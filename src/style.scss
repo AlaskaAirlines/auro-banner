@@ -3,6 +3,8 @@
 
 // ---------------------------------------------------------------------
 
+/* stylelint-disable at-rule-no-unknown -- Need to use @include for responsive mixins */
+
 // Import Auro tokens
 @import './../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
 @import './../node_modules/@alaskaairux/design-tokens/dist/tokens/SassCustomProperties';
@@ -11,34 +13,121 @@
 @import './../node_modules/@alaskaairux/webcorestylesheets/dist/core';
 
 // Support for auroElement styles
-// @import './node_modules/@alaskaairux/webcorestylesheets/dist/auroElement/auroElement';
+// @import "./node_modules/@alaskaairux/webcorestylesheets/dist/auroElement/auroElement";
 
 // container styles - defines the look of the outer custom component
 // :host {
 //   ...
 // }
 
+// layout styles - define any layout specifications for UI that is contained WITHIN the component
+// never define layout that would cause effect on element outside the scope of this component
 
-// Selector is for initial setup only
-// delete when building new custom element
-.testClass {
-  display: inline-block;
-  padding: var(--auro-text-body-size-default);
-  border: 1px solid var(--auro-color-border-error-on-light);
-  color:  var(--auro-color-border-error-on-light);
+.bannerWrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  color: var(--auro-color-text-primary-on-light);
+
+  @include auro_breakpoint--sm {
+    flex-direction: row;
+  }
+}
+.item {
+
+  /* stylelint-disable-next-line declaration-no-important -- this is an important !important */
+  width: 100% !important;
+
+  @include auro_breakpoint--sm {
+    width: auto;
+  }
+}
+.content {
+  @include auro_breakpoint--sm {
+    padding-right: var(--auro-size-xl);
+  }
+}
+.graphic {
+  margin-bottom: var(--auro-size-xl);
+
+  @include auro_breakpoint--sm {
+    margin-bottom: var(--auro-size-none);
+  }
+}
+::slotted(img) {
+  display: flex;
 }
 
-// Selector for native :focus-visible support
-:focus-visible {
-  background-color: var(--auro-color-border-error-on-light);
-  color: var(--auro-color-base-white);
+:host([flipped]) {
+  .bannerWrapper {
+    @include auro_breakpoint--sm {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .content {
+    @include auro_breakpoint--sm {
+      padding-left: var(--auro-size-xl);
+    }
+  }
 }
 
-// Selector for focus-visible polyfill
-:host(.focus-visible) {
-  // requires reference to custom element selector in this example
-  .testClass {
-    background-color: var(--auro-color-border-error-on-light);
-    color: var(--auro-color-base-white);
+
+:host([overlay]) {
+  .content {
+    padding-bottom: 6.25rem;
+
+    @include auro_breakpoint--sm {
+      padding-right: var(--auro-size-xl);
+      padding-bottom: 0;
+    }
+  }
+  .graphic {
+    display: none;
+
+    @include auro_breakpoint--sm {
+      display: block;
+    }
+  }
+  .overlayContainer {
+    position: relative;
+    top: -1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .overlayBg {
+    position: absolute;
+    display: flex;
+    width: 7.5rem;
+    height: 7.5rem;
+    align-items: center;
+    justify-content: center;
+    background: var(--auro-color-brand-neutral-400);
+    border-radius: 50%;
+  }
+}
+
+:host([onBackground]) { 
+  .bannerWrapper {
+    padding: var(--auro-size-xl);
+  }
+}
+
+:host([inset]) { 
+  .content {
+    @include auro_breakpoint--sm {
+      padding: var(--auro-size-xxl);
+    }
+  }
+}
+
+:host([roundedBorder]) {
+  .bannerWrapper {
+    padding: var(--auro-size-lg);
+    border: 1px solid var(--auro-color-border-primary-on-light);
+    border-radius: 5px;
   }
 }

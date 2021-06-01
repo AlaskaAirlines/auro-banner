@@ -1,66 +1,126 @@
+/* eslint-disable init-declarations */
+/* eslint-disable radix */
+/* eslint-disable one-var */
+/* eslint-disable no-negated-condition */
+/* eslint-disable no-underscore-dangle, no-magic-numbers, max-statements */
+
 // Copyright (c) 2021 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
 // ---------------------------------------------------------------------
 
-// If using litElement base class
-import { LitElement, html } from "lit-element";
-
-// If using auroElement base class
-// See instructions for importing auroElement base class https://git.io/JULq4
-// import { html, css } from "lit-element";
-// import AuroElement from '@alaskaairux/webcorestylesheets/dist/auroElement/auroElement';
+import { LitElement, html, css } from "lit-element";
+import { styleMap } from "lit-html/directives/style-map";
+import styleCss from "./style-css.js";
 
 // Import touch detection lib
 import "focus-visible/dist/focus-visible.min.js";
-import styleCss from "./style-css.js";
-import styleCssFixed from './style-fixed-css.js';
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
-* aurolabs-banner provides users a way to ... (it would be great if you fill this out)
- *
- * @attr {Boolean} fixed - Uses fixed pixel values for element shape
- * @attr {String} cssClass - Applies designated CSS class to demo element - you want to delete me!
+ * The auro-card-hero element provides users a flexible way to convey a summary of information in various large formats.
+ * @attr {Boolean} prefersLeft - The left column will move to the top at the lower breakpoint
+ * @attr {Boolean} prefersRight - The right column will move to the top at the lower breakpoint.  If both or neither are set, `prefersRight` is the default.
+ * @attr {Boolean} onBackground - This setting provides padding around the banner when used on a background color or image.
+ * @attr {String} overlayBg - Sets a background behind the overlay
+ * @attr {String} ratio - in the format 'X:Y' where 'X' and 'Y' are two integers.
+ * @slot left - Content in the left column.
+ * @slot right - Content in the right column.
+ * @slot overlay - Content in the front overlay.
  */
+class AuroBanner extends LitElement {
 
-// build the component class
-class AurolabsBanner extends LitElement {
-  // constructor() {
-  //   super();
-  // }
+  constructor() {
+    super();
+    this.ratio = "1:1";
+    this.overlay = false;
+    this.overlayBg = "var(--auro-color-brand-neutral-400)";
+    this.flipped = false;
+    this.onBackground = false;
+    this.inset = false;
+  }
 
-  // function to define props used within the scope of this component
   static get properties() {
     return {
-      // ...super.properties,
-      cssClass:   { type: String }
+      onBackground: {
+        type: Boolean,
+        reflect: true,
+      },
+      inset: {
+        type: Boolean,
+        reflect: true,
+      },
+      flipped: {
+        type: Boolean,
+        reflect: true,
+      },
+      overlay: {
+        type: Boolean,
+        reflect: true,
+      },
+      overlayBg: {
+        type: String,
+      },
+      ratio: {
+        type: String,
+      },
     };
   }
 
   static get styles() {
-    return [
-      styleCss,
-      styleCssFixed
-    ];
+    return css`
+      ${styleCss}
+    `;
   }
-
-  // When using auroElement, use the following attribute and function when hiding content from screen readers.
-  // aria-hidden="${this.hideAudible(this.hiddenAudible)}"
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
-    return html`
 
-      <!-- this is demo code, DO NOT USE IN YOUR ELEMENT -->
-      <div class=${this.cssClass} tabindex="0">
-        <slot></slot>
+    let leftRatio
+    let rightRatio
+
+    if (!this.flipped) {
+      leftRatio = Number.parseInt(this.ratio.split(":")[0]);
+      rightRatio = Number.parseInt(this.ratio.split(":")[1]);
+    } else {
+      leftRatio = Number.parseInt(this.ratio.split(":")[1]);
+      rightRatio = Number.parseInt(this.ratio.split(":")[0]);
+    }
+
+    const leftPercent = leftRatio * (100 / (leftRatio + rightRatio));
+    const rightPercent = rightRatio * (100 / (leftRatio + rightRatio));
+
+    const leftSlotStyles = {
+        flexBasis: `${leftPercent}%`,
+      },
+      rightSlotStyles = {
+        flexBasis: `${rightPercent}%`,
+      };
+
+    return html` <div class="bannerWrapper">
+        ${leftPercent === 0
+    ? html``
+    : html`<div class="item content" style=${styleMap(leftSlotStyles)}>
+              <slot name="content"></slot>
+            </div>`}
+        ${rightPercent === 0
+    ? html``
+    : html`<div class="item graphic" style=${styleMap(rightSlotStyles)}>
+              <slot name="graphic"></slot>
+            </div>`}
       </div>
-    `;
+      ${this.overlay
+    ? html` <div class="overlayContainer">
+            <div class="overlayBg" style="background: ${this.overlayBg}">
+              <slot name="overlay"></slot>
+            </div>
+          </div>`
+    : html``}`;
   }
 }
 
+/* istanbul ignore else */
 // define the name of the custom component
-if (!customElements.get("aurolabs-banner")) {
-  customElements.define("aurolabs-banner", AurolabsBanner);
+if (!customElements.get("auro-banner")) {
+  customElements.define("auro-banner", AuroBanner);
 }
