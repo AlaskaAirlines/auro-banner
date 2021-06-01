@@ -19,13 +19,14 @@ import "focus-visible/dist/focus-visible.min.js";
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
  * The auro-card-hero element provides users a flexible way to convey a summary of information in various large formats.
- * @attr {Boolean} prefersLeft - The left column will move to the top at the lower breakpoint
- * @attr {Boolean} prefersRight - The right column will move to the top at the lower breakpoint.  If both or neither are set, `prefersRight` is the default.
+ * @attr {Boolean} flipped - The content column will move to the right and the graphic column will move to the left.  No change on mobile.  Graphic still on top and content below.
  * @attr {Boolean} onBackground - This setting provides padding around the banner when used on a background color or image.
+ * @attr {Boolean} inset - Adds additional padding around the content slot.  Useful when the banner is wrapped in a background color.
+ * @attr {Boolean} overlay - Enables the overlay slot which adds an overlay that sits between the two columns and overlays a graphic 
  * @attr {String} overlayBg - Sets a background behind the overlay
  * @attr {String} ratio - in the format 'X:Y' where 'X' and 'Y' are two integers.
- * @slot left - Content in the left column.
- * @slot right - Content in the right column.
+ * @slot content - Content in the left column and adds default padding between the two columns.
+ * @slot graphic - Content in the right column and has no default padding so an auro-background can fill the entire space.
  * @slot overlay - Content in the front overlay.
  */
 class AuroBanner extends LitElement {

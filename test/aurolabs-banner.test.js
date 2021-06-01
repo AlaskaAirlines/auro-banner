@@ -82,8 +82,8 @@ describe('<auro-banner>', () => {
     `);
 
     await expect(el.getElementsByClassName('bannerWrapper')).to.not.be.null;
-
-    await expect(true).to.equal(true); // TODO: Add proper assertions
+    await expect(el.getElementsByClassName('graphic')).to.not.be.null;
+    await expect(el.getElementsByClassName('content')).to.be.null;
   });
 
   it('remove graphic slot when ratio 1:0', async () => {
@@ -101,7 +101,7 @@ describe('<auro-banner>', () => {
     `);
 
     await expect(el.getElementsByClassName('bannerWrapper')).to.not.be.null;
-
-    await expect(true).to.equal(true); // TODO: Add proper assertions
+    await expect(el.getElementsByClassName('content')).to.not.be.null;
+    await expect(el.getElementsByClassName('graphic')).to.be.null;
   });
 });
