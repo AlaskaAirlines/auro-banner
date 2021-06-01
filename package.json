@@ -94,7 +94,10 @@
     "last 2 Safari major versions"
   ],
   "nodemonConfig": {
-    "ignore": ["*-css.js", "*.css"]
+    "ignore": [
+      "*-css.js",
+      "*.css"
+    ]
   },
   "husky": {
     "hooks": {
@@ -165,7 +168,7 @@
     "dist:js": "copyfiles -u 1 -V './src/**/*.js' ./dist",
     "esLint": "./node_modules/.bin/eslint src/aurolabs-*.js",
     "linters": "npm-run-all scssLint esLint",
-    "preCommit":"sh scripts/pre-commit.sh",
+    "preCommit": "sh scripts/pre-commit.sh",
     "postCss:component": "node ./scripts/postCss.js",
     "postinstall": "node packageScripts/postinstall.js",
     "sass:render": "sass-render src/*.css -t ./scripts/staticStyles-template.js",
