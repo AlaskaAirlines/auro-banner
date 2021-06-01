@@ -3,7 +3,7 @@ node_modules/
 .cache/
 
 ## Demo support files
-demo/
+# demo/
 
 ## CSS built from Sass process
 src/*.css
@@ -19,4 +19,4 @@ build/
 coverage/
 
 ## Include demo.md file
-!demo/demo.md
+# !demo/demo.md
