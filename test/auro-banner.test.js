@@ -1,7 +1,7 @@
 /* eslint-disable no-undef, sort-vars, no-implicit-coercion */
 
 import { fixture, html, expect } from '@open-wc/testing';
-import '../src/aurolabs-banner';
+import '../src/auro-banner';
 
 describe('<auro-banner>', () => {    
 
