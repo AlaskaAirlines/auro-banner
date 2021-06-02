@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.1](https://github.com/AlaskaAirlines/aurolabs-banner/compare/v1.0.0...v1.0.1) (2021-06-02)
+
+
+### Bug Fixes
+
+* rename package from aurolabs-banner to auro-banner ([9a6979d](https://github.com/AlaskaAirlines/aurolabs-banner/commit/9a6979db96671b9403f1b3350b6416a4bafd1099))
+
 # 1.0.0 (2021-06-01)
 
 
