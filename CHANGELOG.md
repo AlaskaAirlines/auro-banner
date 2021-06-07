@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.2](https://github.com/AlaskaAirlines/aurolabs-banner/compare/v1.0.1...v1.0.2) (2021-06-07)
+
+
+### Bug Fixes
+
+* allow the inset property on mobile ([4625a2a](https://github.com/AlaskaAirlines/aurolabs-banner/commit/4625a2a38a209fd043a30aa50ac64d4d3c30272c))
+
 ## [1.0.1](https://github.com/AlaskaAirlines/aurolabs-banner/compare/v1.0.0...v1.0.1) (2021-06-02)
 
 
