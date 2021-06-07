@@ -22,7 +22,7 @@ import "focus-visible/dist/focus-visible.min.js";
  * @attr {Boolean} flipped - The content column will move to the right and the graphic column will move to the left.  No change on mobile.  Graphic still on top and content below.
  * @attr {Boolean} onBackground - This setting provides padding around the banner when used on a background color or image.
  * @attr {Boolean} inset - Adds additional padding around the content slot.  Useful when the banner is wrapped in a background color.
- * @attr {Boolean} overlay - Enables the overlay slot which adds an overlay that sits between the two columns and overlays a graphic 
+ * @attr {Boolean} overlay - Enables the overlay slot which adds an overlay that sits between the two columns and overlays a graphic
  * @attr {String} overlayBg - Sets a background behind the overlay
  * @attr {String} ratio - in the format 'X:Y' where 'X' and 'Y' are two integers.
  * @slot content - Content in the left column and adds default padding between the two columns.
