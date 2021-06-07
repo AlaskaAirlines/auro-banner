@@ -146,7 +146,7 @@ The following example illustrates how to use the `ratio` property to control the
 If the ratio of one of the sides is set to zero, for example `0:1`, the slot is removed.
 
 <div class="exampleWrapper">
-  <auro-background background="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/oneworld-hub/T-Bright-Small.png) center bottom/cover" height="530px" backgroundsm="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/oneworld-hub/Tbright-L.png) left center/cover" heightsm="200px">
+  <auro-background background="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/oneworld-hub/T-Bright-Small.png) center bottom/cover" height="530px" backgroundsm="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/oneworld-hub/Tbright-L.png) left center/cover" heightsm="302px">
     <auro-banner ratio="0:1" onbackground>
       <div slot="graphic" style="text-align:center; align-self: center">
         <img src="https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png">
@@ -232,7 +232,7 @@ The following example illustrates a `<auro-banner>` custom element using the `ov
 The following example illustrates a `<auro-banner>` custom element wrapped in `<auro-background>` with only the `content` slot is filled. This examples uses `onbackground` to give additional padding inside the `<auro-background>`.
 
 <div class="exampleWrapper">
-  <auro-background height="475px" background="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/UNCF_merch_1167x282.jpg) left bottom/cover" heightsm="200px">
+  <auro-background height="475px" background="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/UNCF_merch_1167x282.jpg) left bottom/cover" heightsm="255px">
       <auro-banner flipped ratio="2:3" onbackground>
         <div slot="content">
           <img src="https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/AS_UNCF_Lockup.svg">
@@ -487,7 +487,7 @@ This example combines a collection of `<auro-icon>` in a list showcasing the man
  <auro-banner ratio="6:4">
   <auro-background
     slot="graphic"
-    height="250px"
+    height="270px"
     heightsm="422px"
     heightmd="335px"
     background="url(https://images.unsplash.com/photo-1585541115073-0fd04faa7142?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80) center center/cover"
@@ -498,7 +498,7 @@ This example combines a collection of `<auro-icon>` in a list showcasing the man
          align-items: center;
           flex-direction:column;
           /* use the same value as height */
-         min-height: 250px;
+         min-height: 270px;
          /* if you want the CC to overlap the bottom on mobile otherwise delete the line below */
          justify-content: flex-end; /*adjust this as needed */
          margin-bottom:30px;
