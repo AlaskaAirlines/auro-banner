@@ -119,6 +119,7 @@
 :host([inset]) {
   .content {
     padding: var(--auro-size-xl);
+
     @include auro_breakpoint--sm {
       padding: var(--auro-size-xxl);
     }
