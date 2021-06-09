@@ -620,6 +620,53 @@ This example combines a collection of `<auro-icon>` in a list showcasing the man
 
 </auro-accordion>
 
+The graphic slot can also include `<auro-hyperlink>` as well as an image, like in this example.
+
+<auro-banner flipped ratio="4:6">
+
+  <div slot="graphic" style="text-align:center; position:relative">
+    <img src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" width="300px" style="margin-bottom: 1.5rem;">
+    <auro-hyperlink secondary cta href="#" target="_blank">Apply now</auro-hyperlink>
+  </div>
+    <div slot="content">
+      <auro-header level="2" display="600" margin="both" size="none" class="title"> Get 40,000 Bonus Miles + Alaska's Famous Companion Fare&trade; offer. Plus,</auro-header>
+      <ul style="list-style: none;padding-left:0;margin:.5rem 0 0 0">
+        <style>ul li {line-height:2rem; text-align:left;} ul li auro-icon {margin-right:.5rem; margin-left:-.35rem}</style>
+          <li><auro-icon label="" emphasis="" category="in-flight" name="luggage"></auro-icon>First checked bag free for you and up to 6 guests on your reservation.</li>
+          <li><auro-icon label="" emphasis="" category="interface" name="star-stroke"></auro-icon>Alaska's Famous Companion Fare™ every year.</li>
+          <li><auro-icon label="" emphasis="" category="shop" name="shopping-bag"></auro-icon>3 miles for every $1 spent on eligible Alaska Airlines purchases.</li>
+          <li><auro-icon label="" emphasis="" category="terminal" name="plane-diag-stroke"></auro-icon>20% back on Alaska Airlines inflight purchases.</li>
+          <li><auro-icon label="" emphasis="" category="terminal" name="lounge"></auro-icon>50% off Lounge passes.</li>
+      </ul>
+    </div>
+  </auro-banner>
+
+<auro-accordion lowProfile justifyRight>
+<span slot="trigger">See code</span>
+
+```html
+<auro-banner flipped ratio="4:6">
+
+  <div slot="graphic" style="text-align:center; position:relative">
+    <img src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" width="300px" style="margin-bottom: 1.5rem;">
+    <auro-hyperlink secondary cta href="#" target="_blank">Apply now</auro-hyperlink>
+  </div>
+    <div slot="content">
+      <auro-header level="2" display="600" margin="both" size="none" class="title"> Get 40,000 Bonus Miles + Alaska's Famous Companion Fare&trade; offer. Plus,</auro-header>
+      <ul style="list-style: none;padding-left:0;margin:.5rem 0 0 0">
+        <style>ul li {line-height:2rem; text-align:left;} ul li auro-icon {margin-right:.5rem; margin-left:-.35rem}</style>
+          <li><auro-icon label="" emphasis="" category="in-flight" name="luggage"></auro-icon>First checked bag free for you and up to 6 guests on your reservation.</li>
+          <li><auro-icon label="" emphasis="" category="interface" name="star-stroke"></auro-icon>Alaska's Famous Companion Fare™ every year.</li>
+          <li><auro-icon label="" emphasis="" category="shop" name="shopping-bag"></auro-icon>3 miles for every $1 spent on eligible Alaska Airlines purchases.</li>
+          <li><auro-icon label="" emphasis="" category="terminal" name="plane-diag-stroke"></auro-icon>20% back on Alaska Airlines inflight purchases.</li>
+          <li><auro-icon label="" emphasis="" category="terminal" name="lounge"></auro-icon>50% off Lounge passes.</li>
+      </ul>
+    </div>
+  </auro-banner>
+```
+
+</auro-accordion>
+
 ### Hero
 
 In these examples the `<auro-banner>` can be used along side a set of page navigation links often at the top of a hub page to highlight a main feature or bit of information.
@@ -678,7 +725,7 @@ In these examples the `<auro-banner>` can be used along side a set of page navig
         <div style="margin-bottom: 1rem">
          LIFT is what we call our work to run our company with care, focusing on social and environmental impact. Join us as we take action on initiatives to support our people and our planet.
         </div>
-       <auro-hyperlink onclick="trackBtnClick()" secondary="" cta="" href="https://flysustainably.com/wp-content/uploads/2021/05/CR_032921_2021-Lift-Report_Final-1.pdf" target="_blank">View 2020 report</auro-hyperlink>
+       <auro-hyperlink secondary="" cta="" href="https://flysustainably.com/wp-content/uploads/2021/05/CR_032921_2021-Lift-Report_Final-1.pdf" target="_blank">View 2020 report</auro-hyperlink>
       </div>
       <div slot="graphic">
         <auro-background height="250px" heightsm="422px" heightmd="335px" background="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/Wing_500x500.png) center center/cover"></auro-background>
@@ -700,7 +747,6 @@ In these examples the `<auro-banner>` can be used along side a set of page navig
       our planet.
     </div>
     <auro-hyperlink
-      onclick="trackBtnClick()"
       secondary=""
       cta=""
       href="https://flysustainably.com/wp-content/uploads/2021/05/CR_032921_2021-Lift-Report_Final-1.pdf"
