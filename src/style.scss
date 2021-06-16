@@ -57,6 +57,7 @@
 }
 ::slotted(img) {
   display: flex;
+  max-width: 100%;
 }
 
 :host([flipped]) {
