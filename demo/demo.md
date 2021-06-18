@@ -406,9 +406,7 @@ The following example illustrates a `<auro-banner>` custom element with the `rou
     </div>
     <auro-hyperlink secondary cta href="#" target="_blank" >Reprehenderit</auro-hyperlink>
     </div>
-    <div slot="graphic">
-      <img src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="" />
-    </div>
+      <img slot="graphic"src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="" />
   </auro-banner>
 </div>
 
@@ -416,19 +414,17 @@ The following example illustrates a `<auro-banner>` custom element with the `rou
 <span slot="trigger">See code</span>
 
 ```html
-<auro-banner roundedBorder ratio="2:4">
-  <div slot="graphic">
-    <img src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="" />
-  </div>
-  <div slot="content">
-    <auro-header level="2" display="800" margin="both" size="none" style="color:#0b5575">Lorem ipsum dolor</auro-header>
+  <auro-banner roundedBorder flipped ratio="2:4">
+    <div slot="content">
+       <auro-header level="2" display="800" margin="both" size="none" style="color:#0b5575">Lorem ipsum dolor</auro-header>
     <div style="color:#0b5575; margin-bottom: 1rem">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus, quod aperiam a aut fuga qui eos reprehenderit facilis vero.
     </div>
-    <auro-hyperlink secondary cta href="#" target="_blank">Reprehenderit</auro-hyperlink>
-  </div>
-</auro-banner>
-```
+    <auro-hyperlink secondary cta href="#" target="_blank" >Reprehenderit</auro-hyperlink>
+    </div>
+      <img slot="graphic"src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="" />
+  </auro-banner>
+  ```
 
 </auro-accordion>
 
