@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.3](https://github.com/AlaskaAirlines/aurolabs-banner/compare/v1.0.2...v1.0.3) (2021-06-16)
+
+
+### Bug Fixes
+
+* Add max-width to slotted images ([0b89484](https://github.com/AlaskaAirlines/aurolabs-banner/commit/0b8948418cb72a8f9ec37b02bb5202f3501fea5b))
+
 ## [1.0.2](https://github.com/AlaskaAirlines/aurolabs-banner/compare/v1.0.1...v1.0.2) (2021-06-07)
 
 
