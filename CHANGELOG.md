@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.4](https://github.com/AlaskaAirlines/aurolabs-banner/compare/v1.0.3...v1.0.4) (2021-07-08)
+
+
+### Bug Fixes
+
+* make the rounder border an auro-variable ([ad854df](https://github.com/AlaskaAirlines/aurolabs-banner/commit/ad854df2a7ab1f11c6f7ed1d33053d8934d8f910))
+
 ## [1.0.3](https://github.com/AlaskaAirlines/aurolabs-banner/compare/v1.0.2...v1.0.3) (2021-06-16)
 
 
