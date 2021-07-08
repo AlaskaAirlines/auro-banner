@@ -454,23 +454,169 @@ The following examples showcases the `<auro-banner>` in a typical merchandising 
 <span slot="trigger">See code</span>
 
 ```html
-<auro-banner ratio="8:17">
-  <img slot="content" src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="" />
+<auro-banner flipped ratio="8:17">
+      <img slot="graphic" src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="" />
+    <div slot="content">
+     <auro-header level="6" display="100" margin="both" size="none"><strong>LIMITED TIME ONLINE OFFER</strong></auro-header>
+     <auro-header level="2" display="700" margin="both" size="none" style="color:#0074CA"><strong style="font-size: 2.4rem;">BUY ONE</strong> ticket<auro-icon  category="terminal"  name="plane-side-fill"
+  customColor  style="color: #01426A; margin-left:1rem"></auro-icon></auro-header>
+     <auro-header level="2" display="700" margin="both" size="none" style="color:#00805D"><strong style="font-size: 2.4rem;">GET ONE</strong> for just the taxes & fees</auro-header>
+    <div style="margin-bottom: .5rem">
+      Plus, get a 40,000 bonus mile offer when you apply here.
+    </div>
+    <auro-hyperlink secondary cta href="#" target="_blank" >Apply now</auro-hyperlink>
+    </div>
+  </auro-banner>
+```
+
+</auro-accordion>
+
+
+
+### Icon Grid
+
+This example showcases a collection of `<auro-icon>` and a description using our `auro-threecolumn` component for formatting.
+
+  <auro-banner ratio="3:2">
+    <div slot="content">
+      <auro-header level="2" color="var(--auro-color-brand-midnight-400)" display="300" margin="top" size="none"><auro-icon category="terminal" name="plane-side-fill" customcolor="" style="color: #01426A; margin-right:.2rem"></auro-icon>Use Miles</auro-header>
+      <auro-header level="2" color="var(--auro-color-brand-midnight-400)" display="700" margin="both" size="none" class="title"><strong style="font-weight: 400">Get a head start on your bucket list.</strong></auro-header>
+      <div style="margin-bottom: 2rem;">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate illum, possimus vitae quaerat alias assumenda magni accusamus minus autem odio debitis quisquam dolorem iste facere adipisci! Temporibus fugit consequatur odit!
+      </div>
+      <auro-threecolumn ratio="1:1:1" gap="24">
+      <style>
+        .icon-copy {
+          margin-top: .5rem
+        }
+      </style>
+        <div slot="left">
+          <auro-icon category="in-flight" name="boarding" customcolor style="color: #01426A;"></auro-icon>
+          <div class="icon-copy">Lorem ipsum dolor sit amet.</div>
+        </div>
+        <div slot="center">
+          <auro-icon category="in-flight" name="lap-infant" customcolor style="color: #01426A;"></auro-icon>
+          <div class="icon-copy">Lorem ipsum dolor sit amet.</div>
+        </div>
+        <div slot="right">
+          <auro-icon category="in-flight" name="wine-and-spirits" customcolor style="color: #01426A;"></auro-icon>
+          <div class="icon-copy">Lorem ipsum dolor sit amet.</div>
+        </div>
+      </auro-threecolumn>
+    </div>
+    <auro-background
+      slot="graphic"
+      height="250px"
+      heightsm="422px"
+      heightmd="335px"
+      background="url(https://images.unsplash.com/photo-1513178532803-0d3db9cf7696?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=925&q=80) center center/cover"
+    />
+  </auro-banner>
+
+<auro-accordion lowProfile justifyRight>
+<span slot="trigger">See code</span>
+
+```html
+<auro-background
+    slot="graphic"
+    height="250px"
+    heightsm="422px"
+    heightmd="335px"
+    background="url(https://images.unsplash.com/photo-1585541115073-0fd04faa7142?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80) center center/cover"
+  ><div class="imageWrapper">
+    <style>
+       .imageWrapper {
+         display:flex;
+         align-items: center;
+          flex-direction:column;
+          /* use the same value as height */
+         min-height: 250px;
+         /* if you want the CC to overlap the bottom on mobile otherwise delete the line below */
+         justify-content: flex-end; /*adjust this as needed */
+         margin-bottom:30px;
+      }
+      .imageWrapper img {
+        height: auto;
+        max-width: 180px;
+        /* if you want the CC to overlap the bottom on mobile otherwise delete the line below */
+        position: relative;
+        top: 30px;
+      }
+      @media (min-width:660px) {
+        .imageWrapper {
+          /* use the same value as heightsm */
+          min-height: 422px;
+          /* if you want the CC to overlap the bottom on mobile but not on other screen sizes otherwise delete the line below */
+          margin-bottom:0;
+          justify-content: center; /*adjust this as needed */
+        }
+        .imageWrapper img {
+          /* if you want the CC to overlap the bottom on mobile but not on other screen sizes otherwise delete the line below  */
+          position: initial;
+          top: 0;
+      }
+      }
+      @media (min-width:1024px) {
+      /* use the same value as heightmd */
+        .imageWrapper {min-height: 355px}
+      }
+       @media (min-width:1232px) {
+      /* use the same value as heightlg */
+        .imageWrapper {min-height: 355px}
+      }
+    </style>
+    <img src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature">
+    </div>
+  </auro-background>
+    <div slot="content">
+    <auro-header level="2" display="600" margin="both" size="none" class="title"> Get 40,000 Bonus Miles + Alaska's Famous Companion Fare&trade; offer. Plus,</auro-header>
+<ul style="list-style: none;padding-left:0;margin:.5rem 0 0 0">
+       <style>ul li {line-height:2rem; text-align:left;} ul li auro-icon {margin-right:.5rem; margin-left:-.35rem}</style>
+        <li><auro-icon label="" emphasis="" category="in-flight" name="luggage"></auro-icon>First checked bag free for you and up to 6 guests on your reservation.</li>
+        <li><auro-icon label="" emphasis="" category="interface" name="star-stroke"></auro-icon>Alaska's Famous Companion Fare™ every year.</li>
+        <li><auro-icon label="" emphasis="" category="shop" name="shopping-bag"></auro-icon>3 miles for every $1 spent on eligible Alaska Airlines purchases.</li>
+        <li><auro-icon label="" emphasis="" category="terminal" name="plane-diag-stroke"></auro-icon>20% back on Alaska Airlines inflight purchases.</li>
+        <li><auro-icon label="" emphasis="" category="terminal" name="lounge"></auro-icon>50% off Lounge passes.</li>
+    </ul>
+    </div>
+  </auro-banner>
+```
+
+</auro-accordion>
+
+### Flight Search page example
+
+<auro-twocolumn ratio="2:1" gap="24">
+  <auro-banner roundedBorder flipped ratio="3:5" slot="left">
   <div slot="graphic">
-    <auro-header level="6" display="100" margin="both" size="none"><strong>LIMITED TIME ONLINE OFFER</strong></auro-header>
-    <auro-header level="2" display="700" margin="both" size="none" style="color:#0074CA"
-      ><strong style="font-size: 2.4rem;">BUY ONE</strong> ticket<auro-icon
-        category="terminal"
-        name="plane-side-fill"
-        customColor
-        style="color: #01426A; margin-left:1rem"
-      ></auro-icon
-    ></auro-header>
-    <auro-header level="2" display="700" margin="both" size="none" style="color:#00805D"><strong style="font-size: 2.4rem;">GET ONE</strong> for just the taxes & fees</auro-header>
-    <div style="margin-bottom: .5rem">Plus, get a 40,000 bonus mile offer when you apply here.</div>
+  <img src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="Alaska Airlines Visa Signature card" style="max-width: 100%;">
+  </div>
+  <div slot="content">
+    <auro-header level="2" display="400" margin="both" size="none">SPECIAL OFFER FOR YOU</auro-header>
+    <div style="font-size: .8rem; line-height: 1.25; margin: .25rem 0 .5rem;">
+    Apply today and get a $200 statement credit offer plus a 30,000 bonus mile offer.
+    </div>
     <auro-hyperlink secondary cta href="#" target="_blank">Apply now</auro-hyperlink>
   </div>
-</auro-banner>
+  </auro-banner>
+</auro-twocolumn>
+
+<auro-accordion lowProfile justifyRight>
+<span slot="trigger">See code</span>
+
+```html
+<auro-banner roundedBorder flipped ratio="3:5" slot="left">
+  <div slot="graphic">
+  <img src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="Alaska Airlines Visa Signature card" style="max-width: 100%;">
+  </div>
+  <div slot="content">
+    <auro-header level="2" display="400" margin="both" size="none">SPECIAL OFFER FOR YOU</auro-header>
+    <div style="font-size: .8rem; line-height: 1.25; margin: .25rem 0 .5rem;">
+    Apply today and get a $200 statement credit offer plus a 30,000 bonus mile offer.
+    </div>
+    <auro-hyperlink secondary cta href="#" target="_blank">Apply now</auro-hyperlink>
+  </div>
+  </auro-banner>
 ```
 
 </auro-accordion>

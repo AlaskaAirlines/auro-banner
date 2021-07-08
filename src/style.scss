@@ -74,7 +74,6 @@
   }
 }
 
-
 :host([overlay]) {
   .content {
     padding-bottom: 6.25rem;
@@ -131,6 +130,6 @@
   .bannerWrapper {
     padding: var(--auro-size-lg);
     border: 1px solid var(--auro-color-border-primary-on-light);
-    border-radius: 5px;
+    border-radius: var(--auro-size-xs);
   }
 }
