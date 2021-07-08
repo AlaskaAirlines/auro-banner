@@ -428,6 +428,41 @@ The following example illustrates a `<auro-banner>` custom element with the `rou
 
 </auro-accordion>
 
+## Row
+
+The following example illustrates a `<auro-banner>` custom element with the `row` variant which maintains the row format on mobile instead of the default stacking behavior.
+
+<div class="exampleWrapper">
+  <auro-banner row flipped ratio="1:2">
+    <div slot="content">
+       <auro-header level="2" display="800" margin="both" size="none" style="color:#0b5575">Lorem ipsum dolor</auro-header>
+    <div style="color:#0b5575; margin-bottom: 1rem">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
+    <auro-hyperlink secondary cta href="#" target="_blank" >Reprehenderit</auro-hyperlink>
+    </div>
+      <img slot="graphic"src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="" />
+  </auro-banner>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+<span slot="trigger">See code</span>
+
+```html
+  <auro-banner row flipped ratio="1:2">
+    <div slot="content">
+       <auro-header level="2" display="800" margin="both" size="none" style="color:#0b5575">Lorem ipsum dolor</auro-header>
+    <div style="color:#0b5575; margin-bottom: 1rem">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
+    <auro-hyperlink secondary cta href="#" target="_blank" >Reprehenderit</auro-hyperlink>
+    </div>
+      <img slot="graphic"src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="" />
+  </auro-banner>
+  ```
+
+</auro-accordion>
+
 ## Additional Examples
 
 The examples below showcase current or former examples of how the `<auro-banner>` is being used in production to give further context on how to use the it.
@@ -588,9 +623,7 @@ This example showcases a collection of `<auro-icon>` and a description using our
 
 <auro-twocolumn ratio="2:1" gap="24">
   <auro-banner roundedBorder flipped ratio="3:5" slot="left">
-  <div slot="graphic">
-  <img src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="Alaska Airlines Visa Signature card" style="max-width: 100%;">
-  </div>
+  <img slot="graphic"src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="Alaska Airlines Visa Signature card" style="max-width: 100%;">
   <div slot="content">
     <auro-header level="2" display="400" margin="both" size="none">SPECIAL OFFER FOR YOU</auro-header>
     <div style="font-size: .8rem; line-height: 1.25; margin: .25rem 0 .5rem;">
@@ -606,9 +639,7 @@ This example showcases a collection of `<auro-icon>` and a description using our
 
 ```html
 <auro-banner roundedBorder flipped ratio="3:5" slot="left">
-  <div slot="graphic">
-  <img src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="Alaska Airlines Visa Signature card" style="max-width: 100%;">
-  </div>
+  <img slot="graphic"src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="Alaska Airlines Visa Signature card" style="max-width: 100%;">
   <div slot="content">
     <auro-header level="2" display="400" margin="both" size="none">SPECIAL OFFER FOR YOU</auro-header>
     <div style="font-size: .8rem; line-height: 1.25; margin: .25rem 0 .5rem;">
@@ -616,7 +647,7 @@ This example showcases a collection of `<auro-icon>` and a description using our
     </div>
     <auro-hyperlink secondary cta href="#" target="_blank">Apply now</auro-hyperlink>
   </div>
-  </auro-banner>
+</auro-banner>
 ```
 
 </auro-accordion>

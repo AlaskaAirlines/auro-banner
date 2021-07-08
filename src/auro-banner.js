@@ -20,6 +20,7 @@ import "focus-visible/dist/focus-visible.min.js";
 /**
  * The auro-card-hero element provides users a flexible way to convey a summary of information in various large formats.
  * @attr {Boolean} flipped - The content column will move to the right and the graphic column will move to the left.  No change on mobile.  Graphic still on top and content below.
+ * @attr {Boolean} row - This setting keeps the row formating for mobile instead of the default stacking behavior.
  * @attr {Boolean} onBackground - This setting provides padding around the banner when used on a background color or image.
  * @attr {Boolean} inset - Adds additional padding around the content slot.  Useful when the banner is wrapped in a background color.
  * @attr {Boolean} overlay - Enables the overlay slot which adds an overlay that sits between the two columns and overlays a graphic
@@ -39,6 +40,7 @@ class AuroBanner extends LitElement {
     this.flipped = false;
     this.onBackground = false;
     this.inset = false;
+    this.row = false;
   }
 
   static get properties() {
@@ -52,6 +54,10 @@ class AuroBanner extends LitElement {
         reflect: true,
       },
       flipped: {
+        type: Boolean,
+        reflect: true,
+      },
+      row: {
         type: Boolean,
         reflect: true,
       },

@@ -60,20 +60,6 @@
   max-width: 100%;
 }
 
-:host([flipped]) {
-  .bannerWrapper {
-    @include auro_breakpoint--sm {
-      flex-direction: row-reverse;
-    }
-  }
-
-  .content {
-    @include auro_breakpoint--sm {
-      padding-left: var(--auro-size-xl);
-    }
-  }
-}
-
 :host([overlay]) {
   .content {
     padding-bottom: 6.25rem;
@@ -133,3 +119,42 @@
     border-radius: var(--auro-size-xs);
   }
 }
+
+:host([row]) {
+  .bannerWrapper {
+    flex-direction: row;
+  }
+  .content {
+    padding-left: var(--auro-size-xl);
+  }
+  .graphic {
+    margin-bottom: none;
+  }
+}
+
+:host([flipped]) {
+  .bannerWrapper {
+    @include auro_breakpoint--sm {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .content {
+    @include auro_breakpoint--sm {
+      padding-left: var(--auro-size-xl);
+    }
+  }
+}
+
+:host([row][flipped]) {
+  .bannerWrapper {
+    flex-direction: row-reverse;
+  }
+  .content {
+    padding-right: var(--auro-size-xl);
+  }
+  .graphic {
+    margin-bottom: 0;
+  }
+}
+

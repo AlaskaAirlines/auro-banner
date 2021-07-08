@@ -12,6 +12,7 @@ The auro-card-hero element provides users a flexible way to convey a summary of 
 | `overlay`      | `overlay`      | `Boolean` | false                                 | Enables the overlay slot which adds an overlay that sits between the two columns and overlays a graphic |
 | `overlayBg`    | `overlayBg`    | `String`  | "var(--auro-color-brand-neutral-400)" | Sets a background behind the overlay             |
 | `ratio`        | `ratio`        | `String`  | "1:1"                                 | in the format 'X:Y' where 'X' and 'Y' are two integers. |
+| `row`          | `row`          | `Boolean` | false                                 | This setting keeps the row formating for mobile instead of the default stacking behavior. |
 
 ## Slots
 
