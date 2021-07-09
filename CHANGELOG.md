@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [1.1.0](https://github.com/AlaskaAirlines/aurolabs-banner/compare/v1.0.4...v1.1.0) (2021-07-09)
+
+
+### Features
+
+* add the row attribute so the banner can be stay as a row on mobile ([89f558e](https://github.com/AlaskaAirlines/aurolabs-banner/commit/89f558eb9af23c8abc2d1c165a14b9ab0654e438))
+
 ## [1.0.4](https://github.com/AlaskaAirlines/aurolabs-banner/compare/v1.0.3...v1.0.4) (2021-07-08)
 
 
