@@ -432,32 +432,44 @@ The following example illustrates a `<auro-banner>` custom element with the `rou
 
 The following example illustrates a `<auro-banner>` custom element with the `row` variant which maintains the row format on mobile instead of the default stacking behavior.
 
-<div class="exampleWrapper">
-  <auro-banner row flipped ratio="1:2">
-    <div slot="content">
-       <auro-header level="2" display="800" margin="both" size="none" style="color:#0b5575">Lorem ipsum dolor</auro-header>
-    <div style="color:#0b5575; margin-bottom: 1rem">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    </div>
-    <auro-hyperlink secondary cta href="#" target="_blank" >Reprehenderit</auro-hyperlink>
-    </div>
-      <img slot="graphic"src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="" />
-  </auro-banner>
-</div>
+
+<auro-twocolumn ratio="1:1">
+  <div slot="left" class="exampleWrapper">
+    <auro-banner row flipped ratio="3:5">
+      <div slot="content">
+        <auro-header level="2" display="400" margin="both" size="none" style="color:#0b5575">Lorem ipsum dolor</auro-header>
+      <div style="color:#0b5575; margin-bottom: 1rem">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </div>
+      </div>
+      <auro-background
+      slot="graphic"
+      height="200px"
+      heightsm="200px"
+      background="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/1C2222E987A24E33B6E3977CDEFAA00F) center center/cover"
+    />
+    </auro-banner>
+  </div>
+</auro-twocolumn>
+
 
 <auro-accordion lowProfile justifyRight>
 <span slot="trigger">See code</span>
 
 ```html
-  <auro-banner row flipped ratio="1:2">
+<auro-banner row flipped ratio="3:5">
     <div slot="content">
-       <auro-header level="2" display="800" margin="both" size="none" style="color:#0b5575">Lorem ipsum dolor</auro-header>
+      <auro-header level="2" display="400" margin="both" size="none" style="color:#0b5575">Lorem ipsum dolor</auro-header>
     <div style="color:#0b5575; margin-bottom: 1rem">
       Lorem ipsum dolor sit amet consectetur adipisicing elit.
     </div>
-    <auro-hyperlink secondary cta href="#" target="_blank" >Reprehenderit</auro-hyperlink>
     </div>
-      <img slot="graphic"src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="" />
+    <auro-background
+    slot="graphic"
+    height="200px"
+    heightsm="200px"
+    background="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/1C2222E987A24E33B6E3977CDEFAA00F) center center/cover"
+  />
   </auro-banner>
   ```
 
@@ -514,112 +526,113 @@ This example showcases a collection of `<auro-icon>` and a description using our
 
   <auro-banner ratio="3:2">
     <div slot="content">
-      <auro-header level="2" color="var(--auro-color-brand-midnight-400)" display="300" margin="top" size="none"><auro-icon category="terminal" name="plane-side-fill" customcolor="" style="color: #01426A; margin-right:.2rem"></auro-icon>Use Miles</auro-header>
-      <auro-header level="2" color="var(--auro-color-brand-midnight-400)" display="700" margin="both" size="none" class="title"><strong style="font-weight: 400">Get a head start on your bucket list.</strong></auro-header>
-      <div style="margin-bottom: 2rem;">
+      <auro-header level="2" color="var(--auro-color-brand-midnight-400)" display="300" margin="top" size="none"><auro-icon category="terminal" name="plane-side-fill" customcolor="" style="color: #01426A; margin-right:.2rem"></auro-icon>Ipsum dolor</auro-header>
+      <auro-header level="2" color="var(--auro-color-brand-midnight-400)" display="700" margin="top" size="none" class="title">Quia possimus ea suscipit ipsam.</auro-header>
+      <div style="margin-bottom: 1rem;">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate illum, possimus vitae quaerat alias assumenda magni accusamus minus autem odio debitis quisquam dolorem iste facere adipisci! Temporibus fugit consequatur odit!
       </div>
       <auro-threecolumn ratio="1:1:1" gap="24">
       <style>
+        .slots {
+          display:flex;
+          align-items: center;
+          padding-bottom:2rem;
+        }
+        .icon-style {
+          max-width:100px;
+        }
         .icon-copy {
-          margin-top: .5rem
+          margin-top: .5rem;
+        }
+        @media (min-width:660px) {
+        .slots {
+          display:initial;
+          padding-bottom:0;
+        }
+          .icon-copy {
+            display: block;
+          }
+          .icon-style {
+            max-width:100%;
+          }
         }
       </style>
-        <div slot="left">
-          <auro-icon category="in-flight" name="boarding" customcolor style="color: #01426A;"></auro-icon>
+        <div class="slots" slot="left">
+          <img class="icon-style" src="https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/5AECE5D9C8D54DB7BCE4395F224686E6">
           <div class="icon-copy">Lorem ipsum dolor sit amet.</div>
         </div>
-        <div slot="center">
-          <auro-icon category="in-flight" name="lap-infant" customcolor style="color: #01426A;"></auro-icon>
+        <div class="slots" slot="center">
+          <img class="icon-style static-fly-partners" src="https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/4F4E766C4463477C80E84154DB1A1174">
           <div class="icon-copy">Lorem ipsum dolor sit amet.</div>
         </div>
-        <div slot="right">
-          <auro-icon category="in-flight" name="wine-and-spirits" customcolor style="color: #01426A;"></auro-icon>
+        <div class="slots" slot="right">
+          <img class="icon-style" src="https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/9EC95FB197C649C293D569F883E5843C">
           <div class="icon-copy">Lorem ipsum dolor sit amet.</div>
         </div>
       </auro-threecolumn>
     </div>
-    <auro-background
-      slot="graphic"
-      height="250px"
-      heightsm="422px"
-      heightmd="335px"
-      background="url(https://images.unsplash.com/photo-1513178532803-0d3db9cf7696?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=925&q=80) center center/cover"
-    />
+    <auro-background slot="graphic" height="450px" heightsm="422px" heightmd="450px" background="url('https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/mileage-plan/membership-benefits/redesign 2021/Earn_miles_600x500_ver2') center center/cover no-repeat"></auro-background>
   </auro-banner>
 
 <auro-accordion lowProfile justifyRight>
 <span slot="trigger">See code</span>
 
 ```html
-<auro-background
-    slot="graphic"
-    height="250px"
-    heightsm="422px"
-    heightmd="335px"
-    background="url(https://images.unsplash.com/photo-1585541115073-0fd04faa7142?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80) center center/cover"
-  ><div class="imageWrapper">
-    <style>
-       .imageWrapper {
-         display:flex;
-         align-items: center;
-          flex-direction:column;
-          /* use the same value as height */
-         min-height: 250px;
-         /* if you want the CC to overlap the bottom on mobile otherwise delete the line below */
-         justify-content: flex-end; /*adjust this as needed */
-         margin-bottom:30px;
-      }
-      .imageWrapper img {
-        height: auto;
-        max-width: 180px;
-        /* if you want the CC to overlap the bottom on mobile otherwise delete the line below */
-        position: relative;
-        top: 30px;
-      }
-      @media (min-width:660px) {
-        .imageWrapper {
-          /* use the same value as heightsm */
-          min-height: 422px;
-          /* if you want the CC to overlap the bottom on mobile but not on other screen sizes otherwise delete the line below */
-          margin-bottom:0;
-          justify-content: center; /*adjust this as needed */
-        }
-        .imageWrapper img {
-          /* if you want the CC to overlap the bottom on mobile but not on other screen sizes otherwise delete the line below  */
-          position: initial;
-          top: 0;
-      }
-      }
-      @media (min-width:1024px) {
-      /* use the same value as heightmd */
-        .imageWrapper {min-height: 355px}
-      }
-       @media (min-width:1232px) {
-      /* use the same value as heightlg */
-        .imageWrapper {min-height: 355px}
-      }
-    </style>
-    <img src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature">
-    </div>
-  </auro-background>
+<auro-banner ratio="3:2">
     <div slot="content">
-    <auro-header level="2" display="600" margin="both" size="none" class="title"> Get 40,000 Bonus Miles + Alaska's Famous Companion Fare&trade; offer. Plus,</auro-header>
-<ul style="list-style: none;padding-left:0;margin:.5rem 0 0 0">
-       <style>ul li {line-height:2rem; text-align:left;} ul li auro-icon {margin-right:.5rem; margin-left:-.35rem}</style>
-        <li><auro-icon label="" emphasis="" category="in-flight" name="luggage"></auro-icon>First checked bag free for you and up to 6 guests on your reservation.</li>
-        <li><auro-icon label="" emphasis="" category="interface" name="star-stroke"></auro-icon>Alaska's Famous Companion Fare™ every year.</li>
-        <li><auro-icon label="" emphasis="" category="shop" name="shopping-bag"></auro-icon>3 miles for every $1 spent on eligible Alaska Airlines purchases.</li>
-        <li><auro-icon label="" emphasis="" category="terminal" name="plane-diag-stroke"></auro-icon>20% back on Alaska Airlines inflight purchases.</li>
-        <li><auro-icon label="" emphasis="" category="terminal" name="lounge"></auro-icon>50% off Lounge passes.</li>
-    </ul>
+      <auro-header level="2" color="var(--auro-color-brand-midnight-400)" display="300" margin="top" size="none"><auro-icon category="terminal" name="plane-side-fill" customcolor="" style="color: #01426A; margin-right:.2rem"></auro-icon>Ipsum dolor</auro-header>
+      <auro-header level="2" color="var(--auro-color-brand-midnight-400)" display="700" margin="top" size="none" class="title">Quia possimus ea suscipit ipsam.</auro-header>
+      <div style="margin-bottom: 1rem;">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate illum, possimus vitae quaerat alias assumenda magni accusamus minus autem odio debitis quisquam dolorem iste facere adipisci! Temporibus fugit consequatur odit!
+      </div>
+      <auro-threecolumn ratio="1:1:1" gap="24">
+      <style>
+        .slots {
+          display:flex;
+          align-items: center;
+          padding-bottom:2rem;
+        }
+        .icon-style {
+          max-width:100px;
+        }
+        .icon-copy {
+          margin-top: .5rem;
+        }
+        @media (min-width:660px) {
+        .slots {
+          display:initial;
+          padding-bottom:0;
+        }
+          .icon-copy {
+            display: block;
+          }
+          .icon-style {
+            max-width:100%;
+          }
+        }
+      </style>
+        <div class="slots" slot="left">
+          <img class="icon-style" src="https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/5AECE5D9C8D54DB7BCE4395F224686E6">
+          <div class="icon-copy">Lorem ipsum dolor sit amet.</div>
+        </div>
+        <div class="slots" slot="center">
+          <img class="icon-style static-fly-partners" src="https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/4F4E766C4463477C80E84154DB1A1174">
+          <div class="icon-copy">Lorem ipsum dolor sit amet.</div>
+        </div>
+        <div class="slots" slot="right">
+          <img class="icon-style" src="https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/9EC95FB197C649C293D569F883E5843C">
+          <div class="icon-copy">Lorem ipsum dolor sit amet.</div>
+        </div>
+      </auro-threecolumn>
     </div>
+    <auro-background slot="graphic" height="450px" heightsm="422px" heightmd="450px" background="url('https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/mileage-plan/membership-benefits/redesign 2021/Earn_miles_600x500_ver2') center center/cover no-repeat"></auro-background>
   </auro-banner>
 ```
 
 </auro-accordion>
 
 ### Flight Search page example
+This example is used on the flight matrix page.
 
 <auro-twocolumn ratio="2:1" gap="24">
   <auro-banner roundedBorder flipped ratio="3:5" slot="left">
@@ -654,6 +667,7 @@ This example showcases a collection of `<auro-icon>` and a description using our
 
 ### Card Benefits
 
+##### Example #1
 This example combines a collection of `<auro-icon>` in a list showcasing the many benefits of our card.
 <br>
 
@@ -793,6 +807,7 @@ This example combines a collection of `<auro-icon>` in a list showcasing the man
 
 </auro-accordion>
 
+##### Example #2
 The graphic slot can also include `<auro-hyperlink>` as well as an image, like in this example.
 
 <auro-banner flipped ratio="4:6">
