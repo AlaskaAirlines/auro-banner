@@ -433,7 +433,6 @@ The following example illustrates a `<auro-banner>` custom element with the `rou
 The following example illustrates a `<auro-banner>` custom element with the `row` variant which maintains the row format on mobile instead of the default stacking behavior.
 
 
-<auro-twocolumn ratio="1:1">
   <div slot="left" class="exampleWrapper">
     <auro-banner row flipped ratio="3:5">
       <div slot="content">
@@ -450,7 +449,6 @@ The following example illustrates a `<auro-banner>` custom element with the `row
     />
     </auro-banner>
   </div>
-</auro-twocolumn>
 
 
 <auro-accordion lowProfile justifyRight>
