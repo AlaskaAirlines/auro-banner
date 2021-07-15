@@ -1,1 +1,1 @@
-export * from './dist/aurolabs-banner';
+export * from './dist/auro-banner';

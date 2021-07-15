@@ -34,8 +34,8 @@
     flex-direction: row;
   }
 }
-.item {
 
+.item {
   /* stylelint-disable-next-line declaration-no-important -- this is an important !important */
   width: 100% !important;
 
@@ -43,11 +43,13 @@
     width: auto;
   }
 }
+
 .content {
   @include auro_breakpoint--sm {
     padding-right: var(--auro-size-xl);
   }
 }
+
 .graphic {
   margin-bottom: var(--auro-size-xl);
 
@@ -55,6 +57,7 @@
     margin-bottom: var(--auro-size-none);
   }
 }
+
 ::slotted(img) {
   display: flex;
   max-width: 100%;
@@ -69,6 +72,7 @@
       padding-bottom: 0;
     }
   }
+
   .graphic {
     display: none;
 
@@ -76,6 +80,7 @@
       display: block;
     }
   }
+
   .overlayContainer {
     position: relative;
     top: -1.25rem;
@@ -86,9 +91,11 @@
 
   .overlayBg {
     position: absolute;
+
     display: flex;
     width: 7.5rem;
     height: 7.5rem;
+
     align-items: center;
     justify-content: center;
     background: var(--auro-color-brand-neutral-400);
@@ -124,9 +131,11 @@
   .bannerWrapper {
     flex-direction: row;
   }
+
   .content {
     padding-left: var(--auro-size-xl);
   }
+
   .graphic {
     margin-bottom: none;
   }
@@ -150,9 +159,11 @@
   .bannerWrapper {
     flex-direction: row-reverse;
   }
+
   .content {
     padding-right: var(--auro-size-xl);
   }
+
   .graphic {
     margin-bottom: 0;
   }

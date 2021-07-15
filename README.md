@@ -1,6 +1,6 @@
 # Banner
 
-`<aurolabs-banner>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of ...
+`<auro-banner>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of ...
 
 ## UI development browser support
 
@@ -30,7 +30,7 @@ Any update to the Auro Design Tokens will be immediately reflected with browsers
 
 ### Define dependency in project component
 
-Defining the component dependency within each component that is using the `<aurolabs-banner>` component.
+Defining the component dependency within each component that is using the `<auro-banner>` component.
 
 ```javascript
 import "@aurodesignsystem/aurolabs-banner";
@@ -39,12 +39,12 @@ import "@aurodesignsystem/aurolabs-banner";
 **Reference component in HTML**
 
 ```html
-<aurolabs-banner>Hello World</aurolabs-banner>
+<auro-banner>Hello World</auro-banner>
 ```
 
 ## Install bundled assets from CDN
 
-In cases where the project is not able to process JS assets, there are pre-processed assets available for use. Two bundles are available -- `aurolabs-banner__bundled.js` for modern browsers and `aurolabs-banner__bundled.es5.js` for legacy browsers (including IE11).
+In cases where the project is not able to process JS assets, there are pre-processed assets available for use. Two bundles are available -- `auro-banner__bundled.js` for modern browsers and `auro-banner__bundled.es5.js` for legacy browsers (including IE11).
 
 Since the legacy bundle includes many polyfills that are not needed by modern browsers, we recommend you load these bundles using [differential serving](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/) so that the browser only loads the bundle it needs. To accomplish this, the script tag for the modern bundle should have `type="module"` and the script tag for the legacy bundle should have the `nomodule` attribute. See the example below.
 
@@ -62,7 +62,7 @@ Since the legacy bundle includes many polyfills that are not needed by modern br
 
 ## aurolabs-banner use cases
 
-The `<aurolabs-banner>` element should be used in situations where users may:
+The `<auro-banner>` element should be used in situations where users may:
 
 * ...
 * ...
@@ -70,10 +70,10 @@ The `<aurolabs-banner>` element should be used in situations where users may:
 
 ## API Code Examples
 
-Default aurolabs-banner
+Default auro-banner
 
 ```html
-<aurolabs-banner>Hello World</aurolabs-banner>
+<auro-banner>Hello World</auro-banner>
 ```
 
 ## Development
@@ -102,7 +102,7 @@ The custom element API file is generated in the build and committed back to the 
 
 ### Testing
 
-Automated tests are required for every Auro component. See `.\test\aurolabs-banner.test.js` for the tests for this component. Run `npm test` to run the tests and check code coverage. Tests must pass and meet a certain coverage threshold to commit. See [the testing documentation](https://auro.alaskaair.com/support/tests) for more details.
+Automated tests are required for every Auro component. See `.\test\auro-banner.test.js` for the tests for this component. Run `npm test` to run the tests and check code coverage. Tests must pass and meet a certain coverage threshold to commit. See [the testing documentation](https://auro.alaskaair.com/support/tests) for more details.
 
 ### Bundled assets
 
