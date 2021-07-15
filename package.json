@@ -7,12 +7,12 @@
     "  3. Go to http://localhost:8000",
     "================================================================================"
   ],
-  "name": "@aurodesignsystem/aurolabs-banner",
-  "version": "0.0.0",
-  "description": "aurolabs-banner HTML custom element",
+  "name": "@aurodesignsystem/auro-banner",
+  "version": "1.1.0",
+  "description": "auro-banner HTML custom element",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AlaskaAirlines/aurolabs-banner"
+    "url": "https://github.com/AlaskaAirlines/auro-banner"
   },
   "main": "index.js",
   "license": "Apache-2.0",
@@ -138,7 +138,7 @@
   "scripts": {
     "build": "npm-run-all build:sass sass:render dist:js build:api bundler postinstall test",
     "build:ci": "npm-run-all sweep build",
-    "build:api": "wca analyze 'src/aurolabs-banner.js' --outFiles docs/api.md",
+    "build:api": "wca analyze 'src/auro-banner.js' --outFiles docs/api.md",
     "build:demo": "npm-run-all build demo:rm:build demo:new:build demo:copy:index demo:copy:demo demo:update:index",
     "build:dev:assets": "npm-run-all build:sass:demo build:sass:component postCss:component sass:render",
     "build:sass": "npm-run-all build:sass:demo build:sass:component postCss:component sass:render",

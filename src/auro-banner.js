@@ -104,25 +104,27 @@ class AuroBanner extends LitElement {
         flexBasis: `${rightPercent}%`,
       };
 
-    return html` <div class="bannerWrapper">
-        ${leftPercent === 0
-    ? html``
-    : html`<div class="item content" style=${styleMap(leftSlotStyles)}>
-              <slot name="content"></slot>
-            </div>`}
-        ${rightPercent === 0
-    ? html``
-    : html`<div class="item graphic" style=${styleMap(rightSlotStyles)}>
-              <slot name="graphic"></slot>
-            </div>`}
+    return html`
+      <div class="bannerWrapper">
+        ${leftPercent === 0 ? html`` : html`
+          <div class="item content" style=${styleMap(leftSlotStyles)}>
+            <slot name="content"></slot>
+          </div>
+        `}
+        ${rightPercent === 0 ? html`` : html`
+          <div class="item graphic" style=${styleMap(rightSlotStyles)}>
+            <slot name="graphic"></slot>
+          </div>
+        `}
       </div>
-      ${this.overlay
-    ? html` <div class="overlayContainer">
-            <div class="overlayBg" style="background: ${this.overlayBg}">
-              <slot name="overlay"></slot>
-            </div>
-          </div>`
-    : html``}`;
+      ${this.overlay ? html`
+        <div class="overlayContainer overlayTop">
+          <div class="overlayBg" style="background: ${this.overlayBg}">
+            <slot name="overlay"></slot>
+          </div>
+        </div>`
+      : html``}
+    `;
   }
 }
 

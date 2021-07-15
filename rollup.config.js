@@ -27,7 +27,7 @@ const getSharedPlugins = (isLegacy) => [
 
 const modernConfig = {
   input: {
-    ['aurolabs-banner__bundled']: './src/aurolabs-banner.js',
+    ['auro-banner__bundled']: './src/auro-banner.js',
   },
   output: {
     format: 'esm',
@@ -53,13 +53,13 @@ const modernConfig = {
   ]
 };
 
-const aurolabsBannerConfig = {
+const auroBannerConfig = {
   input: 'src/es5.js',
   output: {
     format: 'iife',
-    file: 'dist/aurolabs-banner__bundled.es5.js'
+    file: 'dist/auro-banner__bundled.es5.js'
   },
   plugins: getSharedPlugins(true)
 };
 
-export default [modernConfig, aurolabsBannerConfig];
+export default [modernConfig, auroBannerConfig];
