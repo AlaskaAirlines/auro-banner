@@ -83,8 +83,8 @@ class AuroBanner extends LitElement {
   // function that renders the HTML and CSS into  the scope of the component
   render() {
 
-    let leftRatio
-    let rightRatio
+    let leftRatio;
+    let rightRatio;
 
     if (!this.flipped) {
       leftRatio = Number.parseInt(this.ratio.split(":")[0]);
