@@ -59,7 +59,7 @@ Since the legacy bundle includes many polyfills that are not needed by modern br
 <link rel="stylesheet" href="https://unpkg.com/@alaskaairux/webcorestylesheets@latest/dist/bundled/essentials.css" />
 
 <script src="https://unpkg.com/@aurodesignsystem/auro-banner@latest/dist/auro-banner__bundled.js" type="module"></script>
-<script src="https://unpkg.com/@aurodesignsystem/auro-banner@latest/dist/auro-banner__bundled.es5.js" nomodule></script>
+<script src="https://unpkg.com/@aurolabs/auro-banner@latest/dist/auro-banner__bundled.es5.js" nomodule></script>
 ```
 
 ## auro-banner use cases
