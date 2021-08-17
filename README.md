@@ -11,7 +11,7 @@ For the most up to date information on [UI development browser support](https://
 ## Install
 
 [![Build Status](https://img.shields.io/github/workflow/status/AlaskaAirlines/auro-banner/Test%20and%20publish?branch=main&style=for-the-badge)](https://github.com/AlaskaAirlines/auro-banner/actions?query=workflow%3A%22test+and+publish%22)
-[![See it on NPM!](https://img.shields.io/npm/v/@aurodesignsystem/auro-banner?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurodesignsystem/auro-banner)
+[![See it on NPM!](https://img.shields.io/npm/v/@aurolabs/auro-banner?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurolabs/auro-banner)
 [![License](https://img.shields.io/npm/l/@aurolabs/auro-banner?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
 ```shell
