@@ -3,7 +3,7 @@ repository:
   # See https://github.com/apps/settings for app settings
 
   # A short description of the repository that will show up on GitHub
-  description: Custom element that ....
+  description: Custom element that provides users a flexible way to convey a summary of information. The primary elements of a banner include an image, and details.
 
   # A URL with more information about the repository
   homepage: https://auro.alaskaair.com/components/auro/banner

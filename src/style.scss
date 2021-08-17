@@ -12,22 +12,14 @@
 @import './../node_modules/@alaskaairux/webcorestylesheets/dist/breakpoints';
 @import './../node_modules/@alaskaairux/webcorestylesheets/dist/core';
 
-// Support for auroElement styles
-// @import "./node_modules/@alaskaairux/webcorestylesheets/dist/auroElement/auroElement";
-
-// container styles - defines the look of the outer custom component
-// :host {
-//   ...
-// }
-
-// layout styles - define any layout specifications for UI that is contained WITHIN the component
-// never define layout that would cause effect on element outside the scope of this component
+/* auro-banner uses `auro_breakpoint--sm` to define a switch point between a
+ * row and colum layout this breakpoint switch to a column layout is ignored
+ * when the `row` attribute is on the :host() element.
+ */
 
 .bannerWrapper {
   display: flex;
   flex-direction: column-reverse;
-  align-items: center;
-  justify-content: center;
   color: var(--auro-color-text-primary-on-light);
 
   @include auro_breakpoint--sm {
@@ -35,26 +27,99 @@
   }
 }
 
-.item {
-  /* stylelint-disable-next-line declaration-no-important -- this is an important !important */
-  width: 100% !important;
+.content {
+  width: 100%;
+  padding-top: var(--auro-size-xl);
 
   @include auro_breakpoint--sm {
     width: auto;
-  }
-}
-
-.content {
-  @include auro_breakpoint--sm {
+    padding-top: 0;
     padding-right: var(--auro-size-xl);
   }
 }
 
 .graphic {
-  margin-bottom: var(--auro-size-xl);
+  width: 100%;
+  height: 100%;
+}
+
+.graphicLg,
+.graphicMd {
+  display: none;
+}
+
+// This breakpoint must appear in the file before auro_breakpoint--md
+@include auro_breakpoint--sm {
+  .graphicMd {
+    display: initial;
+  }
+
+  .graphicSm {
+    display: none;
+  }
+}
+
+@include auro_breakpoint--md { /* stylelint-disable-line at-rule-empty-line-before */
+  .graphicLg {
+    display: initial;
+  }
+
+  .graphicMd,
+  .graphicSm {
+    display: none;
+  }
+}
+
+.forceSm {
+  display: initial;
+}
+
+.forceMd {
+  @include auro_breakpoint--sm {
+    display: initial;
+  }
+}
+
+.graphicContainer {
+  margin-bottom: var(--auro-size-xl); // margin applied when header is column layout
 
   @include auro_breakpoint--sm {
-    margin-bottom: var(--auro-size-none);
+    margin-bottom: var(--auro-size-none);  // no margin applied when header is row layout
+  }
+}
+
+:host([hideGraphicSm]) {
+  .graphicContainer {
+    display: none;
+  }
+
+  @include auro_breakpoint--sm {
+    .graphicContainer {
+      display: initial;
+    }
+  }
+}
+// When hiding the Medium and Large graphic element the content
+// must be made 100% width
+:host([hideGraphicMd]) {
+  @include auro_breakpoint--sm {
+    .bannerWrapper {
+      display: initial;
+    }
+  }
+
+  @include auro_breakpoint--md { /* stylelint-disable-line at-rule-empty-line-before */
+    .bannerWrapper {
+      display: flex;
+    }
+  }
+}
+
+:host([hideGraphicLg]) {
+  @include auro_breakpoint--md {
+    .bannerWrapper {
+      display: initial;
+    }
   }
 }
 
@@ -70,14 +135,6 @@
     @include auro_breakpoint--sm {
       padding-right: var(--auro-size-xl);
       padding-bottom: 0;
-    }
-  }
-
-  .graphic {
-    display: none;
-
-    @include auro_breakpoint--sm {
-      display: block;
     }
   }
 
@@ -110,7 +167,39 @@
 }
 
 :host([inset]) {
-  .content {
+  .bannerWrapper {
+    padding: var(--auro-size-md);
+
+    @include auro_breakpoint--sm {
+      padding: var(--auro-size-lg);
+    }
+  }
+}
+
+:host([insetXl]) {
+  .bannerWrapper {
+    padding: var(--auro-size-xl);
+
+    @include auro_breakpoint--sm {
+      padding: var(--auro-size-xxl);
+    }
+  }
+}
+
+:host([insetContent]) {
+  .content,
+  .graphicContentContainer {
+    padding: var(--auro-size-md);
+
+    @include auro_breakpoint--sm {
+      padding: var(--auro-size-lg);
+    }
+  }
+}
+
+:host([insetContentXl]) {
+  .content,
+  .graphicContentContainer {
     padding: var(--auro-size-xl);
 
     @include auro_breakpoint--sm {
@@ -121,7 +210,6 @@
 
 :host([roundedBorder]) {
   .bannerWrapper {
-    padding: var(--auro-size-lg);
     border: 1px solid var(--auro-color-border-primary-on-light);
     border-radius: var(--auro-size-xs);
   }
@@ -133,7 +221,7 @@
   }
 
   .content {
-    padding-left: var(--auro-size-xl);
+    padding-right: var(--auro-size-xl);
   }
 
   .graphic {
@@ -150,6 +238,7 @@
 
   .content {
     @include auro_breakpoint--sm {
+      padding-right: 0;
       padding-left: var(--auro-size-xl);
     }
   }
