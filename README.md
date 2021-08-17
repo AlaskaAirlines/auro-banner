@@ -41,7 +41,23 @@ import "@aurolabs/auro-banner";
 **Reference component in HTML**
 
 ```html
-<auro-banner>Hello World</auro-banner>
+  <auro-banner graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;">
+    <div slot="content">
+      <img
+        src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+        alt="Random insert"/>
+      <p>
+        We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
+      </p>
+      <auro-hyperlink
+        cta
+        secondary
+        href="/"
+        target="_blank">
+        More info
+      </auro-hyperlink>
+    </div>
+  </auro-banner>
 ```
 
 ## Install bundled assets from CDN
@@ -76,7 +92,23 @@ The default `<auro-banner>` element features configuration options when using us
 Notice the use of the [auro-hyperlink](http://auro.alaskaair.com/components/auro/hyperlink) element and the `action` slot in the following examples. All the [properties](http://auro.alaskaair.com/components/auro/hyperlink/api) of the Hyperlink element are directly applicable.
 
 ```html
-<auro-banner>Hello World</auro-banner>
+<auro-banner graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;">
+  <div slot="content">
+    <img
+      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      alt="Random insert"/>
+    <p>
+      We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
+    </p>
+    <auro-hyperlink
+      cta
+      secondary
+      href="/"
+      target="_blank">
+      More info
+    </auro-hyperlink>
+  </div>
+</auro-banner>
 ```
 
 ## Development
