@@ -15,7 +15,7 @@ For the most up to date information on [UI development browser support](https://
 [![License](https://img.shields.io/npm/l/@aurolabs/auro-banner?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
 ```shell
-$ npm i @aurodesignsystem/auro-banner
+$ npm i @aurolabs/aurolabs-banner
 ```
 
 Installing as a direct, dev or peer dependency is up to the user installing the package. If you are unsure as to what type of dependency you should use, consider reading this [stack overflow](https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies) answer.
