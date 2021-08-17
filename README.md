@@ -35,7 +35,7 @@ Any update to the Auro Design Tokens will be immediately reflected with browsers
 Defining the component dependency within each component that is using the `<auro-banner>` component.
 
 ```javascript
-import "@aurodesignsystem/auro-banner";
+import "@aurolabs/auro-banner";
 ```
 
 **Reference component in HTML**
