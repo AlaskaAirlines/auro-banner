@@ -14,7 +14,7 @@ import "focus-visible/dist/focus-visible.min.js";
 /**
  * The auro-card-hero element provides users a flexible way to convey a summary of information in various large formats.
  * @attr {Boolean} flipped - The content column will move to the right and the graphic column will move to the left.  No change on mobile.  Graphic still on top and content below.
- * @attr {Boolean} row - This setting keeps the row formating for mobile instead of the default stacking behavior.
+ * @attr {Boolean} row - This setting keeps the row formatting for mobile instead of the default stacking behavior.
  * @attr {Boolean} onBackground - This setting provides padding around the banner when used on a background color or image.
  * @attr {Boolean} inset - Add padding around the banner.
  * @attr {Boolean} insetXl - Add extra large padding around the banner.
