@@ -16,19 +16,19 @@ import "focus-visible/dist/focus-visible.min.js";
  * @attr {Boolean} flipped - The content column will move to the right and the graphic column will move to the left.  No change on mobile.  Graphic still on top and content below.
  * @attr {Boolean} row - This setting keeps the row formating for mobile instead of the default stacking behavior.
  * @attr {Boolean} onBackground - This setting provides padding around the banner when used on a background color or image.
- * @attr {Boolean} inset - Adds additional padding around the banner.
- * @attr {Boolean} insetXl - Adds extra large additional padding around the banner.
- * @attr {String} insetCustom - Adds a custom amount of padding around the banner.
- * @attr {Boolean} insetContent - Adds additional padding to the content and graphicContent slot.
- * @attr {Boolean} insetContentXl -  Adds extra large padding to the content and graphicContent slot.
- * @attr {String} insetContentCustom -  Adds custom padding to the content and graphicContent slot.
+ * @attr {Boolean} inset - Add padding around the banner.
+ * @attr {Boolean} insetXl - Add extra large padding around the banner.
+ * @attr {String} insetCustom - Define custom padding around the banner.
+ * @attr {Boolean} insetContent - Add padding to the `content` and `graphicContent` slots.
+ * @attr {Boolean} insetContentXl -  Add extra large padding to the `content` and `graphicContent` slots.
+ * @attr {String} insetContentCustom -  Define custom padding to the `content` and `graphicContent` slots.
  * @attr {Boolean} overlay - Enables the overlay slot which adds an overlay that sits between the two columns and overlays a graphic
  * @attr {String} overlayBg - Sets a background behind the overlay
  * @attr {String} ratio - in the format 'X:Y' where 'X' and 'Y' are two integers.
  * @slot content - Content in the left column and adds default padding between the two columns.
  * @slot graphic - Content in the right column and has no default padding so an auro-background can fill the entire space.
  * @slot overlay - Content in the front overlay.
- * @attr {String} graphic - Defines the default banner image.
+ * @attr {String} graphic - Path to banner image.
  * @attr {String} graphicSm - Defines a unique banner for display below small breakpoint.
  * @attr {String} graphicMd - Defines a unique banner for display in between small and medium breakpoints.
  * @attr {Boolean} hideGraphicSm - Force hides the graphic below the small breakpoint.

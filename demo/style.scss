@@ -222,9 +222,9 @@ th, td {
 .PageNav {
   border-left: 4px solid var(--auro-color-ui-default-on-light);
   list-style: none;
-  padding-right: 1rem;
+  padding-right: var(--auro-size-md);
 
   li {
-    margin-bottom: 1em;
+    margin-bottom: var(--auro-size-md);
   }
 }
