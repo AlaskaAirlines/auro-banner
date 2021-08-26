@@ -12,11 +12,9 @@ The `overlay` attribute used in combination with the `overlay` slot, and the ass
 
 The `ratio` attribute may be used to define a custom split between the content and graphic slot which otherwise defaults to 50% and 50% each. e.g. a ratio of `1:3` would be 25% and 75% where `2:3` would be 40% and 60%. The content section is always the first part of the ratio and graphic is the second.
 
-`inset` and `insetXl` may be used to apply a predefined padding to the entire banner. Note that this means your defined `graphic` background will be inside of that padding. Additionally you may use `insetCustom` to apply any CSS padding shorthand syntax, e.g. `50rem` or `5rem 3rem 2rem 1rem`.
+`inset` and `insetContent` may be used to apply a predefined padding to the entire banner or to the `content` and `graphicContent` slots. Note that when using `inset` your defined `graphic` background will be inside of that padding. if you want your `graphic` to fill the banner without this padding `insetContent` is the appropriate attribute to use. Valid attribute values for `inset` and `insetCustom` include `none`, `xxxs`, `xxs`, `xs`, `sm`, `md`, `lg`, `xl`, `xxl`, `xxxl` or any CSS value which is valid for the CSS `padding` rule (e.g. `1rem`). When using a custom CSS rule do not include a semi-colon at at the end of the string (e.g. `1rem` is valid, `1rem;` is invalid).
 
-`insetContent`, `insetContentXl` and `insetContentCustom` worked the same but apply the padding directly to the `content` and `graphicContent` slots. This is useful when you want your graphics to fill the banner but still have padding on the slot contents.
-
-There are also a few optional boolean properties `roundedBorder`, `inset`, `insetXl`, `row` and `flipped`.
+There are also a few optional boolean properties `roundedBorder`, `row` and `flipped`.
 
 ## Component use cases
 
@@ -29,17 +27,15 @@ Use the `<auro-banner>` element to:
 
 * Use `<auro-banner>` as the primary source of information.
 * Use `<auro-banner>` to render a single static image on the page. `auro-background` is the correct component for this.
-* Combine combine the following properties (defined below):
-  * `inset`, `insetXl`, `insetCustom`
-  * `insetContent`, `insetContentXl`, `insetContentCustom`
 * Use `ratio` (defined below) values of 0 (e.g. `0:1` or `1:0`)
+* Include a semi-colon in a custom `inset` or `insetContent` attribute value (e.g. `1rem` is valid, `1rem;` is invalid).
 
 ## Default element
 
 The default `<auro-banner>` element using the `content` and `graphic` slots for structured content placement.
 
 <div class="exampleWrapper">
-  <auro-banner graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;">
+  <auro-banner graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
     <div slot="content">
       <img
         src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
@@ -62,7 +58,7 @@ The default `<auro-banner>` element using the `content` and `graphic` slots for 
 <span slot="trigger">See code</span>
 
 ```html
-<auro-banner graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;">
+<auro-banner graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
   <div slot="content">
     <img
       src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
@@ -90,7 +86,7 @@ The `<auro-banner flipped>` element with the `flipped` property will have the le
 <div class="exampleWrapper">
   <auro-banner
     flipped
-    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;">
+    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
     <div slot="content">
       <img
         src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
@@ -115,7 +111,7 @@ The `<auro-banner flipped>` element with the `flipped` property will have the le
 ```html
 <auro-banner
   flipped
-  graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;">
+  graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
   <div slot="content">
     <img
       src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
@@ -145,7 +141,7 @@ Do not use `0` values within the ratio. e.g. `0:1` or `1:0`. Examples below show
 <div class="exampleWrapper">
   <auro-banner
     ratio="2:3"
-    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;">
+    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
     <div slot="content">
       <img
         src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
@@ -170,7 +166,7 @@ Do not use `0` values within the ratio. e.g. `0:1` or `1:0`. Examples below show
 ```html
 <auro-banner
   ratio="2:3"
-  graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;">
+  graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
   <div slot="content">
     <img
       src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
@@ -197,7 +193,7 @@ The following example illustrates `<auro-banner>` custom element using the `over
 
 <div class="exampleWrapper">
   <auro-banner
-    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;"
+    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat"
     overlay>
     <div slot="content">
       <img
@@ -225,7 +221,7 @@ The following example illustrates `<auro-banner>` custom element using the `over
 
 ```html
 <auro-banner
-  graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;"
+  graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat"
   overlay>
   <div slot="content">
     <img
@@ -257,7 +253,7 @@ The following example illustrates `<auro-banner>` custom element using the `over
 
 <div class="exampleWrapper">
   <auro-banner
-    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;"
+    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat"
     overlay
     overlayBg="var(--auro-color-alert-notification-on-light)">
     <div slot="content">
@@ -286,7 +282,7 @@ The following example illustrates `<auro-banner>` custom element using the `over
 
 ```html
 <auro-banner
-  graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;"
+  graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat"
   overlay
   overlayBg="var(--auro-color-alert-notification-on-light)">
   <div slot="content">
@@ -314,12 +310,12 @@ The following example illustrates `<auro-banner>` custom element using the `over
 
 ## Graphic Content only with InsetContent
 
-The following example illustrates `<auro-banner>` with content defined for the `graphicContent` slot and no content in primary `content` slot. The `insetContent`and `insetContentXl` attributes are optionally used to add padding to the content inside the graphic.
+The following example illustrates `<auro-banner>` with content defined for the `graphicContent` slot and no content in primary `content` slot.
 
 <div class="exampleWrapper">
   <auro-banner
-    insetContent
-    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;">
+    insetContent="md"
+    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
     <div slot="graphicContent">
       <img
         src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
@@ -343,8 +339,8 @@ The following example illustrates `<auro-banner>` with content defined for the `
 
 ```html
 <auro-banner
-  insetContent
-  graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;">
+  insetContent="md"
+  graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
   <div slot="graphicContent">
     <img
       src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
@@ -371,7 +367,7 @@ The following example illustrates `<auro-banner>` with content in both the prima
 
 <div class="exampleWrapper">
   <auro-banner
-    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;">
+    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
     <div slot="content">
       <img
         src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
@@ -410,7 +406,7 @@ The following example illustrates `<auro-banner>` with content in both the prima
 
 ```html
 <auro-banner
-  graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;">
+  graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
   <div slot="content">
     <img
       src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
@@ -499,12 +495,10 @@ The following example illustrates `<auro-banner>` that does not have a graphic i
 
 This example showcases an `<auro-banner>` with the `inset` property set which adds padding around the banner content and graphic.
 
-wrapped in `<auro-background background="var(--auro-color-brand-midnight-400)">` when using a background we can add additional padding to the `content` slot by applying the `inset` property.
-
 <div class="exampleWrapper">
   <auro-banner
-    inset
-    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;">
+    inset="md"
+    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
     <div slot="content">
       <img
         src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
@@ -529,8 +523,8 @@ wrapped in `<auro-background background="var(--auro-color-brand-midnight-400)">`
 ```html
 <div class="exampleWrapper">
   <auro-banner
-    inset
-    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;">
+    inset="md"
+    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
     <div slot="content">
       <img
         src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
@@ -551,14 +545,14 @@ wrapped in `<auro-background background="var(--auro-color-brand-midnight-400)">`
 
 </auro-accordion>
 
-## Inset Extra Large
+## InsetContent
 
-This example showcases an `<auro-banner>` with the `insetXl` property set which adds a larger amount of padding around the banner content and graphic. `insetXl` and `inset` should not be used on the same instance of `auro-banner`. However, `insetXl` will always take priority over `inset` if both properties were applied.
+The following example illustrates `<auro-banner>` using the `insetContent="md"` with content in both the primary `content` slot as well as the `graphicContent` slot.
 
 <div class="exampleWrapper">
   <auro-banner
-    insetXl
-    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;">
+    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat"
+    insetContent="md">
     <div slot="content">
       <img
         src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
@@ -574,6 +568,21 @@ This example showcases an `<auro-banner>` with the `insetXl` property set which 
         More info
       </auro-hyperlink>
     </div>
+    <span slot="graphicContent">
+      <img
+        src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+        alt="Random insert"/>
+      <p>
+        We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
+      </p>
+      <auro-hyperlink
+        cta
+        secondary
+        href="/"
+        target="_blank">
+        More info
+      </auro-hyperlink>
+    </span>
   </auro-banner>
 </div>
 
@@ -581,38 +590,53 @@ This example showcases an `<auro-banner>` with the `insetXl` property set which 
 <span slot="trigger">See code</span>
 
 ```html
-  <auro-banner
-    insetXl
-    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;">
-    <div slot="content">
-      <img
-        src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
-        alt="Random insert"/>
-      <p>
-        We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
-      </p>
-      <auro-hyperlink
-        cta
-        secondary
-        href="/"
-        target="_blank">
-        More info
-      </auro-hyperlink>
-    </div>
-  </auro-banner>
+<auro-banner
+  graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat"
+  insetContent="md">
+  <div slot="content">
+    <img
+      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      alt="Random insert"/>
+    <p>
+      We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
+    </p>
+    <auro-hyperlink
+      cta
+      secondary
+      href="/"
+      target="_blank">
+      More info
+    </auro-hyperlink>
+  </div>
+  <span slot="graphicContent">
+    <img
+      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      alt="Random insert"/>
+    <p>
+      We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
+    </p>
+    <auro-hyperlink
+      cta
+      secondary
+      href="/"
+      target="_blank">
+      More info
+    </auro-hyperlink>
+  </span>
+</auro-banner>
 ```
 
 </auro-accordion>
 
 ## RoundedBorder with Inset
 
-The following example illustrates `<auro-banner>` custom element with the `roundedBorder` variant style. In most cases, `roundedBorder` should be used in conjunction with `inset` or `insetXL`.
+The following example illustrates `<auro-banner>` custom element with the `roundedBorder` variant style. In most cases, `roundedBorder` should be used in conjunction with `inset` or `insetContent`.
 
 <div class="exampleWrapper">
   <auro-banner
     roundedBorder
-    inset
-    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;">
+    inset="md"
+    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
     <div slot="content">
       <img
         src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
@@ -637,8 +661,8 @@ The following example illustrates `<auro-banner>` custom element with the `round
 ```html
   <auro-banner
     roundedBorder
-    inset
-    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;">
+    inset="md"
+    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
     <div slot="content">
       <img
         src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
@@ -667,7 +691,7 @@ The following example illustrates `<auro-banner>` custom element with the `row` 
 <div slot="left" class="exampleWrapper">
 <auro-banner
   row
-  graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;">
+  graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
   <div slot="content">
     <img
       src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
@@ -693,7 +717,7 @@ The following example illustrates `<auro-banner>` custom element with the `row` 
 ```html
 <auro-banner
   row
-  graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;">
+  graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
   <div slot="content">
     <img
       src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
@@ -755,179 +779,6 @@ The following examples showcases the `<auro-banner>` in a typical merchandising 
   </div>
   <img slot="graphicContent" src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="" />
 </auro-banner>
-```
-
-</auro-accordion>
-
-### Icon Grid
-
-This example showcases a collection of `<auro-icon>` and a description using our `auro-threecolumn` component for formatting.
-<div class="exampleWrapper">
-  <auro-banner
-    ratio="3:2"
-    graphic="url('https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/mileage-plan/membership-benefits/redesign 2021/Earn_miles_600x500_ver2') center center/cover no-repeat">
-    <div slot="content">
-      <auro-header level="2" color="var(--auro-color-brand-midnight-400)" display="300" margin="top" size="none">
-        <auro-icon category="terminal" name="plane-side-fill" customcolor="" style="color: #01426A; margin-right:.2rem"></auro-icon>
-        Ipsum dolor
-      </auro-header>
-      <auro-header level="2" color="var(--auro-color-brand-midnight-400)" display="700" margin="top" size="none" class="title">
-        Quia possimus ea suscipit ipsam.
-      </auro-header>
-      <div style="margin-bottom: 1rem;">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate illum, possimus vitae quaerat alias assumenda magni accusamus minus autem odio debitis quisquam dolorem iste facere adipisci! Temporibus fugit consequatur odit!
-      </div>
-      <auro-threecolumn ratio="1:1:1" gap="24">
-        <style>
-          .slots {
-            display:flex;
-            align-items: center;
-            padding-bottom:2rem;
-          }
-          .icon-style {
-            max-width:100px;
-          }
-          .icon-copy {
-            margin-top: .5rem;
-          }
-          @media (min-width:660px) {
-          .slots {
-            display:initial;
-            padding-bottom:0;
-          }
-            .icon-copy {
-              display: block;
-            }
-            .icon-style {
-              max-width:100%;
-            }
-          }
-        </style>
-          <div class="slots" slot="left">
-            <img class="icon-style" src="https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/5AECE5D9C8D54DB7BCE4395F224686E6">
-            <div class="icon-copy">Lorem ipsum dolor sit amet.</div>
-          </div>
-          <div class="slots" slot="center">
-            <img class="icon-style static-fly-partners" src="https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/4F4E766C4463477C80E84154DB1A1174">
-            <div class="icon-copy">Lorem ipsum dolor sit amet.</div>
-          </div>
-          <div class="slots" slot="right">
-            <img class="icon-style" src="https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/9EC95FB197C649C293D569F883E5843C">
-            <div class="icon-copy">Lorem ipsum dolor sit amet.</div>
-          </div>
-        </auro-threecolumn>
-    </div>
-  </auro-banner>
-</div>
-
-<auro-accordion lowProfile justifyRight>
-<span slot="trigger">See code</span>
-
-```html
-<auro-banner
-  ratio="3:2"
-  graphic="url('https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/mileage-plan/membership-benefits/redesign 2021/Earn_miles_600x500_ver2') center center/cover no-repeat">
-  <div slot="content">
-    <auro-header level="2" color="var(--auro-color-brand-midnight-400)" display="300" margin="top" size="none">
-      <auro-icon category="terminal" name="plane-side-fill" customcolor="" style="color: #01426A; margin-right:.2rem"></auro-icon>
-      Ipsum dolor
-    </auro-header>
-    <auro-header level="2" color="var(--auro-color-brand-midnight-400)" display="700" margin="top" size="none" class="title">
-      Quia possimus ea suscipit ipsam.
-    </auro-header>
-    <div style="margin-bottom: 1rem;">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate illum, possimus vitae quaerat alias assumenda magni accusamus minus autem odio debitis quisquam dolorem iste facere adipisci! Temporibus fugit consequatur odit!
-    </div>
-    <auro-threecolumn ratio="1:1:1" gap="24">
-      <style>
-        .slots {
-          display:flex;
-          align-items: center;
-          padding-bottom:2rem;
-        }
-        .icon-style {
-          max-width:100px;
-        }
-        .icon-copy {
-          margin-top: .5rem;
-        }
-        @media (min-width:660px) {
-        .slots {
-          display:initial;
-          padding-bottom:0;
-        }
-          .icon-copy {
-            display: block;
-          }
-          .icon-style {
-            max-width:100%;
-          }
-        }
-      </style>
-        <div class="slots" slot="left">
-          <img class="icon-style" src="https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/5AECE5D9C8D54DB7BCE4395F224686E6">
-          <div class="icon-copy">Lorem ipsum dolor sit amet.</div>
-        </div>
-        <div class="slots" slot="center">
-          <img class="icon-style static-fly-partners" src="https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/4F4E766C4463477C80E84154DB1A1174">
-          <div class="icon-copy">Lorem ipsum dolor sit amet.</div>
-        </div>
-        <div class="slots" slot="right">
-          <img class="icon-style" src="https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/9EC95FB197C649C293D569F883E5843C">
-          <div class="icon-copy">Lorem ipsum dolor sit amet.</div>
-        </div>
-      </auro-threecolumn>
-  </div>
-</auro-banner>
-```
-
-</auro-accordion>
-
-### Flight Search page example
-This example is used on the flight matrix page.
-
-<div class="exampleWrapper">
-
-<auro-twocolumn ratio="2:1">
-  <auro-banner
-    roundedBorder
-    inset
-    flipped
-    ratio="3:5"
-    slot="left">
-    <div slot="content">
-      <auro-header level="2" display="400" margin="both" size="none">SPECIAL OFFER FOR YOU</auro-header>
-      <div style="font-size: .8rem; line-height: 1.25; margin: .25rem 0 .5rem;">
-      Apply today and get a $200 statement credit offer plus a 30,000 bonus mile offer.
-      </div>
-      <auro-hyperlink secondary cta href="#" target="_blank">Apply now</auro-hyperlink>
-    </div>
-    <img slot="graphicContent" src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="Alaska Airlines Visa Signature card" style="max-width: 100%;">
-  </auro-banner>
-</auro-twocolumn>
-</div>
-
-<auro-accordion lowProfile justifyRight>
-<span slot="trigger">See code</span>
-
-```html
-<auro-twocolumn ratio="2:1">
-  <auro-banner
-    roundedBorder
-    inset
-    flipped
-    ratio="3:5"
-    slot="left">
-    <div slot="content">
-      <auro-header level="2" display="400" margin="both" size="none">SPECIAL OFFER FOR YOU</auro-header>
-      <div style="font-size: .8rem; line-height: 1.25; margin: .25rem 0 .5rem;">
-      Apply today and get a $200 statement credit offer plus a 30,000 bonus mile offer.
-      </div>
-      <auro-hyperlink secondary cta href="#" target="_blank">Apply now</auro-hyperlink>
-    </div>
-    <img slot="graphicContent" src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="Alaska Airlines Visa Signature card" style="max-width: 100%;">
-  </auro-banner>
-</auro-twocolumn>
 ```
 
 </auro-accordion>
@@ -1303,8 +1154,8 @@ The `<auro-banner>` can showcase important benefits or features of a product and
       slot="graphicContent"
       height="240px"
       heightsm="240px"
-      background="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/Planet_hub_567x282.png) center center/cover no-repeat"
-      backgroundsm="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/Planet_hub_567x282.png) center center/contain no-repeat"></auro-background>
+      bg="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/Planet_hub_567x282.png) center center/cover no-repeat"
+      bgsm="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/Planet_hub_567x282.png) center center/contain no-repeat"></auro-background>
   </auro-banner>
 </div>
 
@@ -1325,8 +1176,8 @@ The `<auro-banner>` can showcase important benefits or features of a product and
     slot="graphicContent"
     height="240px"
     heightsm="240px"
-    background="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/Planet_hub_567x282.png) center center/cover no-repeat"
-    backgroundsm="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/Planet_hub_567x282.png) center center/contain no-repeat"></auro-background>
+    bg="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/Planet_hub_567x282.png) center center/cover no-repeat"
+    bgsm="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/Planet_hub_567x282.png) center center/contain no-repeat"></auro-background>
 </auro-banner>
 ```
 </auro-accordion>
@@ -1335,7 +1186,7 @@ The `<auro-banner>` can showcase important benefits or features of a product and
 <div class="exampleWrapper">
   <auro-banner>
     <div slot="content">
-    <auro-header level="4" display="500" margin="both" size="none" color="var(--auro-color-background-darker)">We fly greener.</auro-header>
+      <auro-header level="4" display="500" margin="both" size="none" color="var(--auro-color-background-darker)">We fly greener.</auro-header>
       <p>
         We work every day to reduce our environmental impact, including on climate change.
       </p>
@@ -1345,8 +1196,8 @@ The `<auro-banner>` can showcase important benefits or features of a product and
       slot="graphicContent"
       height="240px"
       heightsm="240px"
-      background="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/People_hub_567x282.png)center center/cover no-repeat"
-      backgroundsm="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/People_hub_567x282.png) center center/contain no-repeat"></auro-background>
+      bg="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/People_hub_567x282.png)center center/cover no-repeat"
+      bgsm="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/People_hub_567x282.png) center center/contain no-repeat"></auro-background>
   </auro-banner>
 </div>
 
@@ -1356,7 +1207,7 @@ The `<auro-banner>` can showcase important benefits or features of a product and
 ```html
 <auro-banner>
   <div slot="content">
-  <auro-header level="4" display="500" margin="both" size="none" color="var(--auro-color-background-darker)">We fly greener.</auro-header>
+    <auro-header level="4" display="500" margin="both" size="none" color="var(--auro-color-background-darker)">We fly greener.</auro-header>
     <p>
       We work every day to reduce our environmental impact, including on climate change.
     </p>
@@ -1366,8 +1217,8 @@ The `<auro-banner>` can showcase important benefits or features of a product and
     slot="graphicContent"
     height="240px"
     heightsm="240px"
-    background="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/People_hub_567x282.png)center center/cover no-repeat"
-    backgroundsm="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/People_hub_567x282.png) center center/contain no-repeat"></auro-background>
+    bg="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/People_hub_567x282.png)center center/cover no-repeat"
+    bgsm="url(https://sitecore-prod-cd-westus2.azurewebsites.net/-/media/Images/pages/esg-update/People_hub_567x282.png) center center/contain no-repeat"></auro-background>
 </auro-banner>
 ```
 
