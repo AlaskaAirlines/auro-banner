@@ -52,7 +52,7 @@ describe('<auro-banner>', () => {
       </auro-banner>
     `);
 
-    await expect(el.shadowRoot.innerHTML).contains(`<div class="content" style="flex-basis: 50%">`);
+    await expect(el.shadowRoot.innerHTML).contains(`<div class="content" style="flex-basis: 50%; padding: var(--auro-size-none);">`);
     await expect(el.shadowRoot.innerHTML).contains(`<div class="graphicContainer" style="flex-basis: 50%">`);
   });
 
@@ -68,7 +68,7 @@ describe('<auro-banner>', () => {
       </auro-banner>
     `);
 
-    await expect(el.shadowRoot.innerHTML).contains(`<div class="content" style="flex-basis: 25%">`);
+    await expect(el.shadowRoot.innerHTML).contains(`<div class="content" style="flex-basis: 25%; padding: var(--auro-size-none);">`);
     await expect(el.shadowRoot.innerHTML).contains(`<div class="graphicContainer" style="flex-basis: 75%">`);
   });
 
@@ -84,9 +84,8 @@ describe('<auro-banner>', () => {
       </auro-banner>
     `);
 
-    await expect(el.shadowRoot.innerHTML).contains(`<auro-background class="graphic graphicLg forceSm forceMd" style="padding: undefined" background="url(/pic.png)">`);
+    await expect(el.shadowRoot.innerHTML).contains(`<auro-background height="100%" bg="url(/pic.png)" bgsm="url(/pic.png)" bgmd="url(/pic.png)" inset="none">`);
   });
-
 
   it('with medium graphic', async () => {
     const el = await fixture(html`
@@ -100,7 +99,8 @@ describe('<auro-banner>', () => {
       </auro-banner>
     `);
 
-    await expect(el.shadowRoot.innerHTML).contains(`<auro-background class="graphic graphicMd" style="padding: undefined" background="url(/pic.png)">`);
+
+    await expect(el.shadowRoot.innerHTML).contains(`<auro-background height="100%" bg="undefined" bgsm="undefined" bgmd="url(/pic.png)" inset="none">`);
   });
 
   it('with small graphic', async () => {
@@ -115,7 +115,7 @@ describe('<auro-banner>', () => {
       </auro-banner>
     `);
 
-    await expect(el.shadowRoot.innerHTML).contains(`<auro-background class="graphic graphicSm" style="padding: undefined" background="url(/pic.png)">`);
+    await expect(el.shadowRoot.innerHTML).contains(`<auro-background height="100%" bg="undefined" bgsm="url(/pic.png)" bgmd="url(/pic.png)" inset="none">`);
   });
 
   it('with graphic content', async () => {
@@ -130,6 +130,36 @@ describe('<auro-banner>', () => {
     `);
 
     await expect(el.shadowRoot.innerHTML).to.not.contain(`<div class="content"`);
+    await expect(el.shadowRoot.innerHTML).to.contain(`<div class="graphicContentContainer"`);
+  });
+
+  it('with graphic content but no graphic', async () => {
+    const el = await fixture(html`
+      <auro-banner>
+        <div slot="graphicContent">
+          <p>This is some graphic content</p>
+        </div>
+        <div slot="overlay">
+        </div>
+      </auro-banner>
+    `);
+
+    await expect(el.shadowRoot.innerHTML).to.not.contain(`<div class="content"`);
+    await expect(el.shadowRoot.innerHTML).to.contain(`<div class="graphicContentContainer"`);
+
+  });
+
+  it('with no graphic or graphic content', async () => {
+    const el = await fixture(html`
+      <auro-banner>
+        <div slot="content">
+          <p>This is some graphic content</p>
+        </div>
+      </auro-banner>
+    `);
+
+    await expect(el.shadowRoot.innerHTML).to.contain(`<div class="content"`);
+    await expect(el.shadowRoot.innerHTML).to.not.contain(`<div class="graphicContentContainer"`);
   });
 
   it('with overlay content', async () => {
@@ -158,15 +188,58 @@ describe('<auro-banner>', () => {
     await expect(el.shadowRoot.innerHTML).to.not.contain(`<div class="overlayContainer">`);
   });
 
-  it('without overlay content', async () => {
+  it('with pre-defined inset value', async () => {
     const el = await fixture(html`
-      <auro-banner>
-        <div slot="graphicContent">
-          <p>This is some graphic content</p>
+      <auro-banner graphicSm="url(/pic.png)" inset="md"></auro-banner>
+    `);
+
+    await expect(el.shadowRoot.innerHTML).to.contain(`<div class="bannerWrapper" style="padding: var(--auro-size-md)">`);
+  });
+
+  it('with custom inset value', async () => {
+    const el = await fixture(html`
+      <auro-banner graphicSm="url(/pic.png)" inset="1rem"></auro-banner>
+    `);
+
+    await expect(el.shadowRoot.innerHTML).to.contain(`<div class="bannerWrapper" style="padding: 1rem">`);
+  });
+
+  it('with no inset value', async () => {
+    const el = await fixture(html`
+      <auro-banner graphicSm="url(/pic.png)">
+        <div slot="content">
+          <p>Enjoy your flight to Bannerland!</p>
         </div>
       </auro-banner>
     `);
 
-    await expect(el.shadowRoot.innerHTML).contains(`<div class="graphicContentContainer" style="flex-basis: 100%">`);
+    await expect(el.shadowRoot.innerHTML).to.contain(`<div class="content" style="flex-basis: 50%; padding: var(--auro-size-none);">`);
+    await expect(el.shadowRoot.innerHTML).to.contain(`<auro-background height="100%" bg="undefined" bgsm="url(/pic.png)" bgmd="url(/pic.png)" inset="none">`);
+  });
+
+  it('with pre-defined inset value', async () => {
+    const el = await fixture(html`
+      <auro-banner graphicSm="url(/pic.png)" insetContent="md">
+        <div slot="content">
+          <p>Enjoy your flight to Bannerland!</p>
+        </div>
+      </auro-banner>
+    `);
+
+    await expect(el.shadowRoot.innerHTML).to.contain(`<div class="content" style="flex-basis: 50%; padding: var(--auro-size-md);">`);
+    await expect(el.shadowRoot.innerHTML).to.contain(`<auro-background height="100%" bg="undefined" bgsm="url(/pic.png)" bgmd="url(/pic.png)" inset="md">`);
+  });
+
+  it('with custom inset value', async () => {
+    const el = await fixture(html`
+      <auro-banner graphicSm="url(/pic.png)" insetContent="1rem">
+        <div slot="content">
+          <p>Enjoy your flight to Bannerland!</p>
+        </div>
+      </auro-banner>
+    `);
+
+    await expect(el.shadowRoot.innerHTML).to.contain(`<div class="content" style="flex-basis: 50%; padding: 1rem;">`);
+    await expect(el.shadowRoot.innerHTML).to.contain(`auro-background height="100%" bg="undefined" bgsm="url(/pic.png)" bgmd="url(/pic.png)" inset="1rem">`);
   });
 });

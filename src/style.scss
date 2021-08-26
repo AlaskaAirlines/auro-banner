@@ -43,48 +43,14 @@
   height: 100%;
 }
 
-.graphicLg,
-.graphicMd {
-  display: none;
-}
-
-// This breakpoint must appear in the file before auro_breakpoint--md
-@include auro_breakpoint--sm {
-  .graphicMd {
-    display: initial;
-  }
-
-  .graphicSm {
-    display: none;
-  }
-}
-
-@include auro_breakpoint--md { /* stylelint-disable-line at-rule-empty-line-before */
-  .graphicLg {
-    display: initial;
-  }
-
-  .graphicMd,
-  .graphicSm {
-    display: none;
-  }
-}
-
-.forceSm {
-  display: initial;
-}
-
-.forceMd {
-  @include auro_breakpoint--sm {
-    display: initial;
-  }
-}
-
 .graphicContainer {
-  margin-bottom: var(--auro-size-xl); // margin applied when header is column layout
+  &:nth-child(2) {
+    margin-bottom: var(--auro-size-xl); // margin applied when header is column layout
 
-  @include auro_breakpoint--sm {
-    margin-bottom: var(--auro-size-none);  // no margin applied when header is row layout
+    @include auro_breakpoint--sm {
+      margin-bottom: var(--auro-size-none);  // no margin applied when header is row layout
+      margin-left: var(--auro-size-xl);
+    }
   }
 }
 
@@ -166,66 +132,10 @@
   }
 }
 
-:host([inset]) {
-  .bannerWrapper {
-    padding: var(--auro-size-md);
-
-    @include auro_breakpoint--sm {
-      padding: var(--auro-size-lg);
-    }
-  }
-}
-
-:host([insetXl]) {
-  .bannerWrapper {
-    padding: var(--auro-size-xl);
-
-    @include auro_breakpoint--sm {
-      padding: var(--auro-size-xxl);
-    }
-  }
-}
-
-:host([insetContent]) {
-  .content,
-  .graphicContentContainer {
-    padding: var(--auro-size-md);
-
-    @include auro_breakpoint--sm {
-      padding: var(--auro-size-lg);
-    }
-  }
-}
-
-:host([insetContentXl]) {
-  .content,
-  .graphicContentContainer {
-    padding: var(--auro-size-xl);
-
-    @include auro_breakpoint--sm {
-      padding: var(--auro-size-xxl);
-    }
-  }
-}
-
 :host([roundedBorder]) {
   .bannerWrapper {
     border: 1px solid var(--auro-color-border-primary-on-light);
     border-radius: var(--auro-size-xs);
-  }
-}
-
-:host([row]) {
-  .bannerWrapper {
-    flex-direction: row;
-  }
-
-  .content {
-    padding-right: var(--auro-size-xl);
-  }
-
-  .graphic {
-    margin-bottom: none;
   }
 }
 
@@ -240,6 +150,37 @@
     @include auro_breakpoint--sm {
       padding-right: 0;
       padding-left: var(--auro-size-xl);
+    }
+  }
+
+  /* stylelint-disable selector-max-pseudo-class, max-nesting-depth */
+  .graphicContainer {
+    &:nth-child(2) {
+      @include auro_breakpoint--sm {
+        margin-right: var(--auro-size-xl);
+        margin-left: var(--auro-size-none);
+      }
+    }
+  }
+  /* stylelint-enable selector-max-pseudo-class, max-nesting-depth */
+}
+
+:host([row]) {
+  .bannerWrapper {
+    flex-direction: row;
+  }
+
+  .content {
+    padding-right: var(--auro-size-xl);
+  }
+
+  .graphic {
+    margin-bottom: none;
+  }
+
+  .graphicContainer { /* stylelint-disable-line no-descending-specificity */
+    &:nth-child(2) { /* stylelint-disable-line selector-max-pseudo-class, max-nesting-depth */
+      margin-bottom: 0;
     }
   }
 }
