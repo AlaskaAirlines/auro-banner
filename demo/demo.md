@@ -1,20 +1,20 @@
 # Banner
 
-The `<auro-banner>` element provides users a flexible way to convey a summary of information. The primary elements of a banner include an image and some type of value proposition.
+The `<auro-banner>` custom element provides users a flexible way to convey a summary of information. The primary elements of a banner include an image and some type of value proposition.
 
 The component is broken down into three sections - content, graphic, overlay.
 
-`content` is basic `slot` which can accept html content you insert.
+1. The `content` slot can accept any HTML content.
+1. The `graphic` slot has two parts. The graphic background, an attribute that accepts a string that matches the CSS `background` rule. There is also the `graphicContent` slot which allows any content desired as an overlay of the graphic background. The `hideGraphicLg`, `hideGraphicMd` and `hideGraphics,` attributes may be used to hide the graphic entirely at associated breakpoints. E.g. `hideGraphicSm` will hide the graphic on a mobile device layout.
+1. The `overlay` attribute used in combination with the `overlay` slot, and the associated `overlayBg` attribute allow you to place a floating element container over the banner.
 
-`graphic` has two parts. There is the graphic background which is defined as an attribute accepting a string with syntax rules matching the css `background` rule. There is also the `graphicContent` slot which allows you to insert any content you want as an overlay of the graphic background. `hideGraphicLg`, `hideGraphicMd` and `hideGraphics,` may be used to hide the graphic entirely at associated breakpoints. e.g. `hideGraphicSm` will hide the graphic on a mobile device layout.
+The `ratio` attribute can be used to define a custom split between the content and graphic slot which otherwise defaults to 50% and 50% each. E.g. a ratio of `1:3` would be `25%` and `75%` where `2:3` would be `40%` and `60%`. The content section is always the first part of the ratio and the graphic is the second.
 
-The `overlay` attribute used in combination with the `overlay` slot, and the associated `overlayBg` attribute allow you to play a floating slot container over the banner.
+The `inset` and `insetContent` attributes can be used to apply predefined padding to the entire banner, or the `content` and `graphicContent` slots. Note that when using the `inset` attribute the defined `graphic` background will be inside of that padding. If you want your `graphic` to fill the banner without this padding `insetContent` is the appropriate attribute to use.
 
-The `ratio` attribute may be used to define a custom split between the content and graphic slot which otherwise defaults to 50% and 50% each. e.g. a ratio of `1:3` would be 25% and 75% where `2:3` would be 40% and 60%. The content section is always the first part of the ratio and graphic is the second.
+Valid attribute values for `inset` and `insetCustom` include `none`, `xxxs`, `xxs`, `xs`, `sm`, `md`, `lg`, `xl`, `xxl`, `xxxl` or any CSS value which is valid for the CSS `padding` rule, e.g. `1rem`. When using a custom CSS rule, do not include a semi-colon at at the end of the string, e.g. `1rem` is valid, `1rem;` is invalid.
 
-`inset` and `insetContent` may be used to apply a predefined padding to the entire banner or to the `content` and `graphicContent` slots. Note that when using `inset` your defined `graphic` background will be inside of that padding. if you want your `graphic` to fill the banner without this padding `insetContent` is the appropriate attribute to use. Valid attribute values for `inset` and `insetCustom` include `none`, `xxxs`, `xxs`, `xs`, `sm`, `md`, `lg`, `xl`, `xxl`, `xxxl` or any CSS value which is valid for the CSS `padding` rule (e.g. `1rem`). When using a custom CSS rule do not include a semi-colon at at the end of the string (e.g. `1rem` is valid, `1rem;` is invalid).
-
-There are also a few optional boolean properties `roundedBorder`, `row` and `flipped`.
+There are optional boolean properties `roundedBorder`, `row` and `flipped` that can be used universally for the desired effect.
 
 ## Component use cases
 
@@ -27,12 +27,12 @@ Use the `<auro-banner>` element to:
 
 * Use `<auro-banner>` as the primary source of information.
 * Use `<auro-banner>` to render a single static image on the page. `auro-background` is the correct component for this.
-* Use `ratio` (defined below) values of 0 (e.g. `0:1` or `1:0`)
-* Include a semi-colon in a custom `inset` or `insetContent` attribute value (e.g. `1rem` is valid, `1rem;` is invalid).
+* Use `ratio` values of 0 (e.g. `0:1` or `1:0`)
+* Include a semi-colon in a custom `inset` or `insetContent` attribute value, e.g. `1rem` is valid, `1rem;` is invalid.
 
 ## Default element
 
-The default `<auro-banner>` element using the `content` and `graphic` slots for structured content placement.
+The following example illustrates a default `<auro-banner>` element using the `content` and `graphic` slots for structured content.
 
 <div class="exampleWrapper">
   <auro-banner graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
@@ -81,7 +81,7 @@ The default `<auro-banner>` element using the `content` and `graphic` slots for 
 
 ## Flipped
 
-The `<auro-banner flipped>` element with the `flipped` property will have the left side of the show the `graphic` and the right side will show the `content`. The image will still stack on top of the content on mobile.
+The following example illustrates the `<auro-banner>` element with the `flipped` property. The `graphic` appear on the left and the `content` will appear to the right. The image will still stack on top of the content on a mobile device.
 
 <div class="exampleWrapper">
   <auro-banner
@@ -134,9 +134,9 @@ The `<auro-banner flipped>` element with the `flipped` property will have the le
 
 ## Ratio
 
-The following example illustrates how to use the `ratio` property to control the width of the left and right side of the banner. The structure is `{leftRatio}:{rightRatio}` where the left and right ratios are the comparison of sizes between the two parts of the banner. In this example we set it to `2:3` so the left hand side takes up 40% of the page and the right takes up 60%. You could also set the ratio to `40:60` to get the same results.
+The following example illustrates how to use the `ratio` property to control the width of the left and right side of the banner. The syntax is `{leftRatio}:{rightRatio}` where the left and right ratios are the comparison of sizes between the two parts of the banner. In this example the property is set to `2:3`, so the left hand side takes up `40%` of the page and the right takes up `60%`. You could also set the ratio to `40:60` for the same results.
 
-Do not use `0` values within the ratio. e.g. `0:1` or `1:0`. Examples below show how to use banner with either no main content or no graphic.
+Do not use `0` values within the ratio. E.g. `0:1` or `1:0`. Examples below show how to use banner with either no main content or no graphic.
 
 <div class="exampleWrapper">
   <auro-banner
@@ -189,7 +189,7 @@ Do not use `0` values within the ratio. e.g. `0:1` or `1:0`. Examples below show
 
 ## Overlay
 
-The following example illustrates `<auro-banner>` custom element using the `overlay` slot. You'll need to include the boolean `overlay` to display the overlay. This fixes an icon to the bottom of the banner.
+The following example illustrates the `<auro-banner>` custom element using the `overlay` slot. You'll need to include the boolean attribute `overlay` to display the overlay. This will fix an icon to the bottom of the banner.
 
 <div class="exampleWrapper">
   <auro-banner
@@ -249,7 +249,7 @@ The following example illustrates `<auro-banner>` custom element using the `over
 
 ## Overlay with Custom Background Color
 
-The following example illustrates `<auro-banner>` custom element using the `overlay` slot. You'll need to include the boolean `overlay` to display the overlay. This fixes an icon to the bottom of the banner.
+The following example illustrates the `<auro-banner>` custom element using the `overlay` slot and the `overlayBg` attribute to alter the background color of the overlay.
 
 <div class="exampleWrapper">
   <auro-banner
@@ -310,7 +310,7 @@ The following example illustrates `<auro-banner>` custom element using the `over
 
 ## Graphic Content only with InsetContent
 
-The following example illustrates `<auro-banner>` with content defined for the `graphicContent` slot and no content in primary `content` slot.
+The following example illustrates the `<auro-banner>` custom element using the `graphicContent` slot and no content in the primary `content` slot.
 
 <div class="exampleWrapper">
   <auro-banner
@@ -363,7 +363,7 @@ The following example illustrates `<auro-banner>` with content defined for the `
 
 ## Primary and Graphic Content
 
-The following example illustrates `<auro-banner>` with content in both the primary `content` slot as well as the `graphicContent` slot.
+The following example illustrates the `<auro-banner>` custom element with content in both the `content` and `graphicContent` slots.
 
 <div class="exampleWrapper">
   <auro-banner
@@ -444,7 +444,7 @@ The following example illustrates `<auro-banner>` with content in both the prima
 
 ## No Graphic Banner
 
-The following example illustrates `<auro-banner>` that does not have a graphic image.
+The following example illustrates the `<auro-banner>` custom element without a graphic image.
 
 <div class="exampleWrapper">
 <auro-banner>
@@ -493,7 +493,7 @@ The following example illustrates `<auro-banner>` that does not have a graphic i
 
 ## Inset
 
-This example showcases an `<auro-banner>` with the `inset` property set which adds padding around the banner content and graphic.
+The following example illustrates the `<auro-banner>` custom element using the `inset` property which adds padding around the banner content and graphic.
 
 <div class="exampleWrapper">
   <auro-banner
@@ -547,7 +547,7 @@ This example showcases an `<auro-banner>` with the `inset` property set which ad
 
 ## InsetContent
 
-The following example illustrates `<auro-banner>` using the `insetContent="md"` with content in both the primary `content` slot as well as the `graphicContent` slot.
+The following example illustrates the `<auro-banner>` custom element using the `insetContent="md"` attribute with the `content` and `graphicContent` slots.
 
 <div class="exampleWrapper">
   <auro-banner
@@ -630,7 +630,7 @@ The following example illustrates `<auro-banner>` using the `insetContent="md"` 
 
 ## RoundedBorder with Inset
 
-The following example illustrates `<auro-banner>` custom element with the `roundedBorder` variant style. In most cases, `roundedBorder` should be used in conjunction with `inset` or `insetContent`.
+The following example illustrates the `<auro-banner>` custom element with the `roundedBorder` attribute. The `roundedBorder` attribute should be used in conjunction with `inset` or `insetContent`.
 
 <div class="exampleWrapper">
   <auro-banner
@@ -685,8 +685,7 @@ The following example illustrates `<auro-banner>` custom element with the `round
 
 ## Row
 
-The following example illustrates `<auro-banner>` custom element with the `row` variant which maintains the row format on mobile instead of the default stacking behavior.
-
+The following example illustrates the `<auro-banner>` custom element with the `row` attribute to maintain the row format on a mobile device instead of the default stacking behavior.
 
 <div slot="left" class="exampleWrapper">
 <auro-banner
@@ -744,7 +743,7 @@ The examples below showcase current or former examples of how the `<auro-banner>
 
 ### Credit card offer
 
-The following examples showcases the `<auro-banner>` in a typical merchandising situation using `<auro-header>`, `<auro-icon>`, `<auro-hyperlink>` along with basic `html` markup. This one has a custom `ratio` of `8:17`.
+The following examples illustrate the `<auro-banner>` custom element in typical merchandising situations using `<auro-header>`, `<auro-icon>`, `<auro-hyperlink>` along with basic HTML markup. Notice the use of a custom `ratio` of `8:17`.
 
 <div slot="left" class="exampleWrapper">
 <auro-banner
@@ -786,6 +785,7 @@ The following examples showcases the `<auro-banner>` in a typical merchandising 
 ### Card Benefits
 
 ##### Example #1
+
 This example combines a collection of `<auro-icon>` in a list showcasing the many benefits of our card.
 
 <div class="exampleWrapper">
@@ -924,7 +924,8 @@ This example combines a collection of `<auro-icon>` in a list showcasing the man
 </auro-accordion>
 
 ##### Example #2
-The graphic slot can also include `<auro-hyperlink>` as well as an image, like in this example.
+
+The following example illustrates the graphic slot including a `<auro-hyperlink>` custom element as well as an image.
 
 <div class="exampleWrapper">
   <auro-banner flipped ratio="4:6">
@@ -975,9 +976,10 @@ The graphic slot can also include `<auro-hyperlink>` as well as an image, like i
 
 ### Hero
 
-In these examples the `<auro-banner>` can be used along side a set of page navigation links often at the top of a hub page to highlight a main feature or bit of information.
+In these examples the `<auro-banner>` custom element can be used along side page navigation.
 
 ##### oneworld hub page
+
 <div class="exampleWrapper">
   <section class="flex-container">
     <div class="flex-column col1">
@@ -1101,7 +1103,7 @@ In these examples the `<auro-banner>` can be used along side a set of page navig
 
 ### Featured placement
 
-The `<auro-banner>` can showcase an important benefit or feature of a product so a guest can learn more about it.
+The `<auro-banner>` custom element can showcase an important benefit or feature.
 
 <div class="exampleWrapper">
   <auro-banner
@@ -1138,7 +1140,7 @@ The `<auro-banner>` can showcase an important benefit or feature of a product so
 
 ### Alternating placements
 
-The `<auro-banner>` can showcase important benefits or features of a product and still create some visual interest by using the `flipped` property.
+The `<auro-banner>` custom element can showcase important benefits or features of a product and still create some visual interest by using the `flipped` property.
 
 <div class="exampleWrapper">
   <auro-banner
