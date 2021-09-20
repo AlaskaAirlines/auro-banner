@@ -30,7 +30,7 @@ import "focus-visible/dist/focus-visible.min.js";
  * @attr {String} graphicMd - Path to banner image for 'md' breakpoint and above.
  * @attr {String} graphicLg - Path to banner image for 'lg' breakpoint and above.
  * @attr {Boolean} hideGraphicSm - Force hides the graphic below the small breakpoint.
- * @attr {Boolean} hideGraphicMd - Force hides the graphic betwen the small and medium breakpoints.
+ * @attr {Boolean} hideGraphicMd - Force hides the graphic between the small and medium breakpoints.
  * @attr {Boolean} hideGraphicLg - Force hides the graphic above the medium breakpoint.
  */
 class AuroBanner extends LitElement {

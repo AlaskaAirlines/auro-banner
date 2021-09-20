@@ -1,8 +1,6 @@
 # Banner
 
-The <auro-banner> element provides users a flexible way to convey a summary of information. The primary elements of a banner include an image, and details.
-
-The details are broken down into `prefix`, `title`, `description`, `action`, and `disclaimer`.
+The `<auro-banner>` custom element provides users a flexible way to convey a summary of information. The primary elements of a banner include an image, and details.
 
 ## UI development browser support
 
@@ -15,7 +13,7 @@ For the most up to date information on [UI development browser support](https://
 [![License](https://img.shields.io/npm/l/@aurolabs/auro-banner?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
 ```shell
-$ npm i @aurolabs/aurolabs-banner
+$ npm i @aurolabs/auro-banner
 ```
 
 Installing as a direct, dev or peer dependency is up to the user installing the package. If you are unsure as to what type of dependency you should use, consider reading this [stack overflow](https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies) answer.
@@ -87,9 +85,9 @@ Use the `<auro-banner>` element to:
 
 ## API Code Examples
 
-The default `<auro-banner>` element features configuration options when using using the `displayImage`, `contentImage`, `prefix`, `title`, `description`, `action` and `disclaimer` slots for structured content placement.
+The default `<auro-banner>` element features many configuration options. Be sure to review all [API options](https://auro.alaskaair.com/components/auro/banner/api).
 
-Notice the use of the [auro-hyperlink](http://auro.alaskaair.com/components/auro/hyperlink) element and the `action` slot in the following examples. All the [properties](http://auro.alaskaair.com/components/auro/hyperlink/api) of the Hyperlink element are directly applicable.
+Notice the use of the [auro-hyperlink](http://auro.alaskaair.com/components/auro/hyperlink) element within the `action` slot. All the [properties](http://auro.alaskaair.com/components/auro/hyperlink/api) of the Hyperlink element are directly applicable.
 
 ```html
 <auro-banner graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;">
@@ -115,7 +113,7 @@ Notice the use of the [auro-hyperlink](http://auro.alaskaair.com/components/auro
 
 In order to develop against this project, if you are not part of the core team, you will be required to fork the project prior to submitting a pull request.
 
-Please be sure to review the [contribution guidelines](https://auro.alaskaair.com/getting-started/developers/contributing) for this project. Please make sure to **pay special attention** to the **conventional commits** section of the document.
+Please be sure to review the [contribution guidelines](https://auro.alaskaair.com/contributing) for this project. Please make sure to **pay special attention** to the **conventional commits** section of the document.
 
 ### Start development environment
 
@@ -145,6 +143,6 @@ Bundled assets are only generated in the remote and not merged back to this repo
 
 ### Demo deployment
 
-To deploy a demo version of the component for review, run `npm run demo:build` to create a `./build` directory that can be pushed to any static server.
+To deploy a demo version of the component for review, run `npm run build:demo` to create a `./build` directory that can be pushed to any static server.
 
 <small>Built from WC-Generator v3.7.4</small>
