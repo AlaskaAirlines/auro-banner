@@ -5,7 +5,8 @@ The `<auro-banner>` custom element provides users a flexible way to convey a sum
 The component is broken down into three sections - content, graphic, overlay.
 
 1. The `content` slot can accept any HTML content.
-1. The `graphic` slot has two parts. The graphic background, an attribute that accepts a string that matches the CSS `background` rule. There is also the `graphicContent` slot which allows any content desired as an overlay of the graphic background. The `hideGraphicLg`, `hideGraphicMd` and `hideGraphics,` attributes may be used to hide the graphic entirely at associated breakpoints. E.g. `hideGraphicSm` will hide the graphic on a mobile device layout.
+1. The `graphic` is the background rendered behind the `graphicContent` slot, an attribute that accepts a string that matches the CSS `background` rule. The `hideGraphicLg`, `hideGraphicMd` and `hideGraphics,` attributes may be used to hide the graphic entirely at associated breakpoints, e.g. `hideGraphicSm` will hide the graphic on a mobile device layout.
+1. The `graphicContent` slot allows any content desired as an overlay of the `graphic` background, accepts any HTML content.
 1. The `overlay` attribute used in combination with the `overlay` slot, and the associated `overlayBg` attribute allow you to place a floating element container over the banner.
 
 The `ratio` attribute can be used to define a custom split between the content and graphic slot which otherwise defaults to 50% and 50% each. E.g. a ratio of `1:3` would be `25%` and `75%` where `2:3` would be `40%` and `60%`. The content section is always the first part of the ratio and the graphic is the second.
@@ -81,7 +82,7 @@ The following example illustrates a default `<auro-banner>` element using the `c
 
 ## Flipped
 
-The following example illustrates the `<auro-banner>` element with the `flipped` property. The `graphic` appear on the left and the `content` will appear to the right. The image will still stack on top of the content on a mobile device.
+The following example illustrates the `<auro-banner>` element with the `flipped` property. The `graphic` appears on the left and the `content` will appear to the right. The image will still stack on top of the content on a mobile device.
 
 <div class="exampleWrapper">
   <auro-banner
