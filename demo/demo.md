@@ -2,7 +2,7 @@
 
 The `<auro-banner>` custom element provides users a flexible way to convey a summary of information. The primary elements of a banner include an image and some type of value proposition.
 
-The component is broken down into three sections - content, graphic, overlay.
+The component is broken down into four sections - content, graphic, graphicContent and overlay.
 
 1. The `content` slot can accept any HTML content.
 1. The `graphic` is the background rendered behind the `graphicContent` slot, an attribute that accepts a string that matches the CSS `background` rule. The `hideGraphicLg`, `hideGraphicMd` and `hideGraphics,` attributes may be used to hide the graphic entirely at associated breakpoints, e.g. `hideGraphicSm` will hide the graphic on a mobile device layout.
