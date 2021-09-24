@@ -21,6 +21,7 @@
   display: flex;
   flex-direction: column-reverse;
   color: var(--auro-color-text-primary-on-light);
+  gap: var(--auro-size-xl);
 
   @include auro_breakpoint--sm {
     flex-direction: row;
@@ -38,22 +39,6 @@
   }
 }
 
-.graphic {
-  width: 100%;
-  height: 100%;
-}
-
-.graphicContainer {
-  &:nth-child(2) {
-    margin-bottom: var(--auro-size-xl); // margin applied when header is column layout
-
-    @include auro_breakpoint--sm {
-      margin-bottom: var(--auro-size-none);  // no margin applied when header is row layout
-      margin-left: var(--auro-size-xl);
-    }
-  }
-}
-
 :host([hideGraphicSm]) {
   .graphicContainer {
     display: none;
@@ -61,7 +46,7 @@
 
   @include auro_breakpoint--sm {
     .graphicContainer {
-      display: initial;
+      display: flex;
     }
   }
 }
@@ -70,7 +55,7 @@
 :host([hideGraphicMd]) {
   @include auro_breakpoint--sm {
     .bannerWrapper {
-      display: initial;
+      display: block;
     }
   }
 
@@ -84,26 +69,12 @@
 :host([hideGraphicLg]) {
   @include auro_breakpoint--md {
     .bannerWrapper {
-      display: initial;
+      display: block;
     }
   }
-}
-
-::slotted(img) {
-  display: flex;
-  max-width: 100%;
 }
 
 :host([overlay]) {
-  .content {
-    padding-bottom: 6.25rem;
-
-    @include auro_breakpoint--sm {
-      padding-right: var(--auro-size-xl);
-      padding-bottom: 0;
-    }
-  }
-
   .overlayContainer {
     position: relative;
     top: -1.25rem;
@@ -123,12 +94,6 @@
     justify-content: center;
     background: var(--auro-color-brand-neutral-400);
     border-radius: 50%;
-  }
-}
-
-:host([onBackground]) {
-  .bannerWrapper {
-    padding: var(--auro-size-xl);
   }
 }
 
@@ -152,17 +117,6 @@
       padding-left: var(--auro-size-xl);
     }
   }
-
-  /* stylelint-disable selector-max-pseudo-class, max-nesting-depth */
-  .graphicContainer {
-    &:nth-child(2) {
-      @include auro_breakpoint--sm {
-        margin-right: var(--auro-size-xl);
-        margin-left: var(--auro-size-none);
-      }
-    }
-  }
-  /* stylelint-enable selector-max-pseudo-class, max-nesting-depth */
 }
 
 :host([row]) {
@@ -173,29 +127,11 @@
   .content {
     padding-right: var(--auro-size-xl);
   }
-
-  .graphic {
-    margin-bottom: none;
-  }
-
-  .graphicContainer { /* stylelint-disable-line no-descending-specificity */
-    &:nth-child(2) { /* stylelint-disable-line selector-max-pseudo-class, max-nesting-depth */
-      margin-bottom: 0;
-    }
-  }
 }
 
 :host([row][flipped]) {
   .bannerWrapper {
     flex-direction: row-reverse;
-  }
-
-  .content {
-    padding-right: var(--auro-size-xl);
-  }
-
-  .graphic {
-    margin-bottom: 0;
   }
 }
 
