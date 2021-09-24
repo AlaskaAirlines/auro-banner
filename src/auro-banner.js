@@ -32,6 +32,7 @@ import "focus-visible/dist/focus-visible.min.js";
  * @attr {Boolean} hideGraphicSm - Force hides the graphic below the small breakpoint.
  * @attr {Boolean} hideGraphicMd - Force hides the graphic between the small and medium breakpoints.
  * @attr {Boolean} hideGraphicLg - Force hides the graphic above the medium breakpoint.
+ * @attr {Boolean} roundedBorder - Adds a rounded border to the banner.
  */
 class AuroBanner extends LitElement {
 
@@ -53,6 +54,7 @@ class AuroBanner extends LitElement {
     this.row = false;
     this.leftPercent = 100;
     this.rightPercent = 100;
+    this.roundedBorder = false;
   }
 
   static get properties() {
@@ -107,6 +109,9 @@ class AuroBanner extends LitElement {
       },
       rightPercent: {
         type: Number
+      },
+      roundedBorder: {
+        type: Boolean
       }
     };
   }
