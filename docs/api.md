@@ -12,7 +12,7 @@ The auro-card-hero element provides users a flexible way to convey a summary of 
 | `graphicMd`     | `graphicMd`     | `String`  | "undefined"                           | Path to banner image for 'md' breakpoint and above. |
 | `graphicSm`     | `graphicSm`     | `String`  | "undefined"                           | Path to banner image for 'sm' breakpoint and above. |
 | `hideGraphicLg` | `hideGraphicLg` | `Boolean` | false                                 | Force hides the graphic above the medium breakpoint. |
-| `hideGraphicMd` | `hideGraphicMd` | `Boolean` | false                                 | Force hides the graphic betwen the small and medium breakpoints. |
+| `hideGraphicMd` | `hideGraphicMd` | `Boolean` | false                                 | Force hides the graphic between the small and medium breakpoints. |
 | `hideGraphicSm` | `hideGraphicSm` | `Boolean` | false                                 | Force hides the graphic below the small breakpoint. |
 | `inset`         | `inset`         | `Boolean` | "none"                                | Add padding inside the banner.                   |
 | `insetContent`  | `insetContent`  | `Boolean` | "none"                                | Add padding inside the `content` and `graphicContent` slots. |
@@ -21,6 +21,7 @@ The auro-card-hero element provides users a flexible way to convey a summary of 
 | `overlayBg`     | `overlayBg`     | `String`  | "var(--auro-color-brand-neutral-400)" | Sets a background behind the overlay             |
 | `ratio`         | `ratio`         | `String`  | "1:1"                                 | in the format 'X:Y' where 'X' and 'Y' are two integers. |
 | `rightPercent`  | `rightPercent`  | `number`  | 100                                   |                                                  |
+| `roundedBorder` | `roundedBorder` | `Boolean` | false                                 | Adds a rounded border to the banner.             |
 | `row`           | `row`           | `Boolean` | false                                 | This setting keeps the row formatting for mobile instead of the default stacking behavior. |
 
 ## Slots
