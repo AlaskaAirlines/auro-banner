@@ -194,37 +194,3 @@ thead {
 th, td {
   padding: var(--auro-size-md);
 }
-
-
-// Used to create the columns and nav in the hero examples
-.flex-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  @include auro_breakpoint--sm {
-    flex-direction: row;
-  }
-}
-
-.flex-column {
-  flex: 1 1 50%;
-}
-
-.col1 {
-  flex-basis: 20%;
-}
-
-.col2 {
-  flex-basis: 80%;
-}
-
-.PageNav {
-  border-left: 4px solid var(--auro-color-ui-default-on-light);
-  list-style: none;
-  padding-right: var(--auro-size-md);
-
-  li {
-    margin-bottom: var(--auro-size-md);
-  }
-}

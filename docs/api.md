@@ -12,7 +12,7 @@ The auro-card-hero element provides users a flexible way to convey a summary of 
 | `graphicMd`     | `graphicMd`     | `String`  | "undefined"                           | Path to banner image for 'md' breakpoint and above. |
 | `graphicSm`     | `graphicSm`     | `String`  | "undefined"                           | Path to banner image for 'sm' breakpoint and above. |
 | `hideGraphicLg` | `hideGraphicLg` | `Boolean` | false                                 | Force hides the graphic above the medium breakpoint. |
-| `hideGraphicMd` | `hideGraphicMd` | `Boolean` | false                                 | Force hides the graphic betwen the small and medium breakpoints. |
+| `hideGraphicMd` | `hideGraphicMd` | `Boolean` | false                                 | Force hides the graphic between the small and medium breakpoints. |
 | `hideGraphicSm` | `hideGraphicSm` | `Boolean` | false                                 | Force hides the graphic below the small breakpoint. |
 | `inset`         | `inset`         | `Boolean` | "none"                                | Add padding inside the banner.                   |
 | `insetContent`  | `insetContent`  | `Boolean` | "none"                                | Add padding inside the `content` and `graphicContent` slots. |

@@ -9,7 +9,7 @@ repository:
   homepage: https://auro.alaskaair.com/components/auro/banner
 
   # A comma-separated list of topics to set on the repository
-  topics: auro, design-system, custom-element, generator-v3-7-4
+  topics: auro, design-system, custom-element, generator-v3-9-0
 
   # Either `true` to enable issues for this repository, `false` to disable them.
   has_issues: true
@@ -22,6 +22,9 @@ repository:
 
   # Updates the default branch for this repository.
   default_branch: main
+
+  # Either `true` to enable automatic deletion of branches on merge, or `false` to disable
+  delete_branch_on_merge: true
 
   # Either `true` to allow squash-merging pull requests, or `false` to prevent
   # squash-merging.
@@ -66,6 +69,21 @@ branches:
 
 # Labels: define labels for Issues and Pull Requests
 labels:
+  - name: auro-banner
+    cat: default
+    color: fa23e4
+    description:
+    process: Apply to issues to identify project repo
+  - name: Release
+    cat: default
+    color: 1c872e
+    description: Defines release scope of work
+    process: Apply to any issue that is the designated parent issue for a release
+  - name: Issue
+    cat: default
+    color: 1c872e
+    description: Defines issue scope of work related to release
+    process: Apply to any issue that is associated to a release
   - name: duplicate
     cat: default
     color: cde6ff
