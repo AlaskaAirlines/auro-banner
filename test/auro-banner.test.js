@@ -1,12 +1,88 @@
 import { fixture, html, expect } from '@open-wc/testing';
 import '../src/auro-banner';
 
+/**
+ * @param {Element} el 
+ * @returns {Element}
+ */
+function getBannerWrapper(el) {
+  return el.shadowRoot.querySelector('.bannerWrapper');
+}
+
+/**
+ * @param {Element} el 
+ * @returns {Element}
+ */
+function getContent(el) {
+  return el.shadowRoot.querySelector('.content');
+}
+
+/**
+ * @param {Element} el 
+ * @returns {Element}
+ */
+function getGraphicContainer(el) {
+  return el.shadowRoot.querySelector('.graphicContainer');
+}
+
+/**
+ * @param {Element} el 
+ * @returns {Element}
+ */
+function getGraphicContentContainer(el) {
+  return el.shadowRoot.querySelector('.graphicContentContainer');
+}
+
+/**
+ * @param {Element} el 
+ * @returns {Element}
+ */
+function getOverlayContainer(el) {
+  return el.shadowRoot.querySelector('.overlayContainer');
+}
+
+/**
+ * @param {Element} el 
+ * @returns {Element}
+ */
+function getBackground(el) {
+  return el.shadowRoot.querySelector('auro-background');
+}
+
+/**
+ * @param {Element} el 
+ * @param {string} expected
+ */
+function assertStyle(el, expected) {
+  expect(el.getAttribute('style')).to.contain(expected);
+}
+
+/**
+ * @param {Element} el 
+ * @param {string} regular
+ * @param {string} sm
+ * @param {string} md
+ */
+function assertBackground(el, regular, sm, md) {
+  expect(el.getAttribute('bg')).to.equal(regular);
+  expect(el.getAttribute('bgsm')).to.contain(sm);
+  expect(el.getAttribute('bgmd')).to.contain(md);
+}
+
+/**
+ * @param {Element} el 
+ * @param {string} expected
+ */
+function assertInset(el, expected) {
+  expect(el.getAttribute('inset')).to.equal(expected);
+}
+
 describe('<auro-banner>', () => {
 
-  it('<auro-banner> custom element is defined', async () => {
+  it('is defined', async () => {
     const el = await !!customElements.get("auro-banner");
 
-    await expect(el).to.be.true;
+    expect(el).to.be.true;
   });
 
   it('is accessible', async () => {
@@ -36,8 +112,8 @@ describe('<auro-banner>', () => {
       </auro-banner>
     `);
 
-    await expect(el.getElementsByClassName('bannerWrapper')).to.not.be.null;
-    await expect(el.outerHTML.indexOf('flipped') > 0).to.equal(true);
+    expect(getBannerWrapper(el)).to.not.be.null;
+    expect(el.flipped).to.be.true;
   });
 
   it('with default ratio', async () => {
@@ -52,8 +128,8 @@ describe('<auro-banner>', () => {
       </auro-banner>
     `);
 
-    await expect(el.shadowRoot.innerHTML).contains(`<div class="content" style="flex-basis: 50%; padding: var(--auro-size-none);">`);
-    await expect(el.shadowRoot.innerHTML).contains(`<div class="graphicContainer" style="flex-basis: 50%">`);
+    assertStyle(getContent(el), "flex-basis: 50%");
+    assertStyle(getGraphicContainer(el), "flex-basis: 50%");
   });
 
   it('with custom ratio', async () => {
@@ -68,8 +144,8 @@ describe('<auro-banner>', () => {
       </auro-banner>
     `);
 
-    await expect(el.shadowRoot.innerHTML).contains(`<div class="content" style="flex-basis: 25%; padding: var(--auro-size-none);">`);
-    await expect(el.shadowRoot.innerHTML).contains(`<div class="graphicContainer" style="flex-basis: 75%">`);
+    assertStyle(getContent(el), "flex-basis: 25%");
+    assertStyle(getGraphicContainer(el), "flex-basis: 75%");
   });
 
   it('with default graphic', async () => {
@@ -84,7 +160,11 @@ describe('<auro-banner>', () => {
       </auro-banner>
     `);
 
-    await expect(el.shadowRoot.innerHTML).contains(`<auro-background height="100%" bg="url(/pic.png)" bgsm="url(/pic.png)" bgmd="url(/pic.png)" inset="none">`);
+    const background = getBackground(el);
+    const expected = "url(/pic.png)";
+    assertBackground(background, expected, expected, expected);
+    expect(background.getAttribute("height")).to.equal("100%");
+    expect(background.getAttribute("inset")).to.equal("none");
   });
 
   it('with medium graphic', async () => {
@@ -99,8 +179,9 @@ describe('<auro-banner>', () => {
       </auro-banner>
     `);
 
-
-    await expect(el.shadowRoot.innerHTML).contains(`<auro-background height="100%" bg="undefined" bgsm="undefined" bgmd="url(/pic.png)" inset="none">`);
+    const background = getBackground(el);
+    const expected = "url(/pic.png)";
+    assertBackground(background, "undefined", "undefined", expected);
   });
 
   it('with small graphic', async () => {
@@ -115,7 +196,9 @@ describe('<auro-banner>', () => {
       </auro-banner>
     `);
 
-    await expect(el.shadowRoot.innerHTML).contains(`<auro-background height="100%" bg="undefined" bgsm="url(/pic.png)" bgmd="url(/pic.png)" inset="none">`);
+    const background = getBackground(el);
+    const expected = "url(/pic.png)";
+    assertBackground(background, "undefined", expected, expected);
   });
 
   it('with graphic content', async () => {
@@ -129,8 +212,8 @@ describe('<auro-banner>', () => {
       </auro-banner>
     `);
 
-    await expect(el.shadowRoot.innerHTML).to.not.contain(`<div class="content"`);
-    await expect(el.shadowRoot.innerHTML).to.contain(`<div class="graphicContentContainer"`);
+    expect(getContent(el)).to.be.null;
+    expect(getGraphicContentContainer(el)).not.to.be.null;
   });
 
   it('with graphic content but no graphic', async () => {
@@ -144,9 +227,8 @@ describe('<auro-banner>', () => {
       </auro-banner>
     `);
 
-    await expect(el.shadowRoot.innerHTML).to.not.contain(`<div class="content"`);
-    await expect(el.shadowRoot.innerHTML).to.contain(`<div class="graphicContentContainer"`);
-
+    expect(getContent(el)).to.be.null;
+    expect(getGraphicContentContainer(el)).not.to.be.null;
   });
 
   it('with no graphic or graphic content', async () => {
@@ -158,8 +240,8 @@ describe('<auro-banner>', () => {
       </auro-banner>
     `);
 
-    await expect(el.shadowRoot.innerHTML).to.contain(`<div class="content"`);
-    await expect(el.shadowRoot.innerHTML).to.not.contain(`<div class="graphicContentContainer"`);
+    expect(getContent(el)).not.to.be.null;
+    expect(getGraphicContentContainer(el)).to.be.null;
   });
 
   it('with overlay content', async () => {
@@ -173,7 +255,7 @@ describe('<auro-banner>', () => {
       </auro-banner>
     `);
 
-    await expect(el.shadowRoot.innerHTML).contains(`<div class="overlayContainer">`);
+    expect(getOverlayContainer(el)).not.to.be.null;
   });
 
   it('without overlay content', async () => {
@@ -185,7 +267,7 @@ describe('<auro-banner>', () => {
       </auro-banner>
     `);
 
-    await expect(el.shadowRoot.innerHTML).to.not.contain(`<div class="overlayContainer">`);
+    expect(getOverlayContainer(el)).to.be.null;
   });
 
   it('with pre-defined inset value', async () => {
@@ -193,7 +275,7 @@ describe('<auro-banner>', () => {
       <auro-banner graphicSm="url(/pic.png)" inset="md"></auro-banner>
     `);
 
-    await expect(el.shadowRoot.innerHTML).to.contain(`<div class="bannerWrapper" style="padding: var(--auro-size-md)">`);
+    assertStyle(getBannerWrapper(el), "padding: var(--auro-size-md)");
   });
 
   it('with custom inset value', async () => {
@@ -201,7 +283,7 @@ describe('<auro-banner>', () => {
       <auro-banner graphicSm="url(/pic.png)" inset="1rem"></auro-banner>
     `);
 
-    await expect(el.shadowRoot.innerHTML).to.contain(`<div class="bannerWrapper" style="padding: 1rem">`);
+    assertStyle(getBannerWrapper(el), "padding: 1rem");
   });
 
   it('with no inset value', async () => {
@@ -213,11 +295,11 @@ describe('<auro-banner>', () => {
       </auro-banner>
     `);
 
-    await expect(el.shadowRoot.innerHTML).to.contain(`<div class="content" style="flex-basis: 50%; padding: var(--auro-size-none);">`);
-    await expect(el.shadowRoot.innerHTML).to.contain(`<auro-background height="100%" bg="undefined" bgsm="url(/pic.png)" bgmd="url(/pic.png)" inset="none">`);
+    assertStyle(getContent(el), "padding: var(--auro-size-none)");
+    assertInset(getBackground(el), "none");
   });
 
-  it('with pre-defined inset value', async () => {
+  it('with pre-defined insetContent value', async () => {
     const el = await fixture(html`
       <auro-banner graphicSm="url(/pic.png)" insetContent="md">
         <div slot="content">
@@ -226,11 +308,11 @@ describe('<auro-banner>', () => {
       </auro-banner>
     `);
 
-    await expect(el.shadowRoot.innerHTML).to.contain(`<div class="content" style="flex-basis: 50%; padding: var(--auro-size-md);">`);
-    await expect(el.shadowRoot.innerHTML).to.contain(`<auro-background height="100%" bg="undefined" bgsm="url(/pic.png)" bgmd="url(/pic.png)" inset="md">`);
+    assertStyle(getContent(el), "padding: var(--auro-size-md)");
+    assertInset(getBackground(el), "md");
   });
 
-  it('with custom inset value', async () => {
+  it('with custom insetContent value', async () => {
     const el = await fixture(html`
       <auro-banner graphicSm="url(/pic.png)" insetContent="1rem">
         <div slot="content">
@@ -239,7 +321,7 @@ describe('<auro-banner>', () => {
       </auro-banner>
     `);
 
-    await expect(el.shadowRoot.innerHTML).to.contain(`<div class="content" style="flex-basis: 50%; padding: 1rem;">`);
-    await expect(el.shadowRoot.innerHTML).to.contain(`auro-background height="100%" bg="undefined" bgsm="url(/pic.png)" bgmd="url(/pic.png)" inset="1rem">`);
+    assertStyle(getContent(el), "1rem");
+    assertInset(getBackground(el), "1rem");
   });
 });
