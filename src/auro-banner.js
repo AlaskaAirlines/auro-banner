@@ -55,6 +55,7 @@ class AuroBanner extends LitElement {
     this.leftPercent = 100;
     this.rightPercent = 100;
     this.roundedBorder = false;
+    this.minGraphicHeight = '15rem';
   }
 
   static get properties() {
@@ -112,6 +113,9 @@ class AuroBanner extends LitElement {
       },
       roundedBorder: {
         type: Boolean
+      },
+      minGraphicHeight: {
+        type: String
       }
     };
   }
@@ -258,7 +262,7 @@ class AuroBanner extends LitElement {
           ? html`
             <div class="graphicContainer" style="flex-basis: ${this.rightPercent}%">
               <auro-background bg="${this.graphic}" bgSm="${this.graphicSm}" bgMd="${this.graphicMd}" height="100%" inset="${this.insetContent}">
-                <div class="graphicContentContainer">
+                <div class="graphicContentContainer" style="min-height: ${this.minGraphicHeight};">
                   <slot name="graphicContent"></slot>
                 </div>
               </auro-background>
