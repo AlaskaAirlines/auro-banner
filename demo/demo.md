@@ -738,6 +738,60 @@ The following example illustrates the `<auro-banner>` custom element with the `r
 
 </auro-accordion>
 
+## Minimum Graphic Height
+
+The following example illustrates the `<auro-banner>` custom element with the `minGraphicHeight` attribute to enforce a minimum height of the graphic image container. `minGraphicHeight` has a default value of `15rem`.
+
+<div slot="left" class="exampleWrapper">
+<auro-banner
+  graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat"
+  minGraphicHeight="20rem">
+  <div slot="content">
+    <img
+      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      alt="Random insert"/>
+    <p>
+      We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
+    </p>
+    <auro-hyperlink
+      cta
+      secondary
+      href="/"
+      target="_blank">
+      More info
+    </auro-hyperlink>
+  </div>
+</auro-banner>
+</div>
+
+
+<auro-accordion lowProfile justifyRight>
+<span slot="trigger">See code</span>
+
+```html
+<auro-banner
+  graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat"
+  minGraphicHeight="20rem">
+  <div slot="content">
+    <img
+      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      alt="Random insert"/>
+    <p>
+      We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
+    </p>
+    <auro-hyperlink
+      cta
+      secondary
+      href="/"
+      target="_blank">
+      More info
+    </auro-hyperlink>
+  </div>
+</auro-banner>
+  ```
+
+</auro-accordion>
+
 ## Additional Examples
 
 The examples below showcase current or former examples of how the `<auro-banner>` is being used in production to give further context on how to use the it.
