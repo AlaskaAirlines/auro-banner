@@ -18,7 +18,6 @@ The auro-card-hero element provides users a flexible way to convey a summary of 
 | `insetContent`     | `insetContent`     | `Boolean` | "none"                                | Add padding inside the `content` and `graphicContent` slots. |
 | `leftPercent`      | `leftPercent`      | `number`  | 100                                   |                                                  |
 | `minGraphicHeight` | `minGraphicHeight` | `string`  | "15rem"                               |                                                  |
-| `overlay`          | `overlay`          | `Boolean` | false                                 | Enables the overlay slot which adds an overlay that sits between the two columns and overlays a graphic |
 | `overlayBg`        | `overlayBg`        | `String`  | "var(--auro-color-brand-neutral-400)" | Sets a background behind the overlay             |
 | `ratio`            | `ratio`            | `String`  | "1:1"                                 | in the format 'X:Y' where 'X' and 'Y' are two integers. |
 | `rightPercent`     | `rightPercent`     | `number`  | 100                                   |                                                  |

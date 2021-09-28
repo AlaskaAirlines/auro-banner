@@ -190,12 +190,11 @@ Do not use `0` values within the ratio. E.g. `0:1` or `1:0`. Examples below show
 
 ## Overlay
 
-The following example illustrates the `<auro-banner>` custom element using the `overlay` slot. You'll need to include the boolean attribute `overlay` to display the overlay. This will fix an icon to the bottom of the banner.
+The following example illustrates the `<auro-banner>` custom element using the `overlay` slot. The `overlay` will only render when the `overlay` slot has content defined.
 
 <div class="exampleWrapper">
   <auro-banner
-    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat"
-    overlay>
+    graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
     <div slot="content">
       <img
         src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
@@ -222,8 +221,7 @@ The following example illustrates the `<auro-banner>` custom element using the `
 
 ```html
 <auro-banner
-  graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat"
-  overlay>
+  graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
   <div slot="content">
     <img
       src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"

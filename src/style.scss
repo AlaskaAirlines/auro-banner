@@ -74,27 +74,30 @@
   }
 }
 
-:host([overlay]) {
-  .overlayContainer {
-    position: relative;
-    top: -1.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+::slotted(img) {
+  display: flex;
+  max-width: 100%;
+}
 
-  .overlayBg {
-    position: absolute;
+.overlayContainer {
+  position: relative;
+  top: -1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    display: flex;
-    width: 7.5rem;
-    height: 7.5rem;
+.overlayBg {
+  position: absolute;
 
-    align-items: center;
-    justify-content: center;
-    background: var(--auro-color-brand-neutral-400);
-    border-radius: 50%;
-  }
+  display: flex;
+  width: 7.5rem;
+  height: 7.5rem;
+
+  align-items: center;
+  justify-content: center;
+  background: var(--auro-color-brand-neutral-400);
+  border-radius: 50%;
 }
 
 :host([roundedBorder]) {
