@@ -175,15 +175,11 @@ class AuroBanner extends LitElement {
     return false;
   }
 
-  firstUpdated() {
-    // Handle graphic breakpoints
-    if (this.hasBannerGraphic()) {
-      this.graphicSm = this.graphicSm || this.graphic;
-      this.graphicMd = this.graphicMd || this.graphicSm;
-      this.graphicLg = this.graphicLg || this.graphicMd;
-    }
-
-    // Handle ratio
+  /**
+   * @private
+   * @returns {void}
+   */
+  handleRatio() {
     if (this.hasBannerGraphic() || this.hasBannerContent()) {
       const valueA = Number.parseInt(this.ratio.split(':')[0], 10);
       const valueB = Number.parseInt(this.ratio.split(':')[1], 10);
@@ -201,6 +197,17 @@ class AuroBanner extends LitElement {
       this.rightPercent = rightRatio * (100 / (leftRatio + rightRatio));
       /* eslint-enable no-magic-numbers */
     }
+  }
+
+  firstUpdated() {
+    // Handle graphic breakpoints
+    if (this.hasBannerGraphic()) {
+      this.graphicSm = this.graphicSm || this.graphic;
+      this.graphicMd = this.graphicMd || this.graphicSm;
+      this.graphicLg = this.graphicLg || this.graphicMd;
+    }
+
+    this.handleRatio();
 
     // Handle banner with no `content` slot content
     if (!this.hasBannerContent()) {
@@ -304,6 +311,14 @@ class AuroBanner extends LitElement {
         </div>`
       : html``}
     `;
+  }
+
+  updated(changedProperties) {
+    changedProperties.forEach((oldValue, propName) => {
+      if (propName === 'ratio') {
+        this.handleRatio();
+      }
+    });
   }
 }
 
