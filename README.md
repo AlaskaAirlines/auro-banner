@@ -42,7 +42,7 @@ import "@aurolabs/auro-banner";
   <auro-banner graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;">
     <div slot="content">
       <img
-        src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+        src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
         alt="Random insert"/>
       <p>
         We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -93,7 +93,7 @@ Notice the use of the [auro-hyperlink](http://auro.alaskaair.com/components/auro
 <auro-banner graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat;">
   <div slot="content">
     <img
-      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
       alt="Random insert"/>
     <p>
       We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.

@@ -39,7 +39,7 @@ The following example illustrates a default `<auro-banner>` element using the `c
   <auro-banner graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
     <div slot="content">
       <img
-        src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+        src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
         alt="Random insert"/>
       <p>
         We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -62,7 +62,7 @@ The following example illustrates a default `<auro-banner>` element using the `c
 <auro-banner graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
   <div slot="content">
     <img
-      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
       alt="Random insert"/>
     <p>
       We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -90,7 +90,7 @@ The following example illustrates the `<auro-banner>` element with the `flipped`
     graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
     <div slot="content">
       <img
-        src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+        src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
         alt="Random insert"/>
       <p>
         We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -115,7 +115,7 @@ The following example illustrates the `<auro-banner>` element with the `flipped`
   graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
   <div slot="content">
     <img
-      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
       alt="Random insert"/>
     <p>
       We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -145,7 +145,7 @@ Do not use `0` values within the ratio. E.g. `0:1` or `1:0`. Examples below show
     graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
     <div slot="content">
       <img
-        src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+        src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
         alt="Random insert"/>
       <p>
         We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -170,7 +170,7 @@ Do not use `0` values within the ratio. E.g. `0:1` or `1:0`. Examples below show
   graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
   <div slot="content">
     <img
-      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
       alt="Random insert"/>
     <p>
       We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -198,7 +198,7 @@ The following example illustrates the `<auro-banner>` custom element using the `
     overlay>
     <div slot="content">
       <img
-        src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+        src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
         alt="Random insert"/>
       <p>
         We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -226,7 +226,7 @@ The following example illustrates the `<auro-banner>` custom element using the `
   overlay>
   <div slot="content">
     <img
-      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
       alt="Random insert"/>
     <p>
       We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -259,7 +259,7 @@ The following example illustrates the `<auro-banner>` custom element using the `
     overlayBg="var(--auro-color-alert-notification-on-light)">
     <div slot="content">
       <img
-        src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+        src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
         alt="Random insert"/>
       <p>
         We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -288,7 +288,7 @@ The following example illustrates the `<auro-banner>` custom element using the `
   overlayBg="var(--auro-color-alert-notification-on-light)">
   <div slot="content">
     <img
-      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
       alt="Random insert"/>
     <p>
       We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -319,7 +319,7 @@ The following example illustrates the `<auro-banner>` custom element using the `
     graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
     <div slot="graphicContent">
       <img
-        src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+        src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
         alt="Random insert"/>
       <p>
         We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -344,7 +344,7 @@ The following example illustrates the `<auro-banner>` custom element using the `
   graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
   <div slot="graphicContent">
     <img
-      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
       alt="Random insert"/>
     <p>
       We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -371,7 +371,7 @@ The following example illustrates the `<auro-banner>` custom element with conten
     graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
     <div slot="content">
       <img
-        src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+        src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
         alt="Random insert"/>
       <p>
         We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -386,7 +386,7 @@ The following example illustrates the `<auro-banner>` custom element with conten
     </div>
     <span slot="graphicContent">
       <img
-        src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+        src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
         alt="Random insert"/>
       <p>
         We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -410,7 +410,7 @@ The following example illustrates the `<auro-banner>` custom element with conten
   graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
   <div slot="content">
     <img
-      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
       alt="Random insert"/>
     <p>
       We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -425,7 +425,7 @@ The following example illustrates the `<auro-banner>` custom element with conten
   </div>
   <span slot="graphicContent">
     <img
-      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
       alt="Random insert"/>
     <p>
       We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -451,7 +451,7 @@ The following example illustrates the `<auro-banner>` custom element without a g
 <auro-banner>
   <div slot="content">
     <img
-      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
       alt="Random insert"/>
     <p>
       We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -474,7 +474,7 @@ The following example illustrates the `<auro-banner>` custom element without a g
 <auro-banner>
   <div slot="content">
     <img
-      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
       alt="Random insert"/>
     <p>
       We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -502,7 +502,7 @@ The following example illustrates the `<auro-banner>` custom element using the `
     graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
     <div slot="content">
       <img
-        src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+        src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
         alt="Random insert"/>
       <p>
         We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -528,7 +528,7 @@ The following example illustrates the `<auro-banner>` custom element using the `
     graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
     <div slot="content">
       <img
-        src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+        src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
         alt="Random insert"/>
       <p>
         We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -556,7 +556,7 @@ The following example illustrates the `<auro-banner>` custom element using the `
     insetContent="md">
     <div slot="content">
       <img
-        src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+        src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
         alt="Random insert"/>
       <p>
         We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -571,7 +571,7 @@ The following example illustrates the `<auro-banner>` custom element using the `
     </div>
     <span slot="graphicContent">
       <img
-        src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+        src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
         alt="Random insert"/>
       <p>
         We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -596,7 +596,7 @@ The following example illustrates the `<auro-banner>` custom element using the `
   insetContent="md">
   <div slot="content">
     <img
-      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
       alt="Random insert"/>
     <p>
       We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -611,7 +611,7 @@ The following example illustrates the `<auro-banner>` custom element using the `
   </div>
   <span slot="graphicContent">
     <img
-      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
       alt="Random insert"/>
     <p>
       We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -640,7 +640,7 @@ The following example illustrates the `<auro-banner>` custom element with the `r
     graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
     <div slot="content">
       <img
-        src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+        src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
         alt="Random insert"/>
       <p>
         We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -666,7 +666,7 @@ The following example illustrates the `<auro-banner>` custom element with the `r
     graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
     <div slot="content">
       <img
-        src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+        src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
         alt="Random insert"/>
       <p>
         We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -694,7 +694,7 @@ The following example illustrates the `<auro-banner>` custom element with the `r
   graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
   <div slot="content">
     <img
-      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
       alt="Random insert"/>
     <p>
       We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -720,7 +720,7 @@ The following example illustrates the `<auro-banner>` custom element with the `r
   graphic="#b4cdd2 url(https://picsum.photos/id/430/1124/800) center bottom/cover no-repeat">
   <div slot="content">
     <img
-      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      src="https://sitecore-prod-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
       alt="Random insert"/>
     <p>
       We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
