@@ -19,7 +19,6 @@ import "focus-visible/dist/focus-visible.min.js";
  * @attr {Boolean} row - This setting keeps the row formatting for mobile instead of the default stacking behavior.
  * @attr {Boolean} inset - Add padding inside the banner.
  * @attr {Boolean} insetContent - Add padding inside the `content` and `graphicContent` slots.
- * @attr {Boolean} overlay - Enables the overlay slot which adds an overlay that sits between the two columns and overlays a graphic
  * @attr {String} overlayBg - Sets a background behind the overlay
  * @attr {String} ratio - in the format 'X:Y' where 'X' and 'Y' are two integers.
  * @slot content - Content in the left column and adds default padding between the two columns.
@@ -46,7 +45,6 @@ class AuroBanner extends LitElement {
     this.hideGraphicSm = false;
     this.hideGraphicMd = false;
     this.hideGraphicLg = false;
-    this.overlay = false;
     this.overlayBg = "var(--auro-color-brand-neutral-400)";
     this.flipped = false;
     this.inset = 'none';
@@ -56,6 +54,11 @@ class AuroBanner extends LitElement {
     this.rightPercent = 100;
     this.roundedBorder = false;
     this.minGraphicHeight = '15rem';
+
+    /**
+     * @private
+     */
+    this.showOverlay = true;
   }
 
   static get properties() {
@@ -92,10 +95,6 @@ class AuroBanner extends LitElement {
         reflect: true,
       },
       row: {
-        type: Boolean,
-        reflect: true,
-      },
-      overlay: {
         type: Boolean,
         reflect: true,
       },
@@ -162,6 +161,20 @@ class AuroBanner extends LitElement {
     return false;
   }
 
+  /**
+   * @private
+   * @returns {Boolean} Return true if content is defined for the overlay.
+   */
+  hasOverlayContent() {
+    const slot = this.shadowRoot.querySelector('slot[name=overlay]');
+
+    if (slot && slot.assignedNodes().length > 0) {
+      return true;
+    }
+
+    return false;
+  }
+
   firstUpdated() {
     // Handle graphic breakpoints
     if (this.hasBannerGraphic()) {
@@ -200,6 +213,9 @@ class AuroBanner extends LitElement {
       this.leftPercent = 100;
       this.rightPercent = 0;
     }
+
+    // Hide or show the overlay based on overlay slot content definition
+    this.showOverlay = this.hasOverlayContent();
   }
 
   /**
@@ -280,7 +296,7 @@ class AuroBanner extends LitElement {
           ` : undefined
         }
       </div>
-      ${this.overlay ? html`
+      ${this.showOverlay ? html`
         <div class="overlayContainer">
           <div class="overlayBg" style="background: ${this.overlayBg}">
             <slot name="overlay"></slot>
