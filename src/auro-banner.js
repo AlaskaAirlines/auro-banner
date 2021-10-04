@@ -209,18 +209,6 @@ class AuroBanner extends LitElement {
 
     this.handleRatio();
 
-    // Handle banner with no `content` slot content
-    if (!this.hasBannerContent()) {
-      this.leftPercent = 0;
-      this.rightPercent = 100;
-    }
-
-    // Handle banner with no graphic or `graphicContent` slot content
-    if (!this.hasBannerGraphic() && !this.hasBannerGraphicContent()) {
-      this.leftPercent = 100;
-      this.rightPercent = 0;
-    }
-
     // Hide or show the overlay based on overlay slot content definition
     this.showOverlay = this.hasOverlayContent();
   }
@@ -319,6 +307,18 @@ class AuroBanner extends LitElement {
         this.handleRatio();
       }
     });
+
+    // Handle banner with no `content` slot content
+    if (!this.hasBannerContent()) {
+      this.leftPercent = 0;
+      this.rightPercent = 100;
+    }
+
+    // Handle banner with no graphic or `graphicContent` slot content
+    if (!this.hasBannerGraphic() && !this.hasBannerGraphicContent()) {
+      this.leftPercent = 100;
+      this.rightPercent = 0;
+    }
   }
 }
 

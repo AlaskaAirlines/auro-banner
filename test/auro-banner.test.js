@@ -196,7 +196,7 @@ describe('<auro-banner>', () => {
       </auro-banner>
     `);
 
-    // expect(getContent(el)).to.be.null;
+    expect(getContent(el)).to.be.null;
     expect(getGraphicContentContainer(el)).not.to.be.null;
   });
 
@@ -209,7 +209,7 @@ describe('<auro-banner>', () => {
       </auro-banner>
     `);
 
-    // expect(getContent(el)).to.be.null;
+    expect(getContent(el)).to.be.null;
     expect(getGraphicContentContainer(el)).not.to.be.null;
   });
 
@@ -223,7 +223,7 @@ describe('<auro-banner>', () => {
     `);
 
     expect(getContent(el)).not.to.be.null;
-    // expect(getGraphicContentContainer(el)).to.be.null;
+    expect(getGraphicContentContainer(el)).to.be.null;
   });
 
   it('with overlay content', async () => {
