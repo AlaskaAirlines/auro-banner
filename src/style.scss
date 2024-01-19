@@ -3,14 +3,12 @@
 
 // ---------------------------------------------------------------------
 
-/* stylelint-disable at-rule-no-unknown -- Need to use @include for responsive mixins */
-
 // Import Auro tokens
-@import './../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
-@import './../node_modules/@alaskaairux/design-tokens/dist/tokens/SassCustomProperties';
+@import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
+@import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SassCustomProperties";
 
-@import './../node_modules/@alaskaairux/webcorestylesheets/dist/breakpoints';
-@import './../node_modules/@alaskaairux/webcorestylesheets/dist/core';
+@import "./node_modules/@alaskaairux/webcorestylesheets/dist/breakpoints";
+@import "./node_modules/@alaskaairux/webcorestylesheets/dist/core";
 
 // Support for auroElement styles
 // @import "./node_modules/@alaskaairux/webcorestylesheets/dist/auroElement/auroElement";
@@ -23,149 +21,331 @@
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
 // never define layout that would cause effect on element outside the scope of this component
 
-.bannerWrapper {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  justify-content: center;
+:host {
   color: var(--auro-color-text-primary-on-light);
+}
 
-  @include auro_breakpoint--sm {
-    flex-direction: row;
+:host([onDark]) {
+  @extend %auro-banner--ondark;
+}
+
+// =-=-=-=-= common styles -=-=-=-=-=-=
+%auro-banner {
+  img {
+    display: block;
   }
-}
 
-.item {
-  /* stylelint-disable-next-line declaration-no-important -- this is an important !important */
-  width: 100% !important;
-
-  @include auro_breakpoint--sm {
-    width: auto;
+  .disclaimer {
+    color: var(--auro-color-text-secondary-on-light);
+    font-size: var(--auro-text-body-size-xs);
+    line-height: var(--auro-text-body-size-xs);
   }
-}
 
-.content {
-  @include auro_breakpoint--sm {
-    padding-right: var(--auro-size-xl);
+  .bannerWrapper {
+    position: relative;
+    overflow: hidden;
   }
-}
 
-.graphic {
-  margin-bottom: var(--auro-size-xl);
-
-  @include auro_breakpoint--sm {
-    margin-bottom: var(--auro-size-none);
+  .action {
+    display: inline-block;
+    margin: var(--auro-size-md) 0;
   }
-}
 
-::slotted(img) {
-  display: flex;
-  max-width: 100%;
-}
+  .imageWrapper {
+    margin-bottom: var(--auro-size-md);
+    display: block;
+  }
 
-:host([overlay]) {
-  .content {
-    padding-bottom: 6.25rem;
+  .displayImage {
+    display: block;
+    position: absolute;
+    bottom: 0;
+  }
 
-    @include auro_breakpoint--sm {
-      padding-right: var(--auro-size-xl);
-      padding-bottom: 0;
+  .bodyWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: var(--auro-size-xl) var(--auro-size-md);
+    overflow: hidden;
+
+    @include auro_breakpoint--md {
+      padding: var(--auro-size-md);
     }
   }
 
-  .graphic {
+  .title {
+    color: var(--auro-color-brand-midnight-400);
+    margin-bottom: var(--auro-size-md);
+  }
+
+  .description {
+    display: block;
+  }
+
+  .contentWrapper {
+    margin-bottom: 150px;
+
+    @include auro_breakpoint--sm {
+      margin-bottom: 0;
+    }
+  }
+}
+// =-=-=-=-= ondark styles -=-=-=-=-=-=
+
+%auro-banner--ondark {
+  color: var(--auro-color-base-white);
+
+  .title {
+    color: var(--auro-color-base-white);
+  }
+}
+
+// =-=-=-=-= billboard -=-=-=-=-=-=
+
+:host([billboard]) {
+  @extend %auro-banner;
+
+  @include auro_breakpoint--sm {
+    max-height: 24rem;
+  }
+
+  .bodyWrapper {
+    align-items: center;
+    padding: var(--auro-size-xl);
+
+    @include auro_breakpoint--sm {
+      padding: var(--auro-size-xl) 8rem;
+    }
+
+    @include auro_breakpoint--md {
+      padding: var(--auro-size-xl) 10rem;
+    }
+  }
+  .imageWrapper {
+    display: block;
+    margin-bottom: var(--auro-size-md);
+  }
+
+  .contentWrapper {
+    @include auro_breakpoint--sm {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// =-=-=-=-= hero -=-=-=-=-=-=
+
+:host([hero]) {
+  @extend %auro-banner;
+
+  .displayImage {
+    position: static;
+    overflow: hidden;
+
+    &::slotted(img) {
+      display: block;
+    }
+  }
+  .contentWrapper {
+    margin: 0 auto;
+  }
+
+  @include auro_breakpoint--sm {
+    .displayImage {
+      max-width: 50%;
+      right: 0;
+      position: absolute;
+    }
+
+    .bodyWrapper {
+      text-align: left;
+      width: 50%;
+      padding-left: 0;
+    }
+  }
+}
+
+// =-=-=-=-= iconic -=-=-=-=-=-=
+
+:host([iconic]) {
+  @extend %auro-banner;
+
+  $iconBgSize: 7.5rem;
+
+  .iconAbsolute {
+    position: absolute;
+  }
+
+  .iconContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -$iconBgSize/6;
+  }
+
+  .roundIconBg {
+    width: $iconBgSize;
+    height: $iconBgSize;
+    background: var(--auro-color-brand-neutral-400);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+  }
+
+  .displayImage {
     display: none;
 
     @include auro_breakpoint--sm {
       display: block;
+      max-width: 50%;
+      right: 0;
+      position: absolute;
+      overflow: hidden;
+    }
+
+    &::slotted(img) {
+      display: block;
+    }
+  }
+  .description {
+    @include auro_breakpoint--sm {
+      padding-bottom: var(--auro-size-lg);
+      padding-right: var(--auro-size-lg);
     }
   }
 
-  .overlayContainer {
-    position: relative;
-    top: -1.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .contentWrapper {
+    margin: 0 auto var(--auro-size-xxl);
+    padding-bottom: var(--auro-size-xxl);
   }
-
-  .overlayBg {
-    position: absolute;
-
-    display: flex;
-    width: 7.5rem;
-    height: 7.5rem;
-
-    align-items: center;
-    justify-content: center;
-    background: var(--auro-color-brand-neutral-400);
-    border-radius: 50%;
-  }
-}
-
-:host([onBackground]) {
-  .bannerWrapper {
-    padding: var(--auro-size-xl);
-  }
-}
-
-:host([inset]) {
-  .content {
-    padding: var(--auro-size-xl);
-
+  
+  .bodyWrapper {
+    text-align: left;
+    padding: var(--auro-size-xl) var(--auro-size-xl) var(--auro-size-xl) 0;
     @include auro_breakpoint--sm {
+      width: 50%;
+      padding-left: 0;
+    }
+  }
+}
+
+// =-=-=-=-= marquee -=-=-=-=-=-=
+
+:host([marquee]) {
+  @extend :host([hero]);
+}
+
+:host([marquee][solid]) {
+  @extend %auro-banner--ondark;
+
+  .bannerWrapper {
+    background-color: var(--auro-color-brand-midnight-400);
+  }
+
+  .bodyWrapper {
+    padding: var(--auro-size-lg);
+
+    @include auro_breakpoint--md {
+      padding: var(--auro-size-xl);
+    }
+
+    @include auro_breakpoint--lg {
       padding: var(--auro-size-xxl);
     }
   }
 }
 
-:host([roundedBorder]) {
+// =-=-=-=-= roundedBorder -=-=-=-=-=-=
+
+:host([roundedBorder]),
+:host([roundedBorder][alignLeft]) {
+  @extend %auro-banner;
+
   .bannerWrapper {
-    padding: var(--auro-size-lg);
     border: 1px solid var(--auro-color-border-primary-on-light);
-    border-radius: var(--auro-size-xs);
-  }
-}
-
-:host([row]) {
-  .bannerWrapper {
-    flex-direction: row;
+    border-radius: 5px;
   }
 
-  .content {
-    padding-left: var(--auro-size-xl);
-  }
+  .contentWrapper {
+    margin: 0 auto;
 
-  .graphic {
-    margin-bottom: none;
-  }
-}
-
-:host([flipped]) {
-  .bannerWrapper {
     @include auro_breakpoint--sm {
-      flex-direction: row-reverse;
+      flex-basis: 70%;
+      flex-grow: 1;
     }
   }
 
-  .content {
+  .action {
+    margin: 0 0 1rem;
+  }
+
+  .description p {
+    margin: 0;
+  }
+
+  .bodyWrapper {
+    align-items: center;
+    padding: var(--auro-size-md);
+
     @include auro_breakpoint--sm {
-      padding-left: var(--auro-size-xl);
+      flex-direction: row;
+    }
+
+    @include auro_breakpoint--md {
+      padding: var(--auro-size-lg);
+    }
+
+    @include auro_breakpoint--lg {
+      padding: var(--auro-size-xl);
+    }
+  }
+
+  .imageWrapper {
+    @include auro_breakpoint--sm {
+      flex-basis: 30%;
+      display: flex;
+      margin-right: 2rem;
+      margin-bottom: 0;
     }
   }
 }
 
-:host([row][flipped]) {
-  .bannerWrapper {
-    flex-direction: row-reverse;
-  }
+// =-=-=-=-= right -=-=-=-=-=-=
 
-  .content {
-    padding-right: var(--auro-size-xl);
-  }
-
-  .graphic {
-    margin-bottom: 0;
+:host([alignRight]) {
+  .bodyWrapper {
+    align-items: flex-end;
+    text-align: right;
   }
 }
 
+// =-=-=-=-= left -=-=-=-=-=-=
+
+:host([alignLeft]) {
+  .bodyWrapper {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+// =-=-=-=-= slim -=-=-=-=-=-=
+
+:host([slim]) {
+
+  .bodyWrapper {
+    @include auro_breakpoint--sm {
+      padding: var(--auro-size-xl);
+      min-height: unset;
+    }
+
+    @include auro_breakpoint--md {
+      padding: var(--auro-size-xl) var(--auro-size-xxl);
+    }
+  }
+}

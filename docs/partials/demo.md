@@ -7,23 +7,11 @@ This file is generated based on a template fetched from `./docs/partials/demo.md
 # Banner
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./description.md) -->
-<!-- The below content is automatically added from ./description.md -->
-`<auro-banner>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of ...
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis in tellus nec pellentesque. Integer bibendum ligula sit amet vehicula gravida. Maecenas accumsan, ligula vitae molestie iaculis, tellus mi laoreet ex [install instructions](https://auro.alaskaair.com/components/auro/button/install), ac malesuada velit dolor vel mi. Cras et rutrum urna. Sed mattis mi eu tortor ullamcorper, egestas bibendum mauris cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus viverra eros eget neque commodo vulputate. In tempus eu velit at dictum.
-
-Nulla at augue facilisis `odio lobortis` molestie vitae a nulla.
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## auro-banner use cases
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./useCases.md) -->
-<!-- The below content is automatically added from ./useCases.md -->
-The `<auro-banner>` element should be used in situations where users may:
-
-* ...
-* ...
-* ...
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## Additional Information
@@ -60,20 +48,17 @@ toggleDialogClose = (elName) => {
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/basic.html -->
-  <auro-banner>Hello World</auro-banner>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
+
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
 
-```html
-<auro-banner>Hello World</auro-banner>
-```
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
+
 </auro-accordion>
+
 Having a closing statement about your example helps to really complete the thought with your reader.
 
 ## Recommended Use and Version Control
@@ -92,8 +77,10 @@ This will create a new custom element that you can use in your HTML that will fu
 <div class="exampleWrapper">
   <custom-header display="display">Salutations World!</custom-header>
 </div>
+
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
+
   ```html
   <custom-header display="display">Salutations World!</custom-header>
   ```

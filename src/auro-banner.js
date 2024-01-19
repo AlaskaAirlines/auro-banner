@@ -1,6 +1,3 @@
-/* eslint-disable init-declarations */
-/* eslint-disable radix */
-/* eslint-disable one-var */
 /* eslint-disable no-negated-condition */
 /* eslint-disable no-underscore-dangle, no-magic-numbers, max-statements */
 
@@ -9,68 +6,79 @@
 
 // ---------------------------------------------------------------------
 
-import { LitElement, html, css } from "lit-element";
-import { styleMap } from "lit-html/directives/style-map";
+import { LitElement, html, css } from "lit";
+import { ifDefined } from 'lit/directives/if-defined.js';
+
 import styleCss from "./style-css.js";
 
-// Import touch detection lib
-import "focus-visible/dist/focus-visible.min.js";
+import "@aurodesignsystem/auro-header";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
  * The auro-card-hero element provides users a flexible way to convey a summary of information in various large formats.
- * @attr {Boolean} flipped - The content column will move to the right and the graphic column will move to the left.  No change on mobile.  Graphic still on top and content below.
- * @attr {Boolean} row - This setting keeps the row formating for mobile instead of the default stacking behavior.
- * @attr {Boolean} onBackground - This setting provides padding around the banner when used on a background color or image.
- * @attr {Boolean} inset - Adds additional padding around the content slot.  Useful when the banner is wrapped in a background color.
- * @attr {Boolean} overlay - Enables the overlay slot which adds an overlay that sits between the two columns and overlays a graphic
- * @attr {String} overlayBg - Sets a background behind the overlay
- * @attr {String} ratio - in the format 'X:Y' where 'X' and 'Y' are two integers.
- * @slot content - Content in the left column and adds default padding between the two columns.
- * @slot graphic - Content in the right column and has no default padding so an auro-background can fill the entire space.
- * @slot overlay - Content in the front overlay.
+ * @attr {Boolean} billboard - to be used for billboard style configuration
+ * @attr {Boolean} hero - to be used for hero style configuration
+ * @attr {Boolean} iconic - to be used in as a hero on pages but with an icon and no displayImage on mobile
+ * @attr {String} iconbg - to be used in conjunction with the iconic variant this specifies the background color of the icon
+ * @attr {Boolean} marquee - to be used for marquee style configuration
+ * @attr {Boolean} roundedBorder - to be used for roundedBorder style configuration
+ * @attr {Boolean} solid - to be used when you want a solid color as opposed to a transparent background
+ * @attr {Boolean} slim - to be used when we want a slimmer padding to the default banner
+ * @attr {Boolean} alignRight - to be used when we want the text aligned to the right
+ * @attr {Boolean} alignLeft - to be used when we want the text aligned to the left
+ * @attr {Boolean} onDark - to be used when the background image or color is dark and changes the text and cta color
+ * @slot displayImage - placement for `<picture />` or `<img>` elements
+ * @slot prefix - placement for smaller text above title
+ * @slot title - placement for header
+ * @slot contentImage - image placement
+ * @slot description - main body of content
+ * @slot action - call to action
+ * @slot disclaimer - disclaimer copy
  */
-class AuroBanner extends LitElement {
-
+export class AuroBanner extends LitElement {
   constructor() {
     super();
-    this.ratio = "1:1";
-    this.overlay = false;
-    this.overlayBg = "var(--auro-color-brand-neutral-400)";
-    this.flipped = false;
-    this.onBackground = false;
-    this.inset = false;
-    this.row = false;
+    this.hero = false;
+    this.iconic = false;
+    this.marquee = false;
+    this.roundedBorder = false;
+  }
+
+  // This function removes a CSS selector if the footer slot is empty
+  firstUpdated() {
+    const slotNodes = this.shadowRoot.querySelectorAll(`.bannerWrapper slot`);
+
+    for (const item of slotNodes) {
+      this.slt = item.assignedNodes();
+      // eslint-disable-next-line no-magic-numbers
+      if (this.slt.length === 0) {
+        item.removeAttribute("class");
+      }
+    }
   }
 
   static get properties() {
     return {
-      onBackground: {
+      ...super.properties,
+      hero: {
         type: Boolean,
-        reflect: true,
+        reflect: true
       },
-      inset: {
+      iconic: {
         type: Boolean,
-        reflect: true,
+        reflect: true
       },
-      flipped: {
+      marquee: {
         type: Boolean,
-        reflect: true,
+        reflect: true
       },
-      row: {
+      roundedBorder: {
         type: Boolean,
-        reflect: true,
+        reflect: true
       },
-      overlay: {
-        type: Boolean,
-        reflect: true,
-      },
-      overlayBg: {
-        type: String,
-      },
-      ratio: {
-        type: String,
-      },
+      iconbg: {
+        type: String
+      }
     };
   }
 
@@ -82,48 +90,76 @@ class AuroBanner extends LitElement {
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
-
-    let leftRatio;
-    let rightRatio;
-
-    if (!this.flipped) {
-      leftRatio = Number.parseInt(this.ratio.split(":")[0]);
-      rightRatio = Number.parseInt(this.ratio.split(":")[1]);
-    } else {
-      leftRatio = Number.parseInt(this.ratio.split(":")[1]);
-      rightRatio = Number.parseInt(this.ratio.split(":")[0]);
-    }
-
-    const leftPercent = leftRatio * (100 / (leftRatio + rightRatio));
-    const rightPercent = rightRatio * (100 / (leftRatio + rightRatio));
-
-    const leftSlotStyles = {
-        flexBasis: `${leftPercent}%`,
-      },
-      rightSlotStyles = {
-        flexBasis: `${rightPercent}%`,
-      };
-
     return html`
       <div class="bannerWrapper">
-        ${leftPercent === 0 ? html`` : html`
-          <div class="item content" style=${styleMap(leftSlotStyles)}>
-            <slot name="content"></slot>
+      ${!this.roundedBorder
+        ? html`
+        <slot name="displayImage" class="displayImage"></slot>`
+        : html``
+      }
+        <div class="bodyWrapper">
+          ${this.iconic
+           ? html`
+             <slot name="title"></slot>`
+            : html``
+          }
+          ${this.hero
+            ? html`
+              <auro-header level="2" display="300" margin="top" size="none" class="title prefix">
+                <slot name="prefix"></slot>
+              </auro-header>
+
+              <auro-header level="2" display="600" margin="both" size="none" class="title">
+                <slot name="title"></slot>
+              </auro-header>`
+            : html``
+          }
+
+          ${this.marquee
+            ? html`
+              <auro-header level="2" display="400" margin="both" size="none" class="title marquee">
+                <slot name="title"></slot>
+              </auro-header>`
+            : html``
+          }
+
+          ${!this.marquee && !this.hero && !this.iconic && !this.roundedBorder
+            ? html`
+              <auro-header level="2" display="600" margin="both" size="none" class="title">
+                <slot name="title"></slot>
+              </auro-header>`
+            : html``
+          }
+
+          <slot name="contentImage" class="imageWrapper"></slot>
+
+          <div class="contentWrapper">
+          ${this.roundedBorder
+            ? html`
+              <auro-header level="2" display="300" margin="both" size="none" class="title prefix">
+                <slot name="prefix"></slot>
+              </auro-header>
+
+              <auro-header level="2" display="600" margin="both" size="none" class="title">
+                <slot name="title"></slot>
+              </auro-header>`
+            : html``
+          }
+            <slot name="description" class="description"></slot>
+            <slot name="action" class="action"></slot>
+            <slot name="disclaimer" class="disclaimer"></slot>
           </div>
-        `}
-        ${rightPercent === 0 ? html`` : html`
-          <div class="item graphic" style=${styleMap(rightSlotStyles)}>
-            <slot name="graphic"></slot>
-          </div>
-        `}
+        </div>
       </div>
-      ${this.overlay ? html`
-        <div class="overlayContainer overlayTop">
-          <div class="overlayBg" style="background: ${this.overlayBg}">
-            <slot name="overlay"></slot>
+      ${this.iconic
+        ? html`
+        <div class="iconContainer">
+          <div class="roundIconBg" style="background: ${ifDefined(!this.iconbg ? undefined : this.iconbg)}">
+            <slot name="icon" class="icon"></slot>
           </div>
         </div>`
-      : html``}
+        : html``
+      }
     `;
   }
 }
