@@ -1,28 +1,21 @@
-// Copyright (c) 2021 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
+// Copyright (c) 2024 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
 // ---------------------------------------------------------------------
 
+/* stylelint-disable at-rule-no-unknown, declaration-empty-line-before, order/properties-order, scss/double-slash-comment-empty-line-before, at-rule-empty-line-before, no-descending-specificity,
+   scss/percent-placeholder-pattern, rule-empty-line-before, scss/dollar-variable-first-in-block, scss/dollar-variable-pattern,  scss/operator-no-unspaced, scss/at-extend-no-missing-placeholder,
+   selector-max-combinators, selector-max-compound-selectors, scss/selector-nest-combinators */
+
 // Import Auro tokens
-@import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
-@import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SassCustomProperties";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SassCustomProperties";
 
-@import "./node_modules/@alaskaairux/webcorestylesheets/dist/breakpoints";
-@import "./node_modules/@alaskaairux/webcorestylesheets/dist/core";
-
-// Support for auroElement styles
-// @import "./node_modules/@alaskaairux/webcorestylesheets/dist/auroElement/auroElement";
-
-// container styles - defines the look of the outer custom component
-// :host {
-//   ...
-// }
-
-// layout styles - define any layout specifications for UI that is contained WITHIN the component
-// never define layout that would cause effect on element outside the scope of this component
+@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints";
+@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/core";
 
 :host {
-  color: var(--auro-color-text-primary-on-light);
+  color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
 }
 
 :host([onDark]) {
@@ -36,9 +29,9 @@
   }
 
   .disclaimer {
-    color: var(--auro-color-text-secondary-on-light);
-    font-size: var(--auro-text-body-size-xs);
-    line-height: var(--auro-text-body-size-xs);
+    color: var(--ds-color-text-secondary-default, $ds-color-text-secondary-default);
+    font-size: var(--ds-text-body-size-xs, $ds-text-body-size-xs);
+    line-height: var(--ds-text-body-size-xs, $ds-text-body-size-xs);
   }
 
   .bannerWrapper {
@@ -48,11 +41,11 @@
 
   .action {
     display: inline-block;
-    margin: var(--auro-size-md) 0;
+    margin: var(--ds-size-200, $ds-size-200) 0;
   }
 
   .imageWrapper {
-    margin-bottom: var(--auro-size-md);
+    margin-bottom: var(--ds-size-200, $ds-size-200);
     display: block;
   }
 
@@ -68,17 +61,17 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: var(--auro-size-xl) var(--auro-size-md);
+    padding: var(--ds-size-400, $ds-size-400) var(--ds-size-200, $ds-size-200);
     overflow: hidden;
 
     @include auro_breakpoint--md {
-      padding: var(--auro-size-md);
+      padding: var(--ds-size-200, $ds-size-200);
     }
   }
 
   .title {
-    color: var(--auro-color-brand-midnight-400);
-    margin-bottom: var(--auro-size-md);
+    color: var(--ds-color-brand-midnight-400);
+    margin-bottom: var(--ds-size-200, $ds-size-200);
   }
 
   .description {
@@ -93,18 +86,17 @@
     }
   }
 }
-// =-=-=-=-= ondark styles -=-=-=-=-=-=
 
+// =-=-=-=-= ondark styles -=-=-=-=-=-=
 %auro-banner--ondark {
-  color: var(--auro-color-base-white);
+  color: var(--ds-color-base-white, $ds-color-base-white);
 
   .title {
-    color: var(--auro-color-base-white);
+    color: var(--ds-color-base-white, $ds-color-base-white);
   }
 }
 
 // =-=-=-=-= billboard -=-=-=-=-=-=
-
 :host([billboard]) {
   @extend %auro-banner;
 
@@ -114,19 +106,19 @@
 
   .bodyWrapper {
     align-items: center;
-    padding: var(--auro-size-xl);
+    padding: var(--ds-size-400, $ds-size-400);
 
     @include auro_breakpoint--sm {
-      padding: var(--auro-size-xl) 8rem;
+      padding: var(--ds-size-400, $ds-size-400) 8rem;
     }
 
     @include auro_breakpoint--md {
-      padding: var(--auro-size-xl) 10rem;
+      padding: var(--ds-size-400, $ds-size-400) 10rem;
     }
   }
   .imageWrapper {
     display: block;
-    margin-bottom: var(--auro-size-md);
+    margin-bottom: var(--ds-size-200, $ds-size-200);
   }
 
   .contentWrapper {
@@ -184,13 +176,13 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    top: -$iconBgSize/6;
+    top: calc(-1 * $iconBgSize / 6)
   }
 
   .roundIconBg {
     width: $iconBgSize;
     height: $iconBgSize;
-    background: var(--auro-color-brand-neutral-400);
+    background: var(--ds-color-brand-neutral-400, $ds-color-brand-neutral-400);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -215,19 +207,19 @@
   }
   .description {
     @include auro_breakpoint--sm {
-      padding-bottom: var(--auro-size-lg);
-      padding-right: var(--auro-size-lg);
+      padding-bottom: var(--ds-size-300, $ds-size-300);
+      padding-right: var(--ds-size-300, $ds-size-300);
     }
   }
 
   .contentWrapper {
-    margin: 0 auto var(--auro-size-xxl);
-    padding-bottom: var(--auro-size-xxl);
+    margin: 0 auto var(--ds-size-600, $ds-size-600);
+    padding-bottom: var(--ds-size-600, $ds-size-600);
   }
   
   .bodyWrapper {
     text-align: left;
-    padding: var(--auro-size-xl) var(--auro-size-xl) var(--auro-size-xl) 0;
+    padding: var(--ds-size-400, $ds-size-400) var(--ds-size-400, $ds-size-400) var(--ds-size-400, $ds-size-400) 0;
     @include auro_breakpoint--sm {
       width: 50%;
       padding-left: 0;
@@ -245,30 +237,29 @@
   @extend %auro-banner--ondark;
 
   .bannerWrapper {
-    background-color: var(--auro-color-brand-midnight-400);
+    background-color: var(--ds-color-brand-midnight-400, $ds-color-brand-midnight-400);
   }
 
   .bodyWrapper {
-    padding: var(--auro-size-lg);
+    padding: var(--ds-size-300, $ds-size-300);
 
     @include auro_breakpoint--md {
-      padding: var(--auro-size-xl);
+      padding: var(--ds-size-400, $ds-size-400);
     }
 
     @include auro_breakpoint--lg {
-      padding: var(--auro-size-xxl);
+      padding: var(--ds-size-600, $ds-size-600);
     }
   }
 }
 
 // =-=-=-=-= roundedBorder -=-=-=-=-=-=
-
 :host([roundedBorder]),
 :host([roundedBorder][alignLeft]) {
   @extend %auro-banner;
 
   .bannerWrapper {
-    border: 1px solid var(--auro-color-border-primary-on-light);
+    border: 1px solid var(--ds-color-border-primary-default, $ds-color-border-primary-default);
     border-radius: 5px;
   }
 
@@ -291,18 +282,18 @@
 
   .bodyWrapper {
     align-items: center;
-    padding: var(--auro-size-md);
+    padding: var(--ds-size-200, $ds-size-200);
 
     @include auro_breakpoint--sm {
       flex-direction: row;
     }
 
     @include auro_breakpoint--md {
-      padding: var(--auro-size-lg);
+      padding: var(--ds-size-300, $ds-size-300);
     }
 
     @include auro_breakpoint--lg {
-      padding: var(--auro-size-xl);
+      padding: var(--ds-size-400, $ds-size-400);
     }
   }
 
@@ -310,14 +301,13 @@
     @include auro_breakpoint--sm {
       flex-basis: 30%;
       display: flex;
-      margin-right: 2rem;
+      margin-right: var(--ds-size-400, $ds-size-400);
       margin-bottom: 0;
     }
   }
 }
 
 // =-=-=-=-= right -=-=-=-=-=-=
-
 :host([alignRight]) {
   .bodyWrapper {
     align-items: flex-end;
@@ -326,7 +316,6 @@
 }
 
 // =-=-=-=-= left -=-=-=-=-=-=
-
 :host([alignLeft]) {
   .bodyWrapper {
     align-items: flex-start;
@@ -335,17 +324,15 @@
 }
 
 // =-=-=-=-= slim -=-=-=-=-=-=
-
 :host([slim]) {
-
   .bodyWrapper {
     @include auro_breakpoint--sm {
-      padding: var(--auro-size-xl);
+      padding: var(--ds-size-400, $ds-size-400);
       min-height: unset;
     }
 
     @include auro_breakpoint--md {
-      padding: var(--auro-size-xl) var(--auro-size-xxl);
+      padding: var(--ds-size-400, $ds-size-400) var(--ds-size-600, $ds-size-600);
     }
   }
 }
