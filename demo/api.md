@@ -91,7 +91,7 @@ By default `<img>` elements are `inline` elements and will add a few pixels of s
   </auro-banner>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
@@ -159,7 +159,7 @@ For the call-to-action button, see in the example code that it is required to se
   </auro-banner>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/billboardSeries.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/billboardSeries.html -->
@@ -223,7 +223,7 @@ The following example illustrates an option to left align the text `alignLeft` a
   </auro-banner>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/billboardSeriesLeft.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/billboardSeriesLeft.html -->
@@ -285,7 +285,7 @@ The following example illustrates a `<auro-banner`> custom element with the `her
   </auro-banner>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/hero.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/hero.html -->
@@ -341,7 +341,7 @@ The following example illustrates a `<auro-banner>` custom element with the `ico
   </auro-banner>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/iconic.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/iconic.html -->
@@ -397,7 +397,7 @@ The following example illustrates a `<auro-banner>` custom element with the `mar
   </auro-banner>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/marquee.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/marquee.html -->
@@ -455,7 +455,7 @@ The following example illustrates a `<auro-banner>` custom element with the `mar
   </auro-banner>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/marqueeSolid.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/marqueeSolid.html -->
@@ -512,7 +512,7 @@ The following example illustrates a `<auro-banner>` custom element with the `rou
   </auro-banner>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/roundedBorder.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/roundedBorder.html -->
