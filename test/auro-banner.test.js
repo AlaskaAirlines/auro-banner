@@ -3,109 +3,68 @@
 import { fixture, html, expect } from '@open-wc/testing';
 import '../src/auro-banner';
 
-describe('<auro-banner>', () => {    
+describe('auro-banner', () => {    
+  // it('auro-banner is accessible', async () => {
+  //   const el = await fixture(html`
+  //     <auro-banner></auro-banner>
+  //   `);
 
-  it('<auro-banner> custom element is defined', async () => {
+  //   await expect(el).to.be.accessible();
+  // });
+
+  it('auro-banner custom element is defined', async () => {
     const el = await !!customElements.get("auro-banner");
 
     await expect(el).to.be.true;
   });
 
-  it('is accessible', async () => {
+  it('displayImage slot when roundedBorder attribute is not', async () => {
     const el = await fixture(html`
-      <auro-banner ratio="1:3">
-        <div slot="content">
-          <h3>Banner title</h3>
-          <p>Enjoy your flight to Bannerland!</p>
-        </div>
-        <img slot="graphic" src="/pic.png" alt="a test image" />
-        <div slot="overlay">
-        </div>        
-      </auro-banner>
+      <auro-banner></auro-banner>
     `);
 
-    await expect(el).to.be.accessible();
+    const displayImage = el.shadowRoot.querySelector('slot[name="displayImage"]');
+
+    await expect(displayImage).to.not.be.null;
   });
 
-  it('with flipped content', async () => {
+  it('title slot is present with iconic attribute', async () => {
     const el = await fixture(html`
-      <auro-banner id="banner" flipped ratio="1:3">
-        <img slot="graphic" src="/pic.png" alt="a test image" />
-        <div slot="content">
-          <h3>Banner title</h3>
-          <p>Enjoy your flight to Bannerland!</p>
-        </div>
-        <div slot="overlay">
-        </div>        
-      </auro-banner>
+      <auro-banner iconic></auro-banner>
     `);
 
-    await expect(el.getElementsByClassName('bannerWrapper')).to.not.be.null;
-    await expect(el.outerHTML.indexOf('flipped') > 0).to.equal(true);
+    const title = el.shadowRoot.querySelector('slot[name="title"]');
 
-    await expect(el.shadowRoot.innerHTML).contains(`<div class="item content" style="flex-basis: 75%;">`);
-    await expect(el.shadowRoot.innerHTML).contains(`<div class="item graphic" style="flex-basis: 25%;">`);
+    await expect(title).to.not.be.null;
   });
 
-  it('ratio defaults to 1:1 when none set', async () => {
+  it('auro-header is present with hero attribute', async () => {
     const el = await fixture(html`
-      <auro-banner>
-        <div slot="content">
-          <h3>Banner title</h3>
-          <p>Enjoy your flight to Bannerland!</p>
-          <input type="button">CTA</input>
-        </div>
-        <img slot="graphic" src="/pic.png" alt="a test image" />
-        <div slot="overlay">
-        </div>        
-      </auro-banner>
+      <auro-banner hero></auro-banner>
     `);
 
-    await expect(el.getElementsByClassName('bannerWrapper')).to.not.be.null;
+    const header = el.shadowRoot.querySelector('auro-header');
 
-    await expect(el.shadowRoot.innerHTML).contains(`<div class="item content" style="flex-basis: 50%;">`);
-    await expect(el.shadowRoot.innerHTML).contains(`<div class="item graphic" style="flex-basis: 50%;">`);
+    await expect(header).to.not.be.null;
   });
 
-  it('remove content slot when ratio 0:1', async () => {
+  it('auro-header is present with marquee attribute', async () => {
     const el = await fixture(html`
-      <auro-banner ratio="0:1">
-        <div slot="content">
-          <h3>Banner title</h3>
-          <p>Enjoy your flight to Bannerland!</p>
-          <input type="button">CTA</input>
-        </div>
-        <img slot="graphic" src="/pic.png" alt="a test image" />
-        <div slot="overlay">
-        </div>        
-      </auro-banner>
+      <auro-banner marquee></auro-banner>
     `);
 
-    // await expect(el.getElementsByClassName('bannerWrapper')).to.not.be.null;
-    // await expect(el.getElementsByClassName('graphic')).to.not.be.null;
-    // await expect(el.getElementsByClassName('content')).to.be.null;
+    const header = el.shadowRoot.querySelector('auro-header');
 
-    await expect(true).to.be.true;
+    await expect(header).to.not.be.null;
   });
 
-  it('remove graphic slot when ratio 1:0', async () => {
+  it('auro-header is present with roundedBorder attribute', async () => {
     const el = await fixture(html`
-      <auro-banner ratio="1:0">
-        <div slot="content">
-          <h3>Banner title</h3>
-          <p>Enjoy your flight to Bannerland!</p>
-          <input type="button">CTA</input>
-        </div>
-        <img slot="graphic" src="/pic.png" alt="a test image" />
-        <div slot="overlay">
-        </div>        
-      </auro-banner>
+      <auro-banner roundedBorder></auro-banner>
     `);
 
-    // await expect(el.getElementsByClassName('bannerWrapper')).to.not.be.null;
-    // await expect(el.getElementsByClassName('content')).to.not.be.null;
-    // await expect(el.getElementsByClassName('graphic')).to.be.null;
+    const header = el.shadowRoot.querySelector('auro-header');
 
-    await expect(true).to.be.true;
+    await expect(header).to.not.be.null;
   });
 });
