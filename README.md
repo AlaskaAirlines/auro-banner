@@ -21,15 +21,14 @@ The following sections are editable by making changes to the following files:
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/description.md) -->
 <!-- The below content is automatically added from ./../docs/partials/description.md -->
-`<auro-banner>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of ...
+The `<auro-banner>` element provides users a flexible way to convey a summary of information. The primary elements of a banner include an image, and details.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis in tellus nec pellentesque. Integer bibendum ligula sit amet vehicula gravida. Maecenas accumsan, ligula vitae molestie iaculis, tellus mi laoreet ex [install instructions](https://auro.alaskaair.com/components/auro/button/install), ac malesuada velit dolor vel mi. Cras et rutrum urna. Sed mattis mi eu tortor ullamcorper, egestas bibendum mauris cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus viverra eros eget neque commodo vulputate. In tempus eu velit at dictum.
-
-Nulla at augue facilisis `odio lobortis` molestie vitae a nulla.
+The details are broken down into `prefix`, `title`, `description`, `action`, and `disclaimer`.
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/readmeAddlInfo.md) -->
 <!-- The below content is automatically added from ./../docs/partials/readmeAddlInfo.md -->
 <!-- AURO-GENERATED-CONTENT This file is to be used for any additional content that should be included in the README.md which is specific to this component. -->
+**Do not** use `<auro-banner>` as a primary source of information.
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## UI development browser support
@@ -88,7 +87,31 @@ import "@aurodesignsystem/auro-banner";
 <!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
 ```html
-<auro-banner>Hello World</auro-banner>
+<auro-banner billboard>
+  <picture slot="displayImage">
+    <source srcset="https://picsum.photos/id/430/1124/800" media="(min-width: 1024px)">
+    <source srcset="https://picsum.photos/id/430/1124/1000" media="(min-width: 768px)">
+    <source srcset="https://picsum.photos/id/430/736/750" media="(min-width: 736px)">
+    <source srcset="https://picsum.photos/id/430/736/1400" media="(min-width: 375px)">
+    <source srcset="https://picsum.photos/id/430/320/700" media="(min-width: 320px)">
+    <img src="https://picsum.photos/id/430/225/550" alt="" />
+  </picture>
+  <img
+    slot="contentImage"
+    src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+    alt="Random insert"/>
+  <p slot="description">
+    We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
+  </p>
+  <auro-hyperlink
+    cta
+    secondary
+    href="/"
+    slot="action"
+    target="_blank">
+    More info
+  </auro-hyperlink>
+</auro-banner>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 
@@ -118,11 +141,10 @@ We recommend you load these bundles using [differential serving](https://philipw
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/useCases.md) -->
 <!-- The below content is automatically added from ./../docs/partials/useCases.md -->
-The `<auro-banner>` element should be used in situations where users may:
+Use the `<auro-banner>` element to:
 
-* ...
-* ...
-* ...
+* grab the attention of a user
+* direct your user to another resource for further information
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## API Code Examples
@@ -133,7 +155,31 @@ The `<auro-banner>` element should be used in situations where users may:
 <!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
 ```html
-<auro-banner>Hello World</auro-banner>
+<auro-banner billboard>
+  <picture slot="displayImage">
+    <source srcset="https://picsum.photos/id/430/1124/800" media="(min-width: 1024px)">
+    <source srcset="https://picsum.photos/id/430/1124/1000" media="(min-width: 768px)">
+    <source srcset="https://picsum.photos/id/430/736/750" media="(min-width: 736px)">
+    <source srcset="https://picsum.photos/id/430/736/1400" media="(min-width: 375px)">
+    <source srcset="https://picsum.photos/id/430/320/700" media="(min-width: 320px)">
+    <img src="https://picsum.photos/id/430/225/550" alt="" />
+  </picture>
+  <img
+    slot="contentImage"
+    src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+    alt="Random insert"/>
+  <p slot="description">
+    We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
+  </p>
+  <auro-hyperlink
+    cta
+    secondary
+    href="/"
+    slot="action"
+    target="_blank">
+    More info
+  </auro-hyperlink>
+</auro-banner>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 

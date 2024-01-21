@@ -15,7 +15,7 @@ import "@aurodesignsystem/auro-header";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * The auro-card-hero element provides users a flexible way to convey a summary of information in various large formats.
+ * The auro-banner element provides users a flexible way to convey a summary of information. The primary elements of a banner include an image, and details.
  * @attr {Boolean} billboard - to be used for billboard style configuration
  * @attr {Boolean} hero - to be used for hero style configuration
  * @attr {Boolean} iconic - to be used in as a hero on pages but with an icon and no displayImage on mobile
