@@ -9,7 +9,6 @@
 
 // Import Auro tokens
 @import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SassCustomProperties";
 
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints";
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/core";
@@ -216,7 +215,7 @@
     margin: 0 auto var(--ds-size-600, $ds-size-600);
     padding-bottom: var(--ds-size-600, $ds-size-600);
   }
-  
+
   .bodyWrapper {
     text-align: left;
     padding: var(--ds-size-400, $ds-size-400) var(--ds-size-400, $ds-size-400) var(--ds-size-400, $ds-size-400) 0;
