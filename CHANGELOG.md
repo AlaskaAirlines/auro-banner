@@ -1,5 +1,34 @@
 # Semantic Release Automated Changelog
 
+# [2.0.0](https://github.com/AlaskaAirlines/auro-banner/compare/v1.1.0...v2.0.0) (2024-01-24)
+
+
+### Documentation
+
+* update demo template ([1c550c7](https://github.com/AlaskaAirlines/auro-banner/commit/1c550c716d39c92bdd3ec897d340989b4a4a0293))
+
+
+### Features
+
+* **modernize:** rebuild component using the generator [#49](https://github.com/AlaskaAirlines/auro-banner/issues/49) ([3ce06bb](https://github.com/AlaskaAirlines/auro-banner/commit/3ce06bb406c6af608c83be951287284679bdc904))
+* **ssr:** add support for SSR projects [#50](https://github.com/AlaskaAirlines/auro-banner/issues/50) ([b276957](https://github.com/AlaskaAirlines/auro-banner/commit/b276957493a8e84e3f4eb409852e2ea5aee81e47))
+* **tokens:** implement theming support [#51](https://github.com/AlaskaAirlines/auro-banner/issues/51) ([ebfc5e5](https://github.com/AlaskaAirlines/auro-banner/commit/ebfc5e50d300514b297858ddcd02c33471a35fd3))
+
+
+### Performance Improvements
+
+* **accordion:** update doc accordion attributes ([f8ae926](https://github.com/AlaskaAirlines/auro-banner/commit/f8ae92622585e8e03231df96388b2e5c6ed5f18a))
+
+
+### BREAKING CHANGES
+
+* This is NOT the breaking commit, but the npm namespace
+has been updated and requires a MAJOR release.
+
+Changes to be committed:
+modified:   demo/index.md
+modified:   docs/partials/index.md
+
 # [1.1.0](https://github.com/AlaskaAirlines/aurolabs-banner/compare/v1.0.4...v1.1.0) (2021-07-09)
 
 
