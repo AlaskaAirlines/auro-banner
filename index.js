@@ -1,4 +1,4 @@
-import { AuroBanner } from './src/auro-banner';
+import { AuroBanner } from './src/auro-banner.js';
 
 /**
  * Register Custom Element.
