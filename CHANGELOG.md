@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.0.5](https://github.com/AlaskaAirlines/auro-banner/compare/v2.0.4...v2.0.5) (2024-02-20)
+
+
+### Bug Fixes
+
+* **styles:** style template uses lit correctly ([4e2b2e2](https://github.com/AlaskaAirlines/auro-banner/commit/4e2b2e28dd35f6f1c78ecbc58832776868c27f4a))
+
 ## [2.0.4](https://github.com/AlaskaAirlines/auro-banner/compare/v2.0.3...v2.0.4) (2024-02-13)
 
 
