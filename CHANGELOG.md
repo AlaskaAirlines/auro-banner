@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.0.6](https://github.com/AlaskaAirlines/auro-banner/compare/v2.0.5...v2.0.6) (2024-02-23)
+
+
+### Performance Improvements
+
+* **docs:** add custom registration example ([d0d3aa9](https://github.com/AlaskaAirlines/auro-banner/commit/d0d3aa922e7a9acc3dac736416952afa2c40093f))
+
 ## [2.0.5](https://github.com/AlaskaAirlines/auro-banner/compare/v2.0.4...v2.0.5) (2024-02-20)
 
 
