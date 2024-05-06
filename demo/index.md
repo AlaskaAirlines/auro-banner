@@ -55,7 +55,7 @@ The `<auro-banner>` component must be used in conjunction with one of the follow
     </picture>
     <img
       slot="contentImage"
-      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      src="https://images.contentstack.io/v3/assets/blt2cefe12c88e9dd91/bltc1fa673bb196d177/6633f3de693c294c708b20de/oneworld-travel-bright-Horizontal-300.png"
       alt="Random insert"/>
     <p slot="description">
       We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -88,7 +88,7 @@ The `<auro-banner>` component must be used in conjunction with one of the follow
   </picture>
   <img
     slot="contentImage"
-    src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+    src="https://images.contentstack.io/v3/assets/blt2cefe12c88e9dd91/bltc1fa673bb196d177/6633f3de693c294c708b20de/oneworld-travel-bright-Horizontal-300.png"
     alt="Random insert"/>
   <p slot="description">
     We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -133,7 +133,7 @@ This will create a new custom element that you can use in your HTML that will fu
     </picture>
     <img
       slot="contentImage"
-      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      src="https://images.contentstack.io/v3/assets/blt2cefe12c88e9dd91/bltc1fa673bb196d177/6633f3de693c294c708b20de/oneworld-travel-bright-Horizontal-300.png"
       alt="Random insert"/>
     <p slot="description">
       We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -166,7 +166,7 @@ This will create a new custom element that you can use in your HTML that will fu
   </picture>
   <img
     slot="contentImage"
-    src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+    src="https://images.contentstack.io/v3/assets/blt2cefe12c88e9dd91/bltc1fa673bb196d177/6633f3de693c294c708b20de/oneworld-travel-bright-Horizontal-300.png"
     alt="Random insert"/>
   <p slot="description">
     We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
