@@ -75,7 +75,7 @@ By default `<img>` elements are `inline` elements and will add a few pixels of s
     </picture>
     <img
       slot="contentImage"
-      src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+      src="https://images.contentstack.io/v3/assets/blt2cefe12c88e9dd91/bltc1fa673bb196d177/6633f3de693c294c708b20de/oneworld-travel-bright-Horizontal-300.png"
       alt="Random insert"/>
     <p slot="description">
       We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -108,7 +108,7 @@ By default `<img>` elements are `inline` elements and will add a few pixels of s
   </picture>
   <img
     slot="contentImage"
-    src="https://sitecore-test-single-westus2.azurewebsites.net/-/media/Images/pages/examples/oneworld-travel-bright-Horizontal-300.png"
+    src="https://images.contentstack.io/v3/assets/blt2cefe12c88e9dd91/bltc1fa673bb196d177/6633f3de693c294c708b20de/oneworld-travel-bright-Horizontal-300.png"
     alt="Random insert"/>
   <p slot="description">
     We’ll explain any additional costs before you book your car rental. More details on what’s included? Just check the Ts&Cs of any car.
@@ -492,7 +492,7 @@ The following example illustrates a `<auro-banner>` custom element with the `rou
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/roundedBorder.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/roundedBorder.html -->
   <auro-banner roundedBorder alignLeft>
-    <img src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="" slot="contentImage" />
+    <img src="https://images.contentstack.io/v3/assets/blt2cefe12c88e9dd91/blt4f70efe198086558/6633f3defda0c7c6c769b86b/visa_signature.svg" alt="" slot="contentImage" />
     <span slot="prefix">Prefix - Limited Time</span>
     <span slot="title">Title - Irure dolor.</span>
     <p slot="description">
@@ -519,7 +519,7 @@ The following example illustrates a `<auro-banner>` custom element with the `rou
 
 ```html
 <auro-banner roundedBorder alignLeft>
-  <img src="https://sitecore-prod-cd-westcentralus.azurewebsites.net/-/media/Images/photos-infographics/credit-card/visa_signature" alt="" slot="contentImage" />
+  <img src="https://images.contentstack.io/v3/assets/blt2cefe12c88e9dd91/blt4f70efe198086558/6633f3defda0c7c6c769b86b/visa_signature.svg" alt="" slot="contentImage" />
   <span slot="prefix">Prefix - Limited Time</span>
   <span slot="title">Title - Irure dolor.</span>
   <p slot="description">
