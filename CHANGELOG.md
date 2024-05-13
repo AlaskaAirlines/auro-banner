@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+## [2.0.7](https://github.com/AlaskaAirlines/auro-banner/compare/v2.0.6...v2.0.7) (2024-05-13)
+
+
+### Bug Fixes
+
+* **docs:** use correct generateDocs script and file names ([374e7ca](https://github.com/AlaskaAirlines/auro-banner/commit/374e7caa0ed9aca0ac69abdd15f74518108c5151))
+
+
+### Performance Improvements
+
+* **images:** update path of images ([761113b](https://github.com/AlaskaAirlines/auro-banner/commit/761113bf72a8b5d6c1f3ec02015bad95aa7654b5))
+
 ## [2.0.6](https://github.com/AlaskaAirlines/auro-banner/compare/v2.0.5...v2.0.6) (2024-02-23)
 
 
