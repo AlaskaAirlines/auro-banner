@@ -540,3 +540,22 @@ The following example illustrates a `<auro-banner>` custom element with the `rou
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
+
+### Theme Support
+
+The component may be restyled using the following code sample and changing the values of the following token(s).
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../src/tokens.scss) -->
+<!-- The below code snippet is automatically added from ./../../src/tokens.scss -->
+
+```scss
+:host {
+  --ds-auro-banner-text-color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
+  --ds-auro-banner-disclaimer-text-color: var(--ds-color-text-secondary-default, $ds-color-text-secondary-default);
+  --ds-auro-banner-title-text-color: var(--ds-color-text-emphasis-default, $ds-color-text-emphasis-default);
+  --ds-auro-banner-icon-background-color: var(--ds-color-icon-tertiary-default, $ds-color-icon-tertiary-default);
+  --ds-auro-banner-wrapper-background-color: var(--ds-color-brand-midnight-400, $ds-color-brand-midnight-400);
+  --ds-auro-banner-wrapper-border-color: var(--ds-color-border-primary-default, $ds-color-border-primary-default);
+}
+```
+<!-- AURO-GENERATED-CONTENT:END -->
