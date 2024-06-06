@@ -10,6 +10,8 @@ import { LitElement, html, css } from "lit";
 import { ifDefined } from 'lit/directives/if-defined.js';
 
 import styleCss from "./style-css.js";
+import colorCss from "./color-css.js";
+import tokensCss from "./tokens-css.js";
 
 import "@aurodesignsystem/auro-header";
 
@@ -83,9 +85,11 @@ export class AuroBanner extends LitElement {
   }
 
   static get styles() {
-    return css`
-      ${styleCss}
-    `;
+    return [
+      css`${styleCss}`,
+      css`${colorCss}`,
+      css`${tokensCss}`
+    ];
   }
 
   // function that renders the HTML and CSS into  the scope of the component
