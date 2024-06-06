@@ -1,0 +1,68 @@
+// Copyright (c) 2024 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+/* stylelint-disable scss/percent-placeholder-pattern, no-descending-specificity */
+
+// Import Auro tokens
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+
+@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints";
+@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/core";
+
+:host {
+  color: var(--ds-auro-banner-text-color);
+}
+
+:host([onDark]) {
+  @extend %auro-banner--ondark;
+}
+
+// =-=-=-=-= common styles -=-=-=-=-=-=
+%auro-banner {
+  .disclaimer {
+    color: var(--ds-auro-banner-disclaimer-text-color);
+  }
+
+  .title {
+    color: var(--ds-auro-banner-title-text-color);
+  }
+}
+
+// =-=-=-=-= ondark styles -=-=-=-=-=-=
+%auro-banner--ondark {
+  --ds-auro-banner-text-color: var(--ds-color-text-primary-inverse, #{$ds-color-text-primary-inverse});
+  --ds-auro-banner-title-text-color: var(--ds-color-text-primary-inverse, #{$ds-color-text-primary-inverse});
+}
+
+// =-=-=-=-= billboard -=-=-=-=-=-=
+:host([billboard]) {
+  @extend %auro-banner;
+}
+
+:host([iconic]) {
+  @extend %auro-banner;
+
+  .roundIconBg {
+    background: var(--ds-auro-banner-icon-container-color);
+  }
+}
+
+:host([marquee][solid]) {
+  @extend %auro-banner--ondark;
+
+  .bannerWrapper {
+    background-color: var(--ds-auro-banner-wrapper-container-color);
+  }
+}
+
+// =-=-=-=-= roundedBorder -=-=-=-=-=-=
+:host([roundedBorder]),
+:host([roundedBorder][alignLeft]) {
+  @extend %auro-banner;
+
+  .bannerWrapper {
+    border-color: var(--ds-auro-banner-wrapper-border-color);
+  }
+}
