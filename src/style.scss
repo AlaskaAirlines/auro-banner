@@ -13,14 +13,6 @@
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints";
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/core";
 
-:host {
-  color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
-}
-
-:host([onDark]) {
-  @extend %auro-banner--ondark;
-}
-
 // =-=-=-=-= common styles -=-=-=-=-=-=
 %auro-banner {
   img {
@@ -28,7 +20,6 @@
   }
 
   .disclaimer {
-    color: var(--ds-color-text-secondary-default, $ds-color-text-secondary-default);
     font-size: var(--ds-text-body-size-xs, $ds-text-body-size-xs);
     line-height: var(--ds-text-body-size-xs, $ds-text-body-size-xs);
   }
@@ -69,7 +60,6 @@
   }
 
   .title {
-    color: var(--ds-color-brand-midnight-400);
     margin-bottom: var(--ds-size-200, $ds-size-200);
   }
 
@@ -83,15 +73,6 @@
     @include auro_breakpoint--sm {
       margin-bottom: 0;
     }
-  }
-}
-
-// =-=-=-=-= ondark styles -=-=-=-=-=-=
-%auro-banner--ondark {
-  color: var(--ds-color-base-white, $ds-color-base-white);
-
-  .title {
-    color: var(--ds-color-base-white, $ds-color-base-white);
   }
 }
 
@@ -128,7 +109,6 @@
 }
 
 // =-=-=-=-= hero -=-=-=-=-=-=
-
 :host([hero]) {
   @extend %auro-banner;
 
@@ -160,7 +140,6 @@
 }
 
 // =-=-=-=-= iconic -=-=-=-=-=-=
-
 :host([iconic]) {
   @extend %auro-banner;
 
@@ -181,7 +160,6 @@
   .roundIconBg {
     width: $iconBgSize;
     height: $iconBgSize;
-    background: var(--ds-color-brand-neutral-400, $ds-color-brand-neutral-400);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -233,12 +211,6 @@
 }
 
 :host([marquee][solid]) {
-  @extend %auro-banner--ondark;
-
-  .bannerWrapper {
-    background-color: var(--ds-color-brand-midnight-400, $ds-color-brand-midnight-400);
-  }
-
   .bodyWrapper {
     padding: var(--ds-size-300, $ds-size-300);
 
@@ -258,7 +230,8 @@
   @extend %auro-banner;
 
   .bannerWrapper {
-    border: 1px solid var(--ds-color-border-primary-default, $ds-color-border-primary-default);
+    border-width: 1px;
+    border-style: solid;
     border-radius: 5px;
   }
 
