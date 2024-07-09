@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [2.1.0-beta.1](https://github.com/AlaskaAirlines/auro-banner/compare/v2.0.7...v2.1.0-beta.1) (2024-07-09)
+
+
+### Features
+
+* refactor color tokens with tier 3 tokens [#57](https://github.com/AlaskaAirlines/auro-banner/issues/57) ([1b104b7](https://github.com/AlaskaAirlines/auro-banner/commit/1b104b7be217d4dafca07c8ac42b04e40c561c3e))
+
+
+### Performance Improvements
+
+* update dependencies ([8f451b7](https://github.com/AlaskaAirlines/auro-banner/commit/8f451b7fbf846027cebe4552fd062583afa039cb))
+
 ## [2.0.7](https://github.com/AlaskaAirlines/auro-banner/compare/v2.0.6...v2.0.7) (2024-05-13)
 
 
