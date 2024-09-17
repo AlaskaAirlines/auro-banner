@@ -15,11 +15,6 @@
   color: var(--ds-auro-banner-text-color);
 }
 
-:host([onDark]) {
-  @extend %auro-banner--ondark;
-}
-
-// =-=-=-=-= common styles -=-=-=-=-=-=
 %auro-banner {
   .disclaimer {
     color: var(--ds-auro-banner-disclaimer-text-color);
@@ -30,14 +25,24 @@
   }
 }
 
-// =-=-=-=-= ondark styles -=-=-=-=-=-=
 %auro-banner--ondark {
   --ds-auro-banner-text-color: var(--ds-color-text-primary-inverse, #{$ds-color-text-primary-inverse});
-  --ds-auro-banner-title-text-color: var(--ds-color-text-primary-inverse, #{$ds-color-text-primary-inverse});
+
+  .title {
+    --ds-auro-banner-title-text-color: var(--ds-color-text-primary-inverse, #{$ds-color-text-primary-inverse});
+
+    color: var(--ds-auro-banner-title-text-color);
+  }
 }
 
-// =-=-=-=-= billboard -=-=-=-=-=-=
-:host([billboard]) {
+:host([onDark]) {
+  @extend %auro-banner--ondark;
+}
+
+
+:host([billboard]),
+:host([hero]),
+:host([marquee]) {
   @extend %auro-banner;
 }
 
@@ -57,7 +62,6 @@
   }
 }
 
-// =-=-=-=-= roundedBorder -=-=-=-=-=-=
 :host([roundedBorder]),
 :host([roundedBorder][alignLeft]) {
   @extend %auro-banner;
