@@ -1,6 +1,3 @@
-/* eslint-disable no-negated-condition */
-/* eslint-disable no-underscore-dangle, no-magic-numbers, max-statements */
-
 // Copyright (c) 2021 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
@@ -52,7 +49,7 @@ export class AuroBanner extends LitElement {
 
     for (const item of slotNodes) {
       this.slt = item.assignedNodes();
-      // eslint-disable-next-line no-magic-numbers
+
       if (this.slt.length === 0) {
         item.removeAttribute("class");
       }
