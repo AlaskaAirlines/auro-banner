@@ -43,7 +43,7 @@ describe('auro-banner', () => {
       <auro-banner hero></auro-banner>
     `);
 
-    const header = el.shadowRoot.querySelector('auro-header');
+    const header = el.shadowRoot.querySelector('[auro-header]');
 
     await expect(header).to.not.be.null;
   });
@@ -53,7 +53,7 @@ describe('auro-banner', () => {
       <auro-banner marquee></auro-banner>
     `);
 
-    const header = el.shadowRoot.querySelector('auro-header');
+    const header = el.shadowRoot.querySelector('[auro-header]');
 
     await expect(header).to.not.be.null;
   });
@@ -63,7 +63,7 @@ describe('auro-banner', () => {
       <auro-banner roundedBorder></auro-banner>
     `);
 
-    const header = el.shadowRoot.querySelector('auro-header');
+    const header = el.shadowRoot.querySelector('[auro-header]');
 
     await expect(header).to.not.be.null;
   });
