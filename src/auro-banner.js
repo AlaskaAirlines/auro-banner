@@ -13,6 +13,8 @@ import styleCss from "./style-css.js";
 import colorCss from "./color-css.js";
 import tokensCss from "./tokens-css.js";
 
+import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+
 import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
 
 import { AuroHeader } from '@aurodesignsystem/auro-header/src/auro-header.js';
@@ -54,10 +56,17 @@ export class AuroBanner extends LitElement {
      * @private
      */
     this.headerTag = versioning.generateTag('auro-header', headerVersion, AuroHeader);
+
+    /**
+     * @private
+     */
+    this.runtimeUtils = new AuroLibraryRuntimeUtils();
   }
 
-  // This function removes a CSS selector if the footer slot is empty
   firstUpdated() {
+    // Add the tag name as an attribute if it is different than the component name
+    this.runtimeUtils.handleComponentTagRename(this, 'auro-banner');
+
     const slotNodes = this.shadowRoot.querySelectorAll(`.bannerWrapper slot`);
 
     for (const item of slotNodes) {
