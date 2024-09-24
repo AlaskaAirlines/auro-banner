@@ -18,7 +18,7 @@ import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/util
 import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
 
 import { AuroHeader } from '@aurodesignsystem/auro-header/src/auro-header.js';
-import headerVersion from './headerVersion';
+import headerVersion from './headerVersion.js';
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
