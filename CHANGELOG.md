@@ -1,5 +1,32 @@
 # Semantic Release Automated Changelog
 
+# [3.0.0](https://github.com/AlaskaAirlines/auro-banner/compare/v2.0.7...v3.0.0) (2024-09-30)
+
+
+### Bug Fixes
+
+* resolve minor color theming issues [#57](https://github.com/AlaskaAirlines/auro-banner/issues/57) ([167aa4d](https://github.com/AlaskaAirlines/auro-banner/commit/167aa4da7295ef7be8ea4fad5933a67817dd6b6b))
+
+
+### Features
+
+* add attribute as tag name when custom registered ([6b08477](https://github.com/AlaskaAirlines/auro-banner/commit/6b08477ae8ce4ad00e0ea05f0ff70b961cb593ad))
+* refactor color tokens with tier 3 tokens [#57](https://github.com/AlaskaAirlines/auro-banner/issues/57) ([26d976d](https://github.com/AlaskaAirlines/auro-banner/commit/26d976d313d48328d3cadaac52bb7f65f8108d32))
+* use custom registered auro-header ([965ca98](https://github.com/AlaskaAirlines/auro-banner/commit/965ca98f02c10198ad3f4c8777a9c8bd727875b6))
+
+
+### Performance Improvements
+
+* refactor custom component registration config ([97a6262](https://github.com/AlaskaAirlines/auro-banner/commit/97a6262280f0ceebcbcb3b1e56331cde21895031))
+* update dependencies ([15541ad](https://github.com/AlaskaAirlines/auro-banner/commit/15541ad6b091f0a948ea75bc9a5d00dcb4f21732))
+* update dependencies ([70a4b58](https://github.com/AlaskaAirlines/auro-banner/commit/70a4b58d897e9c72debd7953b82df2d85b93d52f))
+* update dependencies and lint configuration ([16a4b0f](https://github.com/AlaskaAirlines/auro-banner/commit/16a4b0f9142e0ddcc0464d1e98266e1efe32a0d8))
+
+
+### BREAKING CHANGES
+
+* trigger major release for color theme support #57
+
 ## [2.0.7](https://github.com/AlaskaAirlines/auro-banner/compare/v2.0.6...v2.0.7) (2024-05-13)
 
 
