@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.0.1](https://github.com/AlaskaAirlines/auro-banner/compare/v3.0.0...v3.0.1) (2024-10-08)
+
+
+### Bug Fixes
+
+* moves auro library to dependencies in package.json [#68](https://github.com/AlaskaAirlines/auro-banner/issues/68) ([e79b9bc](https://github.com/AlaskaAirlines/auro-banner/commit/e79b9bc6901b15cf7a9977060f32985412aaab5c))
+
 # [3.0.0](https://github.com/AlaskaAirlines/auro-banner/compare/v2.0.7...v3.0.0) (2024-09-30)
 
 
