@@ -1,7 +1,7 @@
 /* eslint-disable no-undef, sort-vars, no-implicit-coercion */
 
 import { fixture, html, expect } from '@open-wc/testing';
-import '../src/auro-banner';
+import '../index.js';
 
 describe('auro-banner', () => {    
   // it('auro-banner is accessible', async () => {
