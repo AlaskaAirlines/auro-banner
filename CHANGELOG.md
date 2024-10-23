@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [3.1.0](https://github.com/AlaskaAirlines/auro-banner/compare/v3.0.1...v3.1.0) (2024-10-23)
+
+
+### Features
+
+* **api:** add register static method [#70](https://github.com/AlaskaAirlines/auro-banner/issues/70) ([a3ffbd2](https://github.com/AlaskaAirlines/auro-banner/commit/a3ffbd297e8a9791097174d01bd28dfb0370ba51))
+
+
+### Performance Improvements
+
+* update dependency versions ([82b19cf](https://github.com/AlaskaAirlines/auro-banner/commit/82b19cf0bc79c068b346dfd9c7183ea434569ddd))
+
 ## [3.0.1](https://github.com/AlaskaAirlines/auro-banner/compare/v3.0.0...v3.0.1) (2024-10-08)
 
 
