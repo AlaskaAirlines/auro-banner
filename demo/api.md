@@ -1,5 +1,5 @@
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../api.md) -->
-<!-- The below content is automatically added from ./../api.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/api.md) -->
+<!-- The below content is automatically added from ../docs/api.md -->
 
 # auro-banner
 
@@ -62,8 +62,8 @@ This allows the editor the upmost in image flexibility for cropped images placed
 
 By default `<img>` elements are `inline` elements and will add a few pixels of space below the image. To counter this, either set `display: block` on the `<img>` element, or add this [WCSS pre-defined selector](https://alaskaairlines.github.io/WebCoreStyleSheets/#core-css-#{$sym}#{$prefix}picture#{$scope}) to your project.<br><br>
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/basic.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/basic.html) -->
+  <!-- The below content is automatically added from ../apiExamples/basic.html -->
   <auro-banner billboard>
     <picture slot="displayImage">
       <source srcset="https://picsum.photos/id/430/1124/800" media="(min-width: 1024px)">
@@ -93,8 +93,8 @@ By default `<img>` elements are `inline` elements and will add a few pixels of s
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/basic.html -->
 
 ```html
 <auro-banner billboard>
@@ -133,8 +133,8 @@ The following example illustrates a series of additional API options available t
 For the call-to-action button, see in the example code that it is required to set the `onDark` attribute on the `<auro-hyperlink>` element itself. This is **not** controlled by the `<auro-banner>` element.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/billboardSeries.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/billboardSeries.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/billboardSeries.html) -->
+  <!-- The below content is automatically added from ../apiExamples/billboardSeries.html -->
   <auro-banner billboard slim alignRight ondark>
     <picture slot="displayImage">
       <source srcset="https://picsum.photos/id/324/1124/800" media="(min-width: 1024px)">
@@ -161,8 +161,8 @@ For the call-to-action button, see in the example code that it is required to se
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/billboardSeries.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/billboardSeries.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/billboardSeries.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/billboardSeries.html -->
 
 ```html
 <auro-banner billboard slim alignRight ondark>
@@ -196,8 +196,8 @@ For the call-to-action button, see in the example code that it is required to se
 The following example illustrates an option to left align the text `alignLeft` along with `slim` to reduce the padding and `onDark` to change the text to white.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/billboardSeriesLeft.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/billboardSeriesLeft.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/billboardSeriesLeft.html) -->
+  <!-- The below content is automatically added from ../apiExamples/billboardSeriesLeft.html -->
   <auro-banner billboard slim alignLeft onDark>
     <picture slot="displayImage">
       <source srcset="https://picsum.photos/id/42/1124/800" media="(min-width: 1024px)">
@@ -225,8 +225,8 @@ The following example illustrates an option to left align the text `alignLeft` a
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/billboardSeriesLeft.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/billboardSeriesLeft.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/billboardSeriesLeft.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/billboardSeriesLeft.html -->
 
 ```html
 <auro-banner billboard slim alignLeft onDark>
@@ -261,8 +261,8 @@ The following example illustrates an option to left align the text `alignLeft` a
 The following example illustrates a `<auro-banner`> custom element with the `hero` template style. This example also illustrates the use of the `prefix` slot.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/hero.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/hero.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/hero.html) -->
+  <!-- The below content is automatically added from ../apiExamples/hero.html -->
   <auro-banner hero>
     <picture slot="displayImage">
       <source srcset="https://picsum.photos/id/369/2048/2000" media="(min-width: 1024px)">
@@ -287,8 +287,8 @@ The following example illustrates a `<auro-banner`> custom element with the `her
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/hero.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/hero.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/hero.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/hero.html -->
 
 ```html
 <auro-banner hero>
@@ -320,8 +320,8 @@ The following example illustrates a `<auro-banner`> custom element with the `her
 The following example illustrates a `<auro-banner>` custom element with the `iconic` template style.  The `iconic` template style hides the `displayImage` on small screen sizes and only shows the icon.  This examples also shows how to customize the icon background color using `iconbg`.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/iconic.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/iconic.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/iconic.html) -->
+  <!-- The below content is automatically added from ../apiExamples/iconic.html -->
   <auro-banner iconic iconbg="var(--ds-color-brand-neutral-400)">
     <picture slot="displayImage">
       <source srcset="https://picsum.photos/id/452/2800/2000.jpg" media="(min-width: 1054px)">
@@ -343,8 +343,8 @@ The following example illustrates a `<auro-banner>` custom element with the `ico
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/iconic.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/iconic.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/iconic.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/iconic.html -->
 
 ```html
 <auro-banner iconic iconbg="var(--ds-color-brand-neutral-400)">
@@ -373,8 +373,8 @@ The following example illustrates a `<auro-banner>` custom element with the `ico
 The following example illustrates a `<auro-banner>` custom element with the `marquee` template style. This template configuration also supports the `slim` and `onDark` attributes.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/marquee.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/marquee.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/marquee.html) -->
+  <!-- The below content is automatically added from ../apiExamples/marquee.html -->
   <auro-banner marquee>
     <picture slot="displayImage">
       <source srcset="https://picsum.photos/id/154/2048/2000" media="(min-width: 1024px)">
@@ -399,8 +399,8 @@ The following example illustrates a `<auro-banner>` custom element with the `mar
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/marquee.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/marquee.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/marquee.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/marquee.html -->
 
 ```html
 <auro-banner marquee>
@@ -432,8 +432,8 @@ The following example illustrates a `<auro-banner>` custom element with the `mar
 The following example illustrates a `<auro-banner>` custom element with the `marquee solid` template style. With this configuration, onDark is implied.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/marqueeSolid.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/marqueeSolid.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/marqueeSolid.html) -->
+  <!-- The below content is automatically added from ../apiExamples/marqueeSolid.html -->
   <auro-banner marquee solid>
     <picture slot="displayImage">
       <source srcset="https://picsum.photos/id/1015/1048/2000" media="(min-width: 1024px)">
@@ -457,8 +457,8 @@ The following example illustrates a `<auro-banner>` custom element with the `mar
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/marqueeSolid.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/marqueeSolid.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/marqueeSolid.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/marqueeSolid.html -->
 
 ```html
 <auro-banner marquee solid>
@@ -489,8 +489,8 @@ The following example illustrates a `<auro-banner>` custom element with the `mar
 The following example illustrates a `<auro-banner>` custom element with the `roundedBorder` variant style. With this configuration, no `displayImage` is used. Instead only the `contentImage` is used and the rest of the offer is displayed in a row.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/roundedBorder.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/roundedBorder.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/roundedBorder.html) -->
+  <!-- The below content is automatically added from ../apiExamples/roundedBorder.html -->
   <auro-banner roundedBorder alignLeft>
     <img src="https://images.contentstack.io/v3/assets/blt2cefe12c88e9dd91/blt4f70efe198086558/6633f3defda0c7c6c769b86b/visa_signature.svg" alt="" slot="contentImage" />
     <span slot="prefix">Prefix - Limited Time</span>
@@ -514,8 +514,8 @@ The following example illustrates a `<auro-banner>` custom element with the `rou
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/roundedBorder.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/roundedBorder.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/roundedBorder.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/roundedBorder.html -->
 
 ```html
 <auro-banner roundedBorder alignLeft>
@@ -545,8 +545,8 @@ The following example illustrates a `<auro-banner>` custom element with the `rou
 
 The component may be restyled using the following code sample and changing the values of the following token(s).
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../src/tokens.scss) -->
-<!-- The below code snippet is automatically added from ./../../src/tokens.scss -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../src/tokens.scss) -->
+<!-- The below code snippet is automatically added from ../src/tokens.scss -->
 
 ```scss
 @import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
