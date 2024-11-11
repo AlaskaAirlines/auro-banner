@@ -6,8 +6,8 @@ This file is generated based on a template fetched from `./docs/partials/index.m
 
 # Banner
 
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./description.md) -->
-<!-- The below content is automatically added from ./description.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/partials/description.md) -->
+<!-- The below content is automatically added from ../docs/partials/description.md -->
 The `<auro-banner>` element provides users a flexible way to convey a summary of information. The primary elements of a banner include an image, and details.
 
 The details are broken down into `prefix`, `title`, `description`, `action`, and `disclaimer`.
@@ -15,8 +15,8 @@ The details are broken down into `prefix`, `title`, `description`, `action`, and
 
 ## auro-banner use cases
 
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./useCases.md) -->
-<!-- The below content is automatically added from ./useCases.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/partials/useCases.md) -->
+<!-- The below content is automatically added from ../docs/partials/useCases.md -->
 Use the `<auro-banner>` element to:
 
 * grab the attention of a user
@@ -25,8 +25,8 @@ Use the `<auro-banner>` element to:
 
 ## Additional Information
 
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./readmeAddlInfo.md) -->
-<!-- The below content is automatically added from ./readmeAddlInfo.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/partials/readmeAddlInfo.md) -->
+<!-- The below content is automatically added from ../docs/partials/readmeAddlInfo.md -->
 <!-- AURO-GENERATED-CONTENT This file is to be used for any additional content that should be included in the README.md which is specific to this component. -->
 **Do not** use `<auro-banner>` as a primary source of information.
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -42,8 +42,8 @@ The `<auro-banner>` component must be used in conjunction with one of the follow
 **Note**: See the [auro-banner API page](https://auro.alaskaair.com/components/auro/banner/api) for more information on how to use this component's slots and attributes.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/basic.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/basic.html) -->
+  <!-- The below content is automatically added from ../apiExamples/basic.html -->
   <auro-banner billboard>
     <picture slot="displayImage">
       <source srcset="https://picsum.photos/id/430/1124/800" media="(min-width: 1024px)">
@@ -73,8 +73,8 @@ The `<auro-banner>` component must be used in conjunction with one of the follow
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/basic.html -->
 
 ```html
 <auro-banner billboard>
@@ -121,8 +121,8 @@ AuroBanner.register('custom-banner');
 This will create a new custom element that you can use in your HTML that will function identically to the `auro-banner` element.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/custom.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/custom.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/custom.html) -->
+  <!-- The below content is automatically added from ../apiExamples/custom.html -->
   <custom-banner billboard>
     <picture slot="displayImage">
       <source srcset="https://picsum.photos/id/430/1124/800" media="(min-width: 1024px)">
@@ -152,8 +152,8 @@ This will create a new custom element that you can use in your HTML that will fu
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/custom.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/custom.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/custom.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/custom.html -->
 
 ```html
 <custom-banner billboard>
