@@ -76,7 +76,7 @@ The following example illustrates an option to left align the text `alignLeft` a
 
 ### Hero
 
-The following example illustrates a `<auro-banner`> custom element with the `hero` template style. This example also illustrates the use of the `prefix` slot.
+The following example illustrates a `<auro-banner>` custom element with the `hero` template style. This example also illustrates the use of the `prefix` slot.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/hero.html) -->
