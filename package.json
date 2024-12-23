@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@aurodesignsystem/auro-header": "^2.4.0",
-    "@aurodesignsystem/auro-library": "^3.0.2",
+    "@aurodesignsystem/auro-library": "^3.0.3",
     "chalk": "^5.3.0",
     "lit": "^3.2.1"
   },
