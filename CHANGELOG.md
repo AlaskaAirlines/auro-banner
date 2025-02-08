@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [3.1.3](https://github.com/AlaskaAirlines/auro-banner/compare/v3.1.2...v3.1.3) (2025-02-08)
+
+
+### Performance Improvements
+
+* update dependencies ([66e5743](https://github.com/AlaskaAirlines/auro-banner/commit/66e5743f8a3218b51f31d0fedadb5496a895aa22))
+* update mixins to support new npm spec ([2004ac7](https://github.com/AlaskaAirlines/auro-banner/commit/2004ac7db46e4290bc090e7ba5691ecd1650fba0))
+
 ## [3.1.2](https://github.com/AlaskaAirlines/auro-banner/compare/v3.1.1...v3.1.2) (2024-12-23)
 
 
