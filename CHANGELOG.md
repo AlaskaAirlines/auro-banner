@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.0.1](https://github.com/AlaskaAirlines/auro-banner/compare/v4.0.0...v4.0.1) (2025-04-15)
+
+
+### Performance Improvements
+
+* add wca script for docs api ([02cb6e3](https://github.com/AlaskaAirlines/auro-banner/commit/02cb6e3f5b294b53b776ad48abecd8d7d586b06b))
+
 # [4.0.0](https://github.com/AlaskaAirlines/auro-banner/compare/v3.1.3...v4.0.0) (2025-02-28)
 
 
