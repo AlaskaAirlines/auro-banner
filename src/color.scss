@@ -6,7 +6,8 @@
 /* stylelint-disable scss/percent-placeholder-pattern, no-descending-specificity */
 
 // Import Auro tokens
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
 
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints";
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/core";
@@ -26,10 +27,10 @@
 }
 
 %auro-banner--ondark {
-  --ds-auro-banner-text-color: var(--ds-color-text-primary-inverse, #{$ds-color-text-primary-inverse});
+  --ds-auro-banner-text-color: var(--ds-basic-color-texticon-inverse, #{$ds-basic-color-texticon-inverse});
 
   .title {
-    --ds-auro-banner-title-text-color: var(--ds-color-text-primary-inverse, #{$ds-color-text-primary-inverse});
+    --ds-auro-banner-title-text-color: var(--ds-basic-color-texticon-inverse, #{$ds-basic-color-texticon-inverse});
 
     color: var(--ds-auro-banner-title-text-color);
   }
