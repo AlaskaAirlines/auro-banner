@@ -322,14 +322,14 @@ The following example illustrates a `<auro-banner>` custom element with the `ico
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/iconic.html) -->
   <!-- The below content is automatically added from ../apiExamples/iconic.html -->
-  <auro-banner iconic iconbg="var(--ds-color-brand-neutral-400)">
+  <auro-banner iconic iconbg="var(ds-basic-color-surface-neutral-medium)">
     <picture slot="displayImage">
       <source srcset="https://picsum.photos/id/452/2800/2000.jpg" media="(min-width: 1054px)">
       <source srcset="https://picsum.photos/id/452/1500/2000" media="(min-width:660px)">
       <img src="https://picsum.photos/id/452/2800/2000.jpg" alt="">
     </picture>
     <span slot="icon">
-      <auro-icon category="social" name="instagram" customSize customColor style="color: var(--ds-color-base-white); width: 5rem"></auro-icon>
+      <auro-icon category="social" name="instagram" customSize customColor style="color: var(--ds-color-base-white); --ds-auro-icon-size: 5rem;"></auro-icon>
     </span>
     <span slot="title">
       <auro-header level="2" display="800" margin="both" size="none">Lorem ipsum title</auro-header>
@@ -347,14 +347,14 @@ The following example illustrates a `<auro-banner>` custom element with the `ico
 <!-- The below code snippet is automatically added from ../apiExamples/iconic.html -->
 
 ```html
-<auro-banner iconic iconbg="var(--ds-color-brand-neutral-400)">
+<auro-banner iconic iconbg="var(ds-basic-color-surface-neutral-medium)">
   <picture slot="displayImage">
     <source srcset="https://picsum.photos/id/452/2800/2000.jpg" media="(min-width: 1054px)">
     <source srcset="https://picsum.photos/id/452/1500/2000" media="(min-width:660px)">
     <img src="https://picsum.photos/id/452/2800/2000.jpg" alt="">
   </picture>
   <span slot="icon">
-    <auro-icon category="social" name="instagram" customSize customColor style="color: var(--ds-color-base-white); width: 5rem"></auro-icon>
+    <auro-icon category="social" name="instagram" customSize customColor style="color: var(--ds-color-base-white); --ds-auro-icon-size: 5rem;"></auro-icon>
   </span>
   <span slot="title">
     <auro-header level="2" display="800" margin="both" size="none">Lorem ipsum title</auro-header>
@@ -549,15 +549,15 @@ The component may be restyled using the following code sample and changing the v
 <!-- The below code snippet is automatically added from ../src/tokens.scss -->
 
 ```scss
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
 
 :host {
-  --ds-auro-banner-text-color: var(--ds-color-text-primary-default, #{$ds-color-text-primary-default});
-  --ds-auro-banner-disclaimer-text-color: var(--ds-color-text-secondary-default, #{$ds-color-text-secondary-default});
-  --ds-auro-banner-title-text-color: var(--ds-color-text-emphasis-default, #{$ds-color-text-emphasis-default});
-  --ds-auro-banner-icon-container-color: var(--ds-color-utility-gray-default, #{$ds-color-utility-gray-default});
-  --ds-auro-banner-wrapper-container-color: var(--ds-color-container-secondary-inverse, #{$ds-color-container-secondary-inverse});
-  --ds-auro-banner-wrapper-border-color: var(--ds-color-border-secondary-default, #{$ds-color-border-secondary-default});
+  --ds-auro-banner-text-color: var(--ds-basic-color-texticon-default, #{$ds-basic-color-texticon-default});
+  --ds-auro-banner-disclaimer-text-color: var(--ds-basic-color-texticon-muted, #{$ds-basic-color-texticon-muted});
+  --ds-auro-banner-title-text-color: var(--ds-basic-color-texticon-accent1, #{$ds-basic-color-texticon-accent1});
+  --ds-auro-banner-icon-container-color: var(--ds-basic-color-surface-neutral-medium, #{$ds-basic-color-surface-neutral-medium});
+  --ds-auro-banner-wrapper-container-color: var(--ds-basic-color-surface-inverse, #{$ds-basic-color-surface-inverse});
+  --ds-auro-banner-wrapper-border-color: var(--ds-basic-color-border-default, #{$ds-basic-color-border-default});
 }
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
