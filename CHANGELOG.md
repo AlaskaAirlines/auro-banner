@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [4.1.0](https://github.com/AlaskaAirlines/auro-banner/compare/v4.0.1...v4.1.0) (2025-04-30)
+
+
+### Features
+
+* update to use new color theme tokens [#80](https://github.com/AlaskaAirlines/auro-banner/issues/80) ([8aa3ecb](https://github.com/AlaskaAirlines/auro-banner/commit/8aa3ecb76b7f647a4cb5767ab39c35455236473c))
+
 ## [4.0.1](https://github.com/AlaskaAirlines/auro-banner/compare/v4.0.0...v4.0.1) (2025-04-15)
 
 
