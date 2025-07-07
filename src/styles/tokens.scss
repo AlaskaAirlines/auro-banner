@@ -1,0 +1,10 @@
+@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
+
+:host {
+  --ds-auro-banner-text-color: var(--ds-basic-color-texticon-default, #{v.$ds-basic-color-texticon-default});
+  --ds-auro-banner-disclaimer-text-color: var(--ds-basic-color-texticon-muted, #{v.$ds-basic-color-texticon-muted});
+  --ds-auro-banner-title-text-color: var(--ds-basic-color-texticon-accent1, #{v.$ds-basic-color-texticon-accent1});
+  --ds-auro-banner-icon-container-color: var(--ds-basic-color-surface-neutral-medium, #{v.$ds-basic-color-surface-neutral-medium});
+  --ds-auro-banner-wrapper-container-color: var(--ds-basic-color-surface-inverse, #{v.$ds-basic-color-surface-inverse});
+  --ds-auro-banner-wrapper-border-color: var(--ds-basic-color-border-default, #{v.$ds-basic-color-border-default});
+}

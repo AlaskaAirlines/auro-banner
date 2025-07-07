@@ -9,9 +9,9 @@ import { LitElement, css } from "lit";
 import { html } from 'lit/static-html.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 
-import styleCss from "./style-css.js";
-import colorCss from "./color-css.js";
-import tokensCss from "./tokens-css.js";
+import styleCss from "./styles/style-css.js";
+import colorCss from "./styles/color-css.js";
+import tokensCss from "./styles/tokens-css.js";
 
 import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 
@@ -180,9 +180,9 @@ export class AuroBanner extends LitElement {
               </${this.headerTag}>`
             : html``
           }
-            <slot name="description" class="description"></slot>
+            <slot name="description" class="description body-default"></slot>
             <slot name="action" class="action"></slot>
-            <slot name="disclaimer" class="disclaimer"></slot>
+            <slot name="disclaimer" class="disclaimer body-xs"></slot>
           </div>
         </div>
       </div>
