@@ -1,5 +1,5 @@
 {
-  "include": ["src/**/*.js"], // process the generated J
+  "include": ["src/**/*.js", "test/**/*.js"], // process the generated JS and test files
   "exclude": [],
   "compilerOptions": {
     // Tells TypeScript to read JS files, as
@@ -15,6 +15,10 @@
     // "Go to Definition" in VSCode
     "declarationMap": true,
     "target": "ES2022",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "types": ["mocha"],
+    "strictNullChecks": false,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   }
 }

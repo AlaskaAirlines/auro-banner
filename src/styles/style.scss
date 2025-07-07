@@ -8,20 +8,17 @@
    selector-max-combinators, selector-max-compound-selectors, scss/selector-nest-combinators */
 
 // Import Auro tokens
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as vac;
 
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints";
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/core";
+@use '@aurodesignsystem/webcorestylesheets/dist/bundled/type/classes.alaska.min.css';
+
+@use "@aurodesignsystem/webcorestylesheets/src/breakpoints" as bp;
+@use "@aurodesignsystem/webcorestylesheets/src/core";
 
 // =-=-=-=-= common styles -=-=-=-=-=-=
 %auro-banner {
   img {
     display: block;
-  }
-
-  .disclaimer {
-    font-size: var(--ds-text-body-size-xs, $ds-text-body-size-xs);
-    line-height: var(--ds-text-body-size-xs, $ds-text-body-size-xs);
   }
 
   .bannerWrapper {
@@ -31,11 +28,11 @@
 
   .action {
     display: inline-block;
-    margin: var(--ds-size-200, $ds-size-200) 0;
+    margin: var(--ds-size-200, vac.$ds-size-200) 0;
   }
 
   .imageWrapper {
-    margin-bottom: var(--ds-size-200, $ds-size-200);
+    margin-bottom: var(--ds-size-200, vac.$ds-size-200);
     display: block;
   }
 
@@ -51,16 +48,16 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: var(--ds-size-400, $ds-size-400) var(--ds-size-200, $ds-size-200);
+    padding: var(--ds-size-400, vac.$ds-size-400) var(--ds-size-200, vac.$ds-size-200);
     overflow: hidden;
 
-    @include auro_grid-breakpoint--md {
-      padding: var(--ds-size-200, $ds-size-200);
+    @include bp.auro_grid-breakpoint--md {
+      padding: var(--ds-size-200, vac.$ds-size-200);
     }
   }
 
   .title {
-    margin-bottom: var(--ds-size-200, $ds-size-200);
+    margin-bottom: var(--ds-size-200, vac.$ds-size-200);
   }
 
   .description {
@@ -70,7 +67,7 @@
   .contentWrapper {
     margin-bottom: 150px;
 
-    @include auro_grid-breakpoint--sm {
+    @include bp.auro_grid-breakpoint--sm {
       margin-bottom: 0;
     }
   }
@@ -80,29 +77,29 @@
 :host([billboard]) {
   @extend %auro-banner;
 
-  @include auro_grid-breakpoint--sm {
+  @include bp.auro_grid-breakpoint--sm {
     max-height: 24rem;
   }
 
   .bodyWrapper {
     align-items: center;
-    padding: var(--ds-size-400, $ds-size-400);
+    padding: var(--ds-size-400, vac.$ds-size-400);
 
-    @include auro_grid-breakpoint--sm {
-      padding: var(--ds-size-400, $ds-size-400) 8rem;
+    @include bp.auro_grid-breakpoint--sm {
+      padding: var(--ds-size-400, vac.$ds-size-400) 8rem;
     }
 
-    @include auro_grid-breakpoint--md {
-      padding: var(--ds-size-400, $ds-size-400) 10rem;
+    @include bp.auro_grid-breakpoint--md {
+      padding: var(--ds-size-400, vac.$ds-size-400) 10rem;
     }
   }
   .imageWrapper {
     display: block;
-    margin-bottom: var(--ds-size-200, $ds-size-200);
+    margin-bottom: var(--ds-size-200, vac.$ds-size-200);
   }
 
   .contentWrapper {
-    @include auro_grid-breakpoint--sm {
+    @include bp.auro_grid-breakpoint--sm {
       margin-bottom: 0;
     }
   }
@@ -124,7 +121,7 @@
     margin: 0 auto;
   }
 
-  @include auro_grid-breakpoint--sm {
+  @include bp.auro_grid-breakpoint--sm {
     .displayImage {
       max-width: 50%;
       right: 0;
@@ -170,7 +167,7 @@
   .displayImage {
     display: none;
 
-    @include auro_grid-breakpoint--sm {
+    @include bp.auro_grid-breakpoint--sm {
       display: block;
       max-width: 50%;
       right: 0;
@@ -183,21 +180,21 @@
     }
   }
   .description {
-    @include auro_grid-breakpoint--sm {
-      padding-bottom: var(--ds-size-300, $ds-size-300);
-      padding-right: var(--ds-size-300, $ds-size-300);
+    @include bp.auro_grid-breakpoint--sm {
+      padding-bottom: var(--ds-size-300, vac.$ds-size-300);
+      padding-right: var(--ds-size-300, vac.$ds-size-300);
     }
   }
 
   .contentWrapper {
-    margin: 0 auto var(--ds-size-600, $ds-size-600);
-    padding-bottom: var(--ds-size-600, $ds-size-600);
+    margin: 0 auto var(--ds-size-600, vac.$ds-size-600);
+    padding-bottom: var(--ds-size-600, vac.$ds-size-600);
   }
 
   .bodyWrapper {
     text-align: left;
-    padding: var(--ds-size-400, $ds-size-400) var(--ds-size-400, $ds-size-400) var(--ds-size-400, $ds-size-400) 0;
-    @include auro_grid-breakpoint--sm {
+    padding: var(--ds-size-400, vac.$ds-size-400) var(--ds-size-400, vac.$ds-size-400) var(--ds-size-400, vac.$ds-size-400) 0;
+    @include bp.auro_grid-breakpoint--sm {
       width: 50%;
       padding-left: 0;
     }
@@ -212,14 +209,14 @@
 
 :host([marquee][solid]) {
   .bodyWrapper {
-    padding: var(--ds-size-300, $ds-size-300);
+    padding: var(--ds-size-300, vac.$ds-size-300);
 
-    @include auro_grid-breakpoint--md {
-      padding: var(--ds-size-400, $ds-size-400);
+    @include bp.auro_grid-breakpoint--md {
+      padding: var(--ds-size-400, vac.$ds-size-400);
     }
 
-    @include auro_grid-breakpoint--lg {
-      padding: var(--ds-size-600, $ds-size-600);
+    @include bp.auro_grid-breakpoint--lg {
+      padding: var(--ds-size-600, vac.$ds-size-600);
     }
   }
 }
@@ -238,7 +235,7 @@
   .contentWrapper {
     margin: 0 auto;
 
-    @include auro_grid-breakpoint--sm {
+    @include bp.auro_grid-breakpoint--sm {
       flex-basis: 70%;
       flex-grow: 1;
     }
@@ -254,26 +251,26 @@
 
   .bodyWrapper {
     align-items: center;
-    padding: var(--ds-size-200, $ds-size-200);
+    padding: var(--ds-size-200, vac.$ds-size-200);
 
-    @include auro_grid-breakpoint--sm {
+    @include bp.auro_grid-breakpoint--sm {
       flex-direction: row;
     }
 
-    @include auro_grid-breakpoint--md {
-      padding: var(--ds-size-300, $ds-size-300);
+    @include bp.auro_grid-breakpoint--md {
+      padding: var(--ds-size-300, vac.$ds-size-300);
     }
 
-    @include auro_grid-breakpoint--lg {
-      padding: var(--ds-size-400, $ds-size-400);
+    @include bp.auro_grid-breakpoint--lg {
+      padding: var(--ds-size-400, vac.$ds-size-400);
     }
   }
 
   .imageWrapper {
-    @include auro_grid-breakpoint--sm {
+    @include bp.auro_grid-breakpoint--sm {
       flex-basis: 30%;
       display: flex;
-      margin-right: var(--ds-size-400, $ds-size-400);
+      margin-right: var(--ds-size-400, vac.$ds-size-400);
       margin-bottom: 0;
     }
   }
@@ -298,13 +295,13 @@
 // =-=-=-=-= slim -=-=-=-=-=-=
 :host([slim]) {
   .bodyWrapper {
-    @include auro_grid-breakpoint--sm {
-      padding: var(--ds-size-400, $ds-size-400);
+    @include bp.auro_grid-breakpoint--sm {
+      padding: var(--ds-size-400, vac.$ds-size-400);
       min-height: unset;
     }
 
-    @include auro_grid-breakpoint--md {
-      padding: var(--ds-size-400, $ds-size-400) var(--ds-size-600, $ds-size-600);
+    @include bp.auro_grid-breakpoint--md {
+      padding: var(--ds-size-400, vac.$ds-size-400) var(--ds-size-600, vac.$ds-size-600);
     }
   }
 }
