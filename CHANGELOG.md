@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [4.1.1](https://github.com/AlaskaAirlines/auro-banner/compare/v4.1.0...v4.1.1) (2025-07-09)
+
+
+### Bug Fixes
+
+* add themable type classes ([eb1b53b](https://github.com/AlaskaAirlines/auro-banner/commit/eb1b53bb2bb956efaf928f025abf1ce30fced814))
+* update docs head content ([aab8b91](https://github.com/AlaskaAirlines/auro-banner/commit/aab8b91fd2a4425571ad8814aae878fe428fc539))
+
 # [4.1.0](https://github.com/AlaskaAirlines/auro-banner/compare/v4.0.1...v4.1.0) (2025-04-30)
 
 
