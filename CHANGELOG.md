@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.1.2](https://github.com/AlaskaAirlines/auro-banner/compare/v4.1.1...v4.1.2) (2025-08-14)
+
+
+### Bug Fixes
+
+* update auro-library to latest version ([24fdcc5](https://github.com/AlaskaAirlines/auro-banner/commit/24fdcc5757419716854e2295219d1d41f01c6e63))
+
 ## [4.1.1](https://github.com/AlaskaAirlines/auro-banner/compare/v4.1.0...v4.1.1) (2025-07-09)
 
 
