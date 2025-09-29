@@ -1,3 +1,3 @@
-import { AuroBanner } from './src/auro-banner.js';
+import { AuroBanner } from "./src/auro-banner.js";
 
 AuroBanner.register();
