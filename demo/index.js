@@ -1,4 +1,4 @@
-import { AuroBanner } from '../src/auro-banner.js';
+import { AuroBanner } from "../src/auro-banner.js";
 
 AuroBanner.register(); // registering to `auro-banner`
-AuroBanner.register('custom-banner');
+AuroBanner.register("custom-banner");

@@ -5,20 +5,16 @@
 
 /* eslint-disable lit/binding-positions, lit/no-invalid-html */
 
-import { LitElement, css } from "lit";
-import { html } from 'lit/static-html.js';
-import { ifDefined } from 'lit/directives/if-defined.js';
-
-import styleCss from "./styles/style-css.js";
+import { AuroHeader } from "@aurodesignsystem/auro-header/src/auro-header.js";
+import { AuroDependencyVersioning } from "@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs";
+import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
+import { css, LitElement } from "lit";
+import { ifDefined } from "lit/directives/if-defined.js";
+import { html } from "lit/static-html.js";
+import headerVersion from "./headerVersion.js";
 import colorCss from "./styles/color-css.js";
+import styleCss from "./styles/style-css.js";
 import tokensCss from "./styles/tokens-css.js";
-
-import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
-
-import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
-
-import { AuroHeader } from '@aurodesignsystem/auro-header/src/auro-header.js';
-import headerVersion from './headerVersion.js';
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -55,7 +51,11 @@ export class AuroBanner extends LitElement {
     /**
      * @private
      */
-    this.headerTag = versioning.generateTag('auro-header', headerVersion, AuroHeader);
+    this.headerTag = versioning.generateTag(
+      "auro-header",
+      headerVersion,
+      AuroHeader,
+    );
 
     /**
      * @private
@@ -77,9 +77,9 @@ export class AuroBanner extends LitElement {
 
   firstUpdated() {
     // Add the tag name as an attribute if it is different than the component name
-    this.runtimeUtils.handleComponentTagRename(this, 'auro-banner');
+    this.runtimeUtils.handleComponentTagRename(this, "auro-banner");
 
-    const slotNodes = this.shadowRoot.querySelectorAll(`.bannerWrapper slot`);
+    const slotNodes = this.shadowRoot.querySelectorAll(".bannerWrapper slot");
 
     for (const item of slotNodes) {
       this.slt = item.assignedNodes();
@@ -92,54 +92,53 @@ export class AuroBanner extends LitElement {
 
   static get properties() {
     return {
-      ...super.properties,
+      ...LitElement.properties,
       hero: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
       iconic: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
       marquee: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
       roundedBorder: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
       iconbg: {
-        type: String
-      }
+        type: String,
+      },
     };
   }
 
   static get styles() {
-    return [
-      css`${styleCss}`,
-      css`${colorCss}`,
-      css`${tokensCss}`
-    ];
+    return [css`${styleCss}`, css`${colorCss}`, css`${tokensCss}`];
   }
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     return html`
       <div class="bannerWrapper">
-      ${!this.roundedBorder
-        ? html`
+      ${
+        !this.roundedBorder
+          ? html`
         <slot name="displayImage" class="displayImage"></slot>`
-        : html``
+          : html``
       }
         <div class="bodyWrapper">
-          ${this.iconic
-           ? html`
+          ${
+            this.iconic
+              ? html`
              <slot name="title"></slot>`
-            : html``
+              : html``
           }
-          ${this.hero
-            ? html`
+          ${
+            this.hero
+              ? html`
               <${this.headerTag} level="2" display="300" margin="top" size="none" class="title prefix">
                 <slot name="prefix"></slot>
               </${this.headerTag}>
@@ -147,30 +146,33 @@ export class AuroBanner extends LitElement {
               <${this.headerTag} level="2" display="600" margin="both" size="none" class="title">
                 <slot name="title"></slot>
               </${this.headerTag}>`
-            : html``
+              : html``
           }
 
-          ${this.marquee
-            ? html`
+          ${
+            this.marquee
+              ? html`
               <${this.headerTag} level="2" display="400" margin="both" size="none" class="title marquee">
                 <slot name="title"></slot>
               </${this.headerTag}>`
-            : html``
+              : html``
           }
 
-          ${!this.marquee && !this.hero && !this.iconic && !this.roundedBorder
-            ? html`
+          ${
+            !this.marquee && !this.hero && !this.iconic && !this.roundedBorder
+              ? html`
               <${this.headerTag} level="2" display="600" margin="both" size="none" class="title">
                 <slot name="title"></slot>
               </${this.headerTag}>`
-            : html``
+              : html``
           }
 
           <slot name="contentImage" class="imageWrapper"></slot>
 
           <div class="contentWrapper">
-          ${this.roundedBorder
-            ? html`
+          ${
+            this.roundedBorder
+              ? html`
               <${this.headerTag} level="2" display="300" margin="both" size="none" class="title prefix">
                 <slot name="prefix"></slot>
               </${this.headerTag}>
@@ -178,7 +180,7 @@ export class AuroBanner extends LitElement {
               <${this.headerTag} level="2" display="600" margin="both" size="none" class="title">
                 <slot name="title"></slot>
               </${this.headerTag}>`
-            : html``
+              : html``
           }
             <slot name="description" class="description body-default"></slot>
             <slot name="action" class="action"></slot>
@@ -186,14 +188,15 @@ export class AuroBanner extends LitElement {
           </div>
         </div>
       </div>
-      ${this.iconic
-        ? html`
+      ${
+        this.iconic
+          ? html`
         <div class="iconContainer">
           <div class="roundIconBg" style="background: ${ifDefined(!this.iconbg ? undefined : this.iconbg)}">
             <slot name="icon" class="icon"></slot>
           </div>
         </div>`
-        : html``
+          : html``
       }
     `;
   }
