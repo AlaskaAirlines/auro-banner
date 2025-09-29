@@ -5,7 +5,7 @@
 
 /* eslint-disable lit/binding-positions, lit/no-invalid-html */
 
-import { AuroHeader } from "@aurodesignsystem/auro-header/src/auro-header.js";
+import { AuroHeader } from "@aurodesignsystem/auro-header/class";
 import { AuroDependencyVersioning } from "@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs";
 import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
 import { LitElement } from "lit";
