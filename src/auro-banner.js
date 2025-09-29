@@ -8,13 +8,13 @@
 import { AuroHeader } from "@aurodesignsystem/auro-header/src/auro-header.js";
 import { AuroDependencyVersioning } from "@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs";
 import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
-import { css, LitElement } from "lit";
+import { LitElement } from "lit";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { html } from "lit/static-html.js";
 import headerVersion from "./headerVersion.js";
-import colorCss from "./styles/color-css.js";
-import styleCss from "./styles/style-css.js";
-import tokensCss from "./styles/tokens-css.js";
+import colorCss from "./styles/color.scss";
+import styleCss from "./styles/style.scss";
+import tokensCss from "./styles/tokens.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -116,7 +116,7 @@ export class AuroBanner extends LitElement {
   }
 
   static get styles() {
-    return [css`${styleCss}`, css`${colorCss}`, css`${tokensCss}`];
+    return [styleCss, colorCss, tokensCss];
   }
 
   // function that renders the HTML and CSS into  the scope of the component
