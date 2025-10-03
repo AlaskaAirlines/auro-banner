@@ -29,7 +29,7 @@ import tokensCss from "./styles/tokens.scss";
  * @attr {Boolean} slim - to be used when we want a slimmer padding to the default banner
  * @attr {Boolean} alignRight - to be used when we want the text aligned to the right
  * @attr {Boolean} alignLeft - to be used when we want the text aligned to the left
- * @attr {Boolean} onDark - to be used when the background image or color is dark and changes the text and cta color
+ * @attr {Boolean} onDark - DEPRECATED - use `appearance="inverse"` instead.
  * @slot displayImage - placement for `<picture />` or `<img>` elements
  * @slot prefix - placement for smaller text above title
  * @slot title - placement for header
@@ -41,6 +41,8 @@ import tokensCss from "./styles/tokens.scss";
 export class AuroBanner extends LitElement {
   constructor() {
     super();
+
+    this.appearance = "default";
     this.hero = false;
     this.iconic = false;
     this.marquee = false;
@@ -93,6 +95,17 @@ export class AuroBanner extends LitElement {
   static get properties() {
     return {
       ...LitElement.properties,
+
+      /**
+       * Defines whether the banner should be light colored for use on dark backgrounds.
+       * @property {'default', 'inverse'}
+       * @default 'default'
+       */
+      appearance: {
+        type: String,
+        reflect: true
+      },
+
       hero: {
         type: Boolean,
         reflect: true,

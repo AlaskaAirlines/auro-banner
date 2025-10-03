@@ -38,11 +38,11 @@ By default `<img>` elements are `inline` elements and will add a few pixels of s
 
 </auro-accordion>
 
-#### Billboard / slim / alignRight / onDark
+#### Billboard / slim / alignRight / appearance
 
 The following example illustrates a series of additional API options available to the `<auro-banner>` element. In this example, this shows how a user can augment the `billboard` theme of the `<auro-banner>`.
 
-For the call-to-action button, see in the example code that it is required to set the `onDark` attribute on the `<auro-hyperlink>` element itself. This is **not** controlled by the `<auro-banner>` element.
+For the call-to-action button, see in the example code that it is required to set the `appearance="inverse"` attribute on the `<auro-hyperlink>` element itself. This is **not** controlled by the `<auro-banner>` element.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/billboardSeries.html) -->
@@ -57,9 +57,9 @@ For the call-to-action button, see in the example code that it is required to se
 
 </auro-accordion>
 
-#### Billboard / slim / alignLeft / onDark
+#### Billboard / slim / alignLeft / appearance
 
-The following example illustrates an option to left align the text `alignLeft` along with `slim` to reduce the padding and `onDark` to change the text to white.
+The following example illustrates an option to left align the text `alignLeft` along with `slim` to reduce the padding and `appearance="inverse"` to change the text to white.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/billboardSeriesLeft.html) -->
@@ -110,7 +110,7 @@ The following example illustrates a `<auro-banner>` custom element with the `ico
 
 ### Marquee
 
-The following example illustrates a `<auro-banner>` custom element with the `marquee` template style. This template configuration also supports the `slim` and `onDark` attributes.
+The following example illustrates a `<auro-banner>` custom element with the `marquee` template style. This template configuration also supports the `slim` and `appearance="inverse"` attributes.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/marquee.html) -->
@@ -127,7 +127,7 @@ The following example illustrates a `<auro-banner>` custom element with the `mar
 
 ### Marquee / solid
 
-The following example illustrates a `<auro-banner>` custom element with the `marquee solid` template style. With this configuration, onDark is implied.
+The following example illustrates a `<auro-banner>` custom element with the `marquee solid` template style. With this configuration, `appearance="inverse"` is implied.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/marqueeSolid.html) -->

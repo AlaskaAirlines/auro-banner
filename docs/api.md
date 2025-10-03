@@ -9,19 +9,20 @@ The auro-banner element provides users a flexible way to convey a summary of inf
 | `alignLeft`  | `Boolean` | to be used when we want the text aligned to the left |
 | `alignRight` | `Boolean` | to be used when we want the text aligned to the right |
 | `billboard`  | `Boolean` | to be used for billboard style configuration     |
-| `onDark`     | `Boolean` | to be used when the background image or color is dark and changes the text and cta color |
+| `onDark`     | `Boolean` | DEPRECATED - use `appearance="inverse"` instead. |
 | `slim`       | `Boolean` | to be used when we want a slimmer padding to the default banner |
 | `solid`      | `Boolean` | to be used when you want a solid color as opposed to a transparent background |
 
 ## Properties
 
-| Property        | Attribute       | Type      | Default | Description                                      |
-|-----------------|-----------------|-----------|---------|--------------------------------------------------|
-| `hero`          | `hero`          | `Boolean` | false   | to be used for hero style configuration          |
-| `iconbg`        | `iconbg`        | `String`  |         | to be used in conjunction with the iconic variant this specifies the background color of the icon |
-| `iconic`        | `iconic`        | `Boolean` | false   | to be used in as a hero on pages but with an icon and no displayImage on mobile |
-| `marquee`       | `marquee`       | `Boolean` | false   | to be used for marquee style configuration       |
-| `roundedBorder` | `roundedBorder` | `Boolean` | false   | to be used for roundedBorder style configuration |
+| Property        | Attribute       | Type      | Default     | Description                                      |
+|-----------------|-----------------|-----------|-------------|--------------------------------------------------|
+| `appearance`    | `appearance`    | `string`  | "'default'" | Defines whether the banner should be light colored for use on dark backgrounds. |
+| `hero`          | `hero`          | `Boolean` | false       | to be used for hero style configuration          |
+| `iconbg`        | `iconbg`        | `String`  |             | to be used in conjunction with the iconic variant this specifies the background color of the icon |
+| `iconic`        | `iconic`        | `Boolean` | false       | to be used in as a hero on pages but with an icon and no displayImage on mobile |
+| `marquee`       | `marquee`       | `Boolean` | false       | to be used for marquee style configuration       |
+| `roundedBorder` | `roundedBorder` | `Boolean` | false       | to be used for roundedBorder style configuration |
 
 ## Slots
 
