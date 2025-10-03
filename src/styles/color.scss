@@ -36,7 +36,8 @@
   }
 }
 
-:host([onDark]) {
+:host([onDark]),
+:host([appearance="inverse"]) {
   @extend %auro-banner--ondark;
 }
 
