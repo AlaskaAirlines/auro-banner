@@ -12,19 +12,20 @@ The auro-banner element provides users a flexible way to convey a summary of inf
 | [alignLeft](#alignLeft)  | `Boolean` | to be used when we want the text aligned to the left |
 | [alignRight](#alignRight) | `Boolean` | to be used when we want the text aligned to the right |
 | [billboard](#billboard)  | `Boolean` | to be used for billboard style configuration     |
-| [onDark](#onDark)     | `Boolean` | to be used when the background image or color is dark and changes the text and cta color |
+| [onDark](#onDark)     | `Boolean` | DEPRECATED - use `appearance="inverse"` instead. |
 | [slim](#slim)       | `Boolean` | to be used when we want a slimmer padding to the default banner |
 | [solid](#solid)      | `Boolean` | to be used when you want a solid color as opposed to a transparent background |
 
 ## Properties
 
-| Property        | Attribute       | Type      | Default | Description                                      |
-|-----------------|-----------------|-----------|---------|--------------------------------------------------|
-| [hero](#hero)          | `hero`          | `Boolean` | false   | to be used for hero style configuration          |
-| [iconbg](#iconbg)        | `iconbg`        | `String`  |         | to be used in conjunction with the iconic variant this specifies the background color of the icon |
-| [iconic](#iconic)        | `iconic`        | `Boolean` | false   | to be used in as a hero on pages but with an icon and no displayImage on mobile |
-| [marquee](#marquee)       | `marquee`       | `Boolean` | false   | to be used for marquee style configuration       |
-| [roundedBorder](#roundedBorder) | `roundedBorder` | `Boolean` | false   | to be used for roundedBorder style configuration |
+| Property        | Attribute       | Type      | Default     | Description                                      |
+|-----------------|-----------------|-----------|-------------|--------------------------------------------------|
+| [appearance](#appearance)    | `appearance`    | `string`  | "'default'" | Defines whether the component will be on lighter or darker backgrounds. |
+| [hero](#hero)          | `hero`          | `Boolean` | false       | to be used for hero style configuration          |
+| [iconbg](#iconbg)        | `iconbg`        | `String`  |             | to be used in conjunction with the iconic variant this specifies the background color of the icon |
+| [iconic](#iconic)        | `iconic`        | `Boolean` | false       | to be used in as a hero on pages but with an icon and no displayImage on mobile |
+| [marquee](#marquee)       | `marquee`       | `Boolean` | false       | to be used for marquee style configuration       |
+| [roundedBorder](#roundedBorder) | `roundedBorder` | `Boolean` | false       | to be used for roundedBorder style configuration |
 
 ## Slots
 
@@ -126,16 +127,16 @@ By default `<img>` elements are `inline` elements and will add a few pixels of s
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### Billboard / slim / alignRight / onDark
+#### Billboard / slim / alignRight / appearance
 
 The following example illustrates a series of additional API options available to the `<auro-banner>` element. In this example, this shows how a user can augment the `billboard` theme of the `<auro-banner>`.
 
-For the call-to-action button, see in the example code that it is required to set the `onDark` attribute on the `<auro-hyperlink>` element itself. This is **not** controlled by the `<auro-banner>` element.
+For the call-to-action button, see in the example code that it is required to set the `appearance="inverse"` attribute on the `<auro-hyperlink>` element itself. This is **not** controlled by the `<auro-banner>` element.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/billboardSeries.html) -->
   <!-- The below content is automatically added from ../apiExamples/billboardSeries.html -->
-  <auro-banner billboard slim alignRight ondark>
+  <auro-banner billboard slim alignRight appearance="inverse">
     <picture slot="displayImage">
       <source srcset="https://picsum.photos/id/324/1124/800" media="(min-width: 1024px)">
       <source srcset="https://picsum.photos/id/324/1124/1000" media="(min-width: 768px)">
@@ -144,13 +145,13 @@ For the call-to-action button, see in the example code that it is required to se
       <source srcset="https://picsum.photos/id/324/320/700" media="(min-width: 320px)">
       <img src="https://picsum.photos/id/324/225/550" alt="" />
     </picture>
-    <auro-alaska official ondark style="width: 192px" slot="contentImage"></auro-alaska>
+    <auro-alaska official appearance="inverse" style="width: 192px" slot="contentImage"></auro-alaska>
     <p slot="description">
       <span style="max-width:320px; margin-left:auto; display:block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
     </p>
     <auro-hyperlink
       cta
-      ondark
+      appearance="inverse"
       href="/"
       slot="action"
       target="_blank">
@@ -165,7 +166,7 @@ For the call-to-action button, see in the example code that it is required to se
 <!-- The below code snippet is automatically added from ../apiExamples/billboardSeries.html -->
 
 ```html
-<auro-banner billboard slim alignRight ondark>
+<auro-banner billboard slim alignRight appearance="inverse">
   <picture slot="displayImage">
     <source srcset="https://picsum.photos/id/324/1124/800" media="(min-width: 1024px)">
     <source srcset="https://picsum.photos/id/324/1124/1000" media="(min-width: 768px)">
@@ -174,13 +175,13 @@ For the call-to-action button, see in the example code that it is required to se
     <source srcset="https://picsum.photos/id/324/320/700" media="(min-width: 320px)">
     <img src="https://picsum.photos/id/324/225/550" alt="" />
   </picture>
-  <auro-alaska official ondark style="width: 192px" slot="contentImage"></auro-alaska>
+  <auro-alaska official appearance="inverse" style="width: 192px" slot="contentImage"></auro-alaska>
   <p slot="description">
     <span style="max-width:320px; margin-left:auto; display:block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
   </p>
   <auro-hyperlink
     cta
-    ondark
+    appearance="inverse"
     href="/"
     slot="action"
     target="_blank">
@@ -191,14 +192,14 @@ For the call-to-action button, see in the example code that it is required to se
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### Billboard / slim / alignLeft / onDark
+#### Billboard / slim / alignLeft / appearance
 
-The following example illustrates an option to left align the text `alignLeft` along with `slim` to reduce the padding and `onDark` to change the text to white.
+The following example illustrates an option to left align the text `alignLeft` along with `slim` to reduce the padding and `appearance="inverse"` to change the text to white.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/billboardSeriesLeft.html) -->
   <!-- The below content is automatically added from ../apiExamples/billboardSeriesLeft.html -->
-  <auro-banner billboard slim alignLeft onDark>
+  <auro-banner billboard slim alignLeft appearance="inverse">
     <picture slot="displayImage">
       <source srcset="https://picsum.photos/id/42/1124/800" media="(min-width: 1024px)">
       <source srcset="https://picsum.photos/id/42/1124/1000" media="(min-width: 768px)">
@@ -214,7 +215,7 @@ The following example illustrates an option to left align the text `alignLeft` a
     <auro-hyperlink
       cta
       secondary
-      ondark
+      appearance="inverse"
       href="/"
       slot="action"
       target="_blank">
@@ -229,7 +230,7 @@ The following example illustrates an option to left align the text `alignLeft` a
 <!-- The below code snippet is automatically added from ../apiExamples/billboardSeriesLeft.html -->
 
 ```html
-<auro-banner billboard slim alignLeft onDark>
+<auro-banner billboard slim alignLeft appearance="inverse">
   <picture slot="displayImage">
     <source srcset="https://picsum.photos/id/42/1124/800" media="(min-width: 1024px)">
     <source srcset="https://picsum.photos/id/42/1124/1000" media="(min-width: 768px)">
@@ -245,7 +246,7 @@ The following example illustrates an option to left align the text `alignLeft` a
   <auro-hyperlink
     cta
     secondary
-    ondark
+    appearance="inverse"
     href="/"
     slot="action"
     target="_blank">
@@ -370,7 +371,7 @@ The following example illustrates a `<auro-banner>` custom element with the `ico
 
 ### Marquee
 
-The following example illustrates a `<auro-banner>` custom element with the `marquee` template style. This template configuration also supports the `slim` and `onDark` attributes.
+The following example illustrates a `<auro-banner>` custom element with the `marquee` template style. This template configuration also supports the `slim` and `appearance="inverse"` attributes.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/marquee.html) -->
@@ -429,7 +430,7 @@ The following example illustrates a `<auro-banner>` custom element with the `mar
 
 ### Marquee / solid
 
-The following example illustrates a `<auro-banner>` custom element with the `marquee solid` template style. With this configuration, onDark is implied.
+The following example illustrates a `<auro-banner>` custom element with the `marquee solid` template style. With this configuration, `appearance="inverse"` is implied.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/marqueeSolid.html) -->
@@ -440,13 +441,13 @@ The following example illustrates a `<auro-banner>` custom element with the `mar
       <source srcset="https://picsum.photos/id/1015/736/1400" media="(min-width:660px)">
       <img src="https://picsum.photos/id/1015/660/660" alt="">
     </picture>
-    <auro-alaska official ondark style="width: 192px" slot="contentImage"></auro-alaska>
+    <auro-alaska official appearance="inverse" style="width: 192px" slot="contentImage"></auro-alaska>
     <p slot="description">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
     <auro-hyperlink
       cta
-      ondark
+      appearance="inverse"
       href="/"
       slot="action"
       target="_blank">
@@ -467,13 +468,13 @@ The following example illustrates a `<auro-banner>` custom element with the `mar
     <source srcset="https://picsum.photos/id/1015/736/1400" media="(min-width:660px)">
     <img src="https://picsum.photos/id/1015/660/660" alt="">
   </picture>
-  <auro-alaska official ondark style="width: 192px" slot="contentImage"></auro-alaska>
+  <auro-alaska official appearance="inverse" style="width: 192px" slot="contentImage"></auro-alaska>
   <p slot="description">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
   </p>
   <auro-hyperlink
     cta
-    ondark
+    appearance="inverse"
     href="/"
     slot="action"
     target="_blank">
