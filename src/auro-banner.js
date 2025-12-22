@@ -1,4 +1,4 @@
-// Copyright (c) 2021 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
+// Copyright (c) 2025 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
 // ---------------------------------------------------------------------
@@ -18,30 +18,25 @@ import tokensCss from "./styles/tokens.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * The auro-banner element provides users a flexible way to convey a summary of information. The primary elements of a banner include an image, and details.
- * @attr {Boolean} billboard - to be used for billboard style configuration
- * @attr {Boolean} hero - to be used for hero style configuration
- * @attr {Boolean} iconic - to be used in as a hero on pages but with an icon and no displayImage on mobile
- * @attr {String} iconbg - to be used in conjunction with the iconic variant this specifies the background color of the icon
- * @attr {Boolean} marquee - to be used for marquee style configuration
- * @attr {Boolean} roundedBorder - to be used for roundedBorder style configuration
- * @attr {Boolean} solid - to be used when you want a solid color as opposed to a transparent background
- * @attr {Boolean} slim - to be used when we want a slimmer padding to the default banner
- * @attr {Boolean} alignRight - to be used when we want the text aligned to the right
- * @attr {Boolean} alignLeft - to be used when we want the text aligned to the left
- * @attr {Boolean} onDark - DEPRECATED - use `appearance="inverse"` instead.
+ * The `auro-banner` element provides users a flexible way to convey a summary of information. The primary elements of a banner include an image, and details.
+ * @customElement auro-banner
+ * 
+ * @slot action - call to action
+ * @slot contentImage - image placement
+ * @slot description - main body of content
+ * @slot disclaimer - disclaimer copy
  * @slot displayImage - placement for `<picture />` or `<img>` elements
  * @slot prefix - placement for smaller text above title
  * @slot title - placement for header
- * @slot contentImage - image placement
- * @slot description - main body of content
- * @slot action - call to action
- * @slot disclaimer - disclaimer copy
  */
 export class AuroBanner extends LitElement {
   constructor() {
     super();
 
+    this._initializeDefaults();
+  }
+
+  _initializeDefaults() {
     this.appearance = "default";
     this.hero = false;
     this.iconic = false;
@@ -67,7 +62,7 @@ export class AuroBanner extends LitElement {
 
   /**
    * This will register this element with the browser.
-   * @param {string} [name="auro-banner"] - The name of element that you want to register to.
+   * @param {string} [name="auro-banner"] - The name of the element that you want to register.
    *
    * @example
    * AuroBanner.register("custom-banner") // this will register this element to <custom-banner/>
@@ -97,8 +92,25 @@ export class AuroBanner extends LitElement {
       ...LitElement.properties,
 
       /**
-       * Defines whether the component will be on lighter or darker backgrounds.
-       * @property {'default', 'inverse'}
+       * Use to align text to the left side of the banner
+       */
+      alignLeft: {
+        type: Boolean,
+        reflect: true,
+      },
+
+      /**
+       * Use to align text to the right side of the banner
+       */
+      alignRight: {
+        type: Boolean,
+        reflect: true,
+      },
+
+
+      /**
+       * Defines whether the component will be on lighter or darker backgrounds
+       * @type {'default' | 'inverse'}
        * @default 'default'
        */
       appearance: {
@@ -106,24 +118,76 @@ export class AuroBanner extends LitElement {
         reflect: true
       },
 
+
+      /**
+       * Use to enable billboard style configuration
+       */
+      billboard: {
+        type: Boolean,
+        reflect: true,
+      },
+
+      /**
+       * Use to enable hero style configuration
+       */
       hero: {
         type: Boolean,
         reflect: true,
       },
+
+      /**
+       * Use in conjunction with the iconic variant to specify the background color of the icon
+       */
+      iconbg: {
+        type: String,
+      },
+
+      /**
+       * Used similarly to the `hero` variant, but adds an icon slot and removes the display image on mobile
+       */
       iconic: {
         type: Boolean,
         reflect: true,
       },
+
+      /**
+       * Use to enable marquee style configuration
+       */
       marquee: {
         type: Boolean,
         reflect: true,
       },
+
+      /**
+       * DEPRECATED - use `appearance="inverse"` instead.
+       */
+      onDark: {
+        type: Boolean,
+        reflect: true,
+      },
+
+      /**
+       * Use to enable rounded border style configuration
+       */
       roundedBorder: {
         type: Boolean,
         reflect: true,
       },
-      iconbg: {
-        type: String,
+
+      /**
+       * Use to enable slimmer padding to the default banner
+       */
+      slim: {
+        type: Boolean,
+        reflect: true,
+      },
+
+      /**
+       * Use to enable a solid background color as opposed to a transparent background
+       */
+      solid: {
+        type: Boolean,
+        reflect: true,
       },
     };
   }
