@@ -1,37 +1,38 @@
 # auro-banner
 
-The auro-banner element provides users a flexible way to convey a summary of information. The primary elements of a banner include an image, and details.
+The `auro-banner` element provides users a flexible way to convey a summary of information. The primary elements of a banner include an image, and details.
 
-## Attributes
+### Properties & Attributes
 
-| Attribute    | Type      | Description                                      |
-|--------------|-----------|--------------------------------------------------|
-| `alignLeft`  | `Boolean` | to be used when we want the text aligned to the left |
-| `alignRight` | `Boolean` | to be used when we want the text aligned to the right |
-| `billboard`  | `Boolean` | to be used for billboard style configuration     |
-| `onDark`     | `Boolean` | DEPRECATED - use `appearance="inverse"` instead. |
-| `slim`       | `Boolean` | to be used when we want a slimmer padding to the default banner |
-| `solid`      | `Boolean` | to be used when you want a solid color as opposed to a transparent background |
+| Properties    | Attributes    | Modifiers | Type                   | Default   | Description                                                                                         |
+| ------------- | ------------- | --------- | ---------------------- | --------- | --------------------------------------------------------------------------------------------------- |
+| alignLeft     | alignLeft     |           | boolean                |           | Use to align text to the left side of the banner                                                    |
+| alignRight    | alignRight    |           | boolean                |           | Use to align text to the right side of the banner                                                   |
+| appearance    | appearance    |           | `default` \| `inverse` | `default` | Defines whether the component will be on lighter or darker backgrounds                              |
+| billboard     | billboard     |           | boolean                |           | Use to enable billboard style configuration                                                         |
+| hero          | hero          |           | boolean                |           | Use to enable hero style configuration                                                              |
+| iconbg        | iconbg        |           | string                 |           | Use in conjunction with the iconic variant to specify the background color of the icon              |
+| iconic        | iconic        |           | boolean                |           | Used similarly to the `hero` variant, but adds an icon slot and removes the display image on mobile |
+| marquee       | marquee       |           | boolean                |           | Use to enable marquee style configuration                                                           |
+| onDark        | onDark        |           | boolean                |           | DEPRECATED - use `appearance="inverse"` instead.                                                    |
+| roundedBorder | roundedBorder |           | boolean                |           | Use to enable rounded border style configuration                                                    |
+| slim          | slim          |           | boolean                |           | Use to enable slimmer padding to the default banner                                                 |
+| solid         | solid         |           | boolean                |           | Use to enable a solid background color as opposed to a transparent background                       |
 
-## Properties
+### Methods
 
-| Property        | Attribute       | Type      | Default     | Description                                      |
-|-----------------|-----------------|-----------|-------------|--------------------------------------------------|
-| `appearance`    | `appearance`    | `string`  | "'default'" | Defines whether the component will be on lighter or darker backgrounds. |
-| `hero`          | `hero`          | `Boolean` | false       | to be used for hero style configuration          |
-| `iconbg`        | `iconbg`        | `String`  |             | to be used in conjunction with the iconic variant this specifies the background color of the icon |
-| `iconic`        | `iconic`        | `Boolean` | false       | to be used in as a hero on pages but with an icon and no displayImage on mobile |
-| `marquee`       | `marquee`       | `Boolean` | false       | to be used for marquee style configuration       |
-| `roundedBorder` | `roundedBorder` | `Boolean` | false       | to be used for roundedBorder style configuration |
+| Name     | Parameters                                                           | Return | Description                                       |
+| -------- | -------------------------------------------------------------------- | ------ | ------------------------------------------------- |
+| register | `name` (string) - The name of the element that you want to register. |        | This will register this element with the browser. |
 
-## Slots
+### Slots
 
-| Name           | Description                                     |
-|----------------|-------------------------------------------------|
-| `action`       | call to action                                  |
-| `contentImage` | image placement                                 |
-| `description`  | main body of content                            |
-| `disclaimer`   | disclaimer copy                                 |
-| `displayImage` | placement for `<picture />` or `<img>` elements |
-| `prefix`       | placement for smaller text above title          |
-| `title`        | placement for header                            |
+| Name         | Description                                     |
+| ------------ | ----------------------------------------------- |
+| action       | call to action                                  |
+| contentImage | image placement                                 |
+| description  | main body of content                            |
+| disclaimer   | disclaimer copy                                 |
+| displayImage | placement for `<picture />` or `<img>` elements |
+| prefix       | placement for smaller text above title          |
+| title        | placement for header                            |
